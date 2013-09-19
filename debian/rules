@@ -28,10 +28,9 @@ binary-indep: install omv_clean_scm
 	dh_md5sums
 	dh_builddeb
 
-binary-arch:
-# We have nothing to do by default.
-
 build:
+
+binary-arch:
 # We have nothing to do by default.
 
 binary: binary-indep binary-arch
