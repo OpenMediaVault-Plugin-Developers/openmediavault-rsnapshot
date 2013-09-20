@@ -93,7 +93,7 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 		-i "daily != 0" -o "interval	daily	" -v "daily" -n -b \
 		-i "weekly != 0" -o "interval	weekly	" -v "weekly" -n -b \
 		-i "monthly != 0" -o "interval	monthly	" -v "monthly" -n -b \
-		-o "verbose		3" -n \
+		-o "verbose		2" -n \
 		-o "loglevel	3" -n \
 		-o "cmd_rm		/bin/rm" -n \
 		-o "cmd_rsync	/usr/bin/rsync" -n \
@@ -108,13 +108,22 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 
 	  # generate rsnapshot cron config
       xmlstarlet sel -t -m "//services/rsnapshot/jobs/job[uuid='${uuid}']" \
+	    -i "enable = 0" -o "#### DISABLED ####" -n -b \
 		-o "# backup ${sourcepath} to ${targetpath} : " -n \
-		-o "if [ \"\$2\" = \"${uuid}\" ] || [ -z \"\$2\" ]; then echo \"starting \$1 backup for ${uuid}\"; /usr/bin/rsnapshot -c ${filename} \$1; fi" -n \
+		-i "enable = 0" -o "# " -b \
+		-o "if [ \"\$2\" = \"${uuid}\" ] || [ -z \"\$2\" ]; then" -n \
+		-i "enable = 0" -o "# " -b \
+		-o "	echo \"starting \$1 backup for ${uuid}\";" -n \
+		-i "enable = 0" -o "# " -b \
+		-o "	/usr/bin/rsnapshot -c ${filename} \$1;" -n \
+		-i "enable = 0" -o "# " -b \
+		-o "fi" -n \
+		-i "enable = 0" -o "#### DISABLED #### " -b \
 		${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
 
   done
 
-  echo "\n echo \"Backup finished.\"" >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
-  mv ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp ${OMV_RSNAPSHOT_CRONSCRIPT}
-  chmod ${OMV_RSNAPSHOT_SCRIPTS_MASK} ${OMV_RSNAPSHOT_CRONSCRIPT}
+echo "\n echo \"Backups finished.\"" >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
+mv ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp ${OMV_RSNAPSHOT_CRONSCRIPT}
+chmod ${OMV_RSNAPSHOT_SCRIPTS_MASK} ${OMV_RSNAPSHOT_CRONSCRIPT}
 
