@@ -34,6 +34,8 @@
 
 set -e
 
+echo "mkconf started" >> /tmp/rsnapshot.log
+
 . /etc/default/openmediavault
 . /usr/share/openmediavault/scripts/helper-functions
 

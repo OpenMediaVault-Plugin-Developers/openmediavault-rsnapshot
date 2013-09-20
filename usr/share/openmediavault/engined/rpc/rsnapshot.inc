@@ -25,6 +25,10 @@ require_once("openmediavault/error.inc");
 require_once("openmediavault/rpcservice.inc");
 require_once("openmediavault/notify.inc");
 
+/**
+* So this RPC service gets registered upon startup of openmediavault-engined.
+* Any errors while starting engined originate from this file :(
+*/
 class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 	/**
 	 * Get the RPC service name.

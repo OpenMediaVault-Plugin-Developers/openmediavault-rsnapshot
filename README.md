@@ -23,3 +23,8 @@ Im Modulverzeichnis aufrufen:
 
 dpkg-buildpackage -us -uc 
 
+Plugin installieren!
+
+Installation fehlgeschlagen/hängt? vermutlich konnte der omv-engined nicht starten:
+
+/usr/sbin/omv-engined -fd
