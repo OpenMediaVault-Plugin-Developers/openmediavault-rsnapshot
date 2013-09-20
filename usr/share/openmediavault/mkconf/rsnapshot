@@ -65,8 +65,8 @@ mkdir -p ${OMV_RSNAPSHOT_CONFS_DIR}
 rm -f ${OMV_RSNAPSHOT_CONFS_DIR}/rsnapshot-*
 #rm -f ${OMV_RSNAPSHOT_CONFS_DIR}/sync-*
 
-# delete the cron entries
-#echo "" > $OMV_CRONTAB_RSNAPSHOT_CONFIG
+# delete the temp cron script if existent
+echo "if [ -z \"\$1\" ]; then echo No argument given; exit 1; fi" > ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
 
 # Create the scripts regardless if enabled or disabled.
 xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
@@ -89,23 +89,26 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 		-o "config_version	1.2" -n \
 		-o "snapshot_root	${targetpath}" -n \
 		-o "#no_create_root	1" -n \
-		-o "interval	hourly  6" -n \
-		-o "interval	daily   7" -n \
-		-o "interval	weekly  4" -n \
+		-o "interval	hourly	6" -n \
+		-o "interval	daily	7" -n \
+		-o "interval	weekly	4" -n \
 		-o "verbose		2" -n \
 		-o "loglevel	3" -n \
-		-o "logfile 	${OMV_RSNAPSHOT_LOGFILE}" -n \
-		-o "lockfile	/var/run/rsnapshot-${uuid}.pid" -n \
+		-o "cmd_rm		/bin/rm" -n \
+		-o "cmd_rsync	/usr/bin/rsync" -n \
+		-o "cmd_logger	/usr/bin/logger" -n \
+		-o "logfile		${OMV_RSNAPSHOT_LOGFILE}" -n \
 		-o "rsync_long_args	--delete --numeric-ids --relative --delete-excluded " -v "rsyncargs" -n \
 		-o "one_fs	" -v "onefs" -n \
 		-o "backup	${sourcepath}	localhost/" -n \
-		-o "rsync_numretries	" -v "numretries" -n \
+		-o "rsync_numtries	" -v "numtries" -n \
 		${OMV_CONFIG_FILE} | xmlstarlet unesc > ${filename}
 	  chmod ${OMV_RSNAPSHOT_SCRIPTS_MASK} ${filename}
 
+	  # generate rsnapshot cron config
       xmlstarlet sel -t -m "//services/rsnapshot/jobs/job[uuid='${uuid}']" \
 		-o "# backup ${sourcepath} to ${targetpath} : " -n \
-		-o "/usr/bin/rsnapshot -c ${filename} \$1" -n \
+		-o "if [ \"\$2\" = \"${uuid}\" ] || [ -z \"\$2\" ]; then /usr/bin/rsnapshot -c ${filename} \$1; fi" -n \
 		${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
 
 	  mv ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp ${OMV_RSNAPSHOT_CRONSCRIPT}

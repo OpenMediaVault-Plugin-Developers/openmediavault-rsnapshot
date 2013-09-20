@@ -103,7 +103,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			  $objectv['uuid']));
 			// Modify result object.
 			$objectv['enable'] = boolval($objectv['enable']);
-			$objectv['numretries'] = intval($objectv['numretries']);
+			$objectv['numtries'] = intval($objectv['numtries']);
 			$objectv['onefs'] = boolval($objectv['onefs']);
 		}
 		// Filter the result.
@@ -142,7 +142,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 		}
 		// Modify result object.
 		$object['enable'] = boolval($object['enable']);
-		$objectv['numretries'] = intval($objectv['numretries']);
+		$objectv['numtries'] = intval($objectv['numtries']);
 		$objectv['onefs'] = boolval($objectv['onefs']);
 		return $object;
 	}
@@ -171,7 +171,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 				  "targetfolderref":{'.$GLOBALS['OMV_JSONSCHEMA_UUID'].'},
 				  "onefs":{"type":"boolean"},
 				  "sourcefolderref":{'.$GLOBALS['OMV_JSONSCHEMA_UUID'].'},
-				  "numretries":{"type":"integer","minimum":0,"maximum":65535},
+				  "numtries":{"type":"integer","minimum":1,"maximum":65535},
 				  "rsyncargs":{"type":"string"}
 			  }
 		  }');
@@ -184,7 +184,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			"targetfolderref" => $params['targetfolderref'],
 			"onefs" => array_boolval($params, 'onefs'),
 			"sourcefolderref" => $params['sourcefolderref'],
-			"numretries" => $params['numretries'],
+			"numtries" => $params['numtries'],
 			"rsyncargs" => $params['rsyncargs']
 		);
 		// Set the configuration object.
@@ -276,8 +276,8 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			  $bgOutputFilename);
 			// Execute the backup script.
 			$cmd = "/bin/sh";
-			$cmdArgs = array(sprintf("%s/rsync-%s",
-			  $GLOBALS['OMV_RSNAPSHOT_SCRIPTS_DIR'], $params['uuid']));
+			$cmdArgs = array(sprintf("%s daily %s",
+			  $GLOBALS['OMV_RSNAPSHOT_CRONSCRIPT'], $params['uuid']));
 			if(FALSE === $this->execve($cmd, $cmdArgs, $bgOutputFilename)) {
 				throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
 				  $cmd." ".implode(" ", $cmdArgs), "");
