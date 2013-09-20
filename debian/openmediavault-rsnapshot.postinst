@@ -23,14 +23,14 @@ set -e
 
 . /etc/default/openmediavault
 . /usr/share/openmediavault/scripts/helper-functions
-
 case "$1" in
 	configure)
 		########################################################################
 		# Set the default settings.
 		########################################################################
 		if [ -z "$2" ]; then
-			omv_set_default "OMV_RSNAPSHOT_SCRIPTS_DIR" "/var/lib/openmediavault/rsnapshot.d"
+			omv_set_default "OMV_RSNAPSHOT_CONFS_DIR" "/var/lib/openmediavault/rsnapshot.d"
+			omv_set_default "OMV_RSNAPSHOT_CRONSCRIPT" "/var/lib/openmediavault/cron.d/rsnapshot"
 		fi
 
 		########################################################################

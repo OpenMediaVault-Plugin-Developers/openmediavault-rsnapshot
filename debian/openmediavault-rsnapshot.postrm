@@ -30,12 +30,14 @@ case "$1" in
 	purge)
 		# Remove the configuration data.
 		omv_config_delete "/config/services/rsnapshot"
-		# Remove udev-rule
-		#rm -f ${OMV_USBBACKUP_UDEV_RULE_CONFIG}
+		# remove rsnapshot cron script
+		rm -f ${OMV_RSNAPSHOT_CRONSCRIPT}
+		rm -rf ${OMV_RSNAPSHOT_CONFS_DIR}
 		#udevadm control --reload-rules
 	;;
 
 	remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+		rm -f /etc/cron.d/openmediavault-rsnapshot
 	;;
 
 	*)
