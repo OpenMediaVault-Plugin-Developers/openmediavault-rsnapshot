@@ -85,29 +85,26 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 		}
 		// Add additional share informations.
 		foreach($objects as $objectk => &$objectv) {
-			$objectv['sharedfoldername'] = gettext("n/a");
+			$objectv['sourcefoldername'] = gettext("n/a");
+			$objectv['targetfoldername'] = gettext("n/a");
 			// Get the shared folder configuration object.
 			$sfobject = $xmlConfig->get("//system/shares/sharedfolder[" .
-			  "uuid='{$objectv['sharedfolderref']}']");
+			  "uuid='{$objectv['sourcefolderref']}']");
 			if(!is_null($sfobject) && !empty($sfobject)) {
-				$objectv['sharedfoldername'] = $sfobject['name'];
+				$objectv['sourcefoldername'] = $sfobject['name'];
+			}
+			$sfobject = $xmlConfig->get("//system/shares/sharedfolder[" .
+			  "uuid='{$objectv['targetfolderref']}']");
+			if(!is_null($sfobject) && !empty($sfobject)) {
+				$objectv['targetfoldername'] = $sfobject['name'];
 			}
 			// Get job status.
-			$objectv['running'] = file_exists(sprintf("/var/run/sync-%s",
-			  $objectv['fsuuid']));
+			$objectv['running'] = file_exists(sprintf("/var/run/rsnapshot-%s",
+			  $objectv['uuid']));
 			// Modify result object.
 			$objectv['enable'] = boolval($objectv['enable']);
-			$objectv['sendemail'] = boolval($objectv['sendemail']);
-			$objectv['usesubdir'] = boolval($objectv['usesubdir']);
-			$objectv['recursive'] = boolval($objectv['recursive']);
-			$objectv['times'] = boolval($objectv['times']);
-			$objectv['compress'] = boolval($objectv['compress']);
-			$objectv['archive'] = boolval($objectv['archive']);
-			$objectv['delete'] = boolval($objectv['delete']);
-			$objectv['quiet'] = boolval($objectv['quiet']);
-			$objectv['perms'] = boolval($objectv['perms']);
-			$objectv['acls'] = boolval($objectv['acls']);
-			$objectv['xattrs'] = boolval($objectv['xattrs']);
+			$objectv['numretries'] = intval($objectv['numretries']);
+			$objectv['onefs'] = boolval($objectv['onefs']);
 		}
 		// Filter the result.
 		return $this->applyFilter($objects, $params['start'],
@@ -145,18 +142,8 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 		}
 		// Modify result object.
 		$object['enable'] = boolval($object['enable']);
-		$object['sendemail'] = boolval($object['sendemail']);
-		$object['usesubdir'] = boolval($object['usesubdir']);
-		$object['recursive'] = boolval($object['recursive']);
-		$object['times'] = boolval($object['times']);
-		$object['compress'] = boolval($object['compress']);
-		$object['archive'] = boolval($object['archive']);
-		$object['delete'] = boolval($object['delete']);
-		$object['quiet'] = boolval($object['quiet']);
-		$object['perms'] = boolval($object['perms']);
-		$object['acls'] = boolval($object['acls']);
-		$object['xattrs'] = boolval($object['xattrs']);
-		$object['partial'] = boolval($object['partial']);
+		$objectv['numretries'] = intval($objectv['numretries']);
+		$objectv['onefs'] = boolval($objectv['onefs']);
 		return $object;
 	}
 
@@ -180,22 +167,12 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			  "properties":{
 				  "uuid":{'.$GLOBALS['OMV_JSONSCHEMA_UUID_UNDEFINED'].'},
 				  "enable":{"type":"boolean"},
-				  "mode":{"type":"string","enum":["push","pull"]},
-				  "sendemail":{"type":"boolean"},
 				  "comment":{"type":"string"},
-				  "sharedfolderref":{'.$GLOBALS['OMV_JSONSCHEMA_UUID'].'},
-				  "usesubdir":{"type":"boolean"},
-				  "recursive":{"type":"boolean"},
-				  "times":{"type":"boolean"},
-				  "compress":{"type":"boolean"},
-				  "archive":{"type":"boolean"},
-				  "delete":{"type":"boolean"},
-				  "quiet":{"type":"boolean"},
-				  "perms":{"type":"boolean"},
-				  "acls":{"type":"boolean"},
-				  "xattrs":{"type":"boolean"},
-				  "partial":{"type":"boolean"},
-				  "extraoptions":{"type":"string"}
+				  "targetfolderref":{'.$GLOBALS['OMV_JSONSCHEMA_UUID'].'},
+				  "onefs":{"type":"boolean"},
+				  "sourcefolderref":{'.$GLOBALS['OMV_JSONSCHEMA_UUID'].'},
+				  "numretries":{"type":"integer","minimum":0,"maximum":65535},
+				  "rsyncargs":{"type":"string"}
 			  }
 		  }');
 		// Prepare the configuration object.
@@ -203,22 +180,12 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			"uuid" => ($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) ?
 			  OMVUtil::uuid() : $params['uuid'],
 			"enable" => array_boolval($params, 'enable'),
-			"mode" => $params['mode'],
-			"sendemail" => array_boolval($params, 'sendemail'),
 			"comment" => $params['comment'],
-			"sharedfolderref" => $params['sharedfolderref'],
-			"usesubdir" => array_boolval($params, 'usesubdir'),
-			"recursive" => array_boolval($params, 'recursive'),
-			"times" => array_boolval($params, 'times'),
-			"compress" => array_boolval($params, 'compress'),
-			"archive" => array_boolval($params, 'archive'),
-			"delete" => array_boolval($params, 'delete'),
-			"quiet" => array_boolval($params, 'quiet'),
-			"perms" => array_boolval($params, 'perms'),
-			"acls" => array_boolval($params, 'acls'),
-			"xattrs" => array_boolval($params, 'xattrs'),
-			"partial" => array_boolval($params, 'partial'),
-			"extraoptions" => $params['extraoptions']
+			"targetfolderref" => $params['targetfolderref'],
+			"onefs" => array_boolval($params, 'onefs'),
+			"sourcefolderref" => $params['sourcefolderref'],
+			"numretries" => $params['numretries'],
+			"rsyncargs" => $params['rsyncargs']
 		);
 		// Set the configuration object.
 		$success = FALSE;

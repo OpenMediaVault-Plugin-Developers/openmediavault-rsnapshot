@@ -54,7 +54,11 @@ class OMVModuleRSnapshot extends OMVModuleServiceAbstract
 	 */
 	final public function onSharedFolder($type, $path, $object) {
 		global $xmlConfig;
-		$xpath = sprintf("//services/rsnapshot/jobs/job[sharedfolderref='%s']",
+		$xpath = sprintf("//services/rsnapshot/jobs/job[sourcefolderref='%s']",
+		  $object['uuid']);
+		if(TRUE === $xmlConfig->exists($xpath))
+			$this->setDirty();
+		$xpath = sprintf("//services/rsnapshot/jobs/job[targetfolderref='%s']",
 		  $object['uuid']);
 		if(TRUE === $xmlConfig->exists($xpath))
 			$this->setDirty();

@@ -67,24 +67,6 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
 			fieldLabel: _("Enable"),
 			checked: true
 		},{
-			xtype: "combo",
-			name: "mode",
-			fieldLabel: _("Mode"),
-			queryMode: "local",
-			store: Ext.create("Ext.data.ArrayStore", {
-				fields: [ "value", "text" ],
-				data: [
-					[ "push", _("From shared folder to external storage") ],
-					[ "pull", _("From external storage to shared folder") ]
-				]
-			}),
-			displayField: "text",
-			valueField: "value",
-			allowBlank: false,
-			editable: false,
-			triggerAction: "all",
-			value: "push"
-		},{
 			xtype: "textfield",
 			name: "comment",
 			fieldLabel: _("Comment"),
@@ -92,101 +74,51 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
 			vtype: "comment"
 		},{
 			xtype: "sharedfoldercombo",
-			name: "sharedfolderref",
-			fieldLabel: _("Shared folder"),
+			name: "targetfolderref",
+			fieldLabel: _("Target folder"),
 			plugins: [{
 				ptype: "fieldinfo",
-				text: _("The shared folder to synchronise when the external storage device is connected.")
+				text: _("The Folder used as target for backups.")
 			}]
 		},{
 			xtype: "checkbox",
-			name: "usesubdir",
+			name: "onefs",
 			fieldLabel: "&nbsp",
-			checked: true,
+			checked: false,
 			inputValue: 1,
-			boxLabel: _("Synchronise from/to directory on external storage device."),
+			boxLabel: _("One filesystem only"),
 			plugins: [{
 				ptype: "fieldinfo",
-				text: _("The shared folder content is synchronised from/to the root of the external storage device if this option is not set. The name of the directory is taken from the shared folder.")
+				text: _("If this is enabled, rsync won't span filesystem partitions within a backup point.")
 			}]
 		},{
-			xtype: "checkbox",
-			name: "recursive",
-			fieldLabel: _("Recursive"),
-			checked: true,
-			boxLabel: _("Recurse into directories.")
-		},{
-			xtype: "checkbox",
-			name: "times",
-			fieldLabel: _("Times"),
-			checked: true,
-			boxLabel: _("Preserve modification times.")
-		},{
-			xtype: "checkbox",
-			name: "compress",
-			fieldLabel: _("Compress"),
-			checked: false,
-			boxLabel: _("Compress file data during the transfer.")
-		},{
-			xtype: "checkbox",
-			name: "archive",
-			fieldLabel: _("Archive"),
-			checked: true,
-			boxLabel: _("Enable archive mode.")
-		},{
-			xtype: "checkbox",
-			name: "delete",
-			fieldLabel: _("Delete"),
-			checked: false,
-			boxLabel: _("Delete files on the receiving side that don't exist on sender.")
-		},{
-			xtype: "checkbox",
-			name: "quiet",
-			fieldLabel: _("Quiet"),
-			checked: false,
-			boxLabel: _("Suppress non-error messages.")
-		},{
-			xtype: "checkbox",
-			name: "perms",
-			fieldLabel: _("Preserve permissions"),
-			checked: true,
-			boxLabel: _("Set the destination permissions to be the same as the source permissions.")
-		},{
-			xtype: "checkbox",
-			name: "acls",
-			fieldLabel: _("Preserve ACLs"),
-			checked: false,
-			boxLabel: _("Update the destination ACLs to be the same as the source ACLs.")
-		},{
-			xtype: "checkbox",
-			name: "xattrs",
-			fieldLabel: _("Preserve extended attributes"),
-			checked: false,
-			boxLabel: _("Update the destination extended attributes to be the same as the local ones.")
-		},{
-			xtype: "checkbox",
-			name: "partial",
-			fieldLabel: _("Keep partially transferred files"),
-			checked: false,
-			boxLabel: _("Enable this option to keep partially transferred files, otherwise they will be deleted if the transfer is interrupted.")
-		},{
-			xtype: "checkbox",
-			name: "sendemail",
-			fieldLabel: _("Send email"),
-			checked: false,
-			boxLabel: _("Send command output via email."),
+			xtype: "sharedfoldercombo",
+			name: "sourcefolderref",
+			fieldLabel: _("Source folder"),
 			plugins: [{
 				ptype: "fieldinfo",
-				text: _("An email message with the command output (if any produced) is send to the administrator.")
+				text: _("The shared folder to Backup.")
+			}]
+		},{
+			xtype: "numberfield",
+			name: "numretries",
+			fieldLabel: _("Rsync retries"),
+			minValue: 0,
+			allowDecimals: false,
+			allowBlank: false,
+			value: 0,
+			plugins: [{
+				ptype: "fieldinfo",
+				text: _("Number of rsync re-tries. If you experience any network problems or network card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input' errors, for example, set this to a non-zero value to have the rsync operation re-tried")
 			}]
 		},{
 			xtype: "textfield",
-			name: "extraoptions",
-			fieldLabel: _("Extra options"),
+			name: "rsyncargs",
+			fieldLabel: _("Rsync arguments"),
 			allowBlank: true,
 			plugins: [{
 				ptype: "fieldinfo",
-				text: _("Please check the <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual page</a> for more details.")
+				text: _("Default rsync args. All rsync commands have at least these options set. Please check the <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual page</a> for more details.")
 			}]
 		}];
 	}
@@ -224,10 +156,15 @@ Ext.define("OMV.module.admin.service.rsnapshot.Jobs", {
 		trueIcon: "switch_on.png",
 		falseIcon: "switch_off.png"
 	},{
-		text: _("Shared folder"),
+		text: _("Source"),
 		sortable: true,
-		dataIndex: "sharedfoldername",
-		stateId: "sharedfoldername"
+		dataIndex: "sourcefoldername",
+		stateId: "sourcefoldername"
+	},{
+		text: _("Target"),
+		sortable: true,
+		dataIndex: "targetfoldername",
+		stateId: "targetfoldername"
 	},{
 		text: _("Comment"),
 		sortable: true,
@@ -245,7 +182,8 @@ Ext.define("OMV.module.admin.service.rsnapshot.Jobs", {
 					fields: [
 						{ name: "uuid", type: "string" },
 						{ name: "enable", type: "boolean" },
-						{ name: "sharedfoldername", type: "string" },
+						{ name: "sourcefoldername", type: "string" },
+						{ name: "targetfoldername", type: "string" },
 						{ name: "comment", type: "string" },
 						{ name: "running", type: "boolean" }
 					]
