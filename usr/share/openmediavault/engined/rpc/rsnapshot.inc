@@ -37,76 +37,11 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 	 * Initialize the RPC service.
 	 */
 	public function initialize() {
-		$this->registerMethod("getCandidates");
 		$this->registerMethod("getList");
 		$this->registerMethod("get");
 		$this->registerMethod("set");
 		$this->registerMethod("delete");
 		$this->registerMethod("execute");
-	}
-
-	/**
-	 * Get list of USB volumes that can be used for backup jobs.
-	 * @param params The method parameters.
-	 * @param context The context of the caller.
-	 * @return An array containing objects with the following fields:
-	 *   \em uuid, \em devicefile and \em description.
-	 *   The field \em uuid is the mount point configuration object UUID.
-	 * @throw E_CONFIG_GET_OBJECT_FAILED
-	 */
-	public function getCandidates($params, $context) {
-		global $xmlConfig;
-		// Validate the RPC caller context.
-		$this->validateMethodContext($context, array(
-			  "role" => OMV_ROLE_ADMINISTRATOR
-		  ));
-		// Get list of all detected filesystems. Note, the list may also
-		// contain RAID and LVM volumes, so the list must be filtered.
-		if(FALSE === ($objects = OMVFilesystems::get())) {
-			throw new OMVException(OMVErrorMsg::E_MISC_FAILURE,
-			  gettext("Failed to get filesystems"));
-		}
-		// Get the root partition (the filesystem containing the operation
-		// system) to filter it out.
-		$rootDeviceFile = OMVSystem::getRootDeviceFile();
-		// Collect volumes that are candidates for a backup job.
-		$result = array();
-		foreach($objects as $objectk => $objectv) {
-			// Skip filesystem we do not support?
-			if(!in_array($objectv['type'], array("ext3", "ext4", "xfs",
-			  "jfs", "msdos", "ntfs", "vfat", "hfsplus"))) {
-				continue;
-			}
-			// Skip the device where the operating system is installed on.
-			if($objectv['devicefile'] === $rootDeviceFile) {
-				continue;
-			}
-			// Check if the volume is connected via USB.
-			$fs = new OMVFilesystem($objectv['devicefile']);
-			if(!$fs->exists()) {
-				throw new OMVException(OMVErrorMsg::E_MISC_FAILURE,
-				  sprintf(gettext("Filesystem '%s' not found"),
-				  $objectv['devicefile']));
-				continue;
-			}
-			$sd = OMVStorageDeviceFactory::get($fs->getParentDeviceFile());
-			if(is_null($sd) || !$sd->exists()) {
-				throw new OMVException(OMVErrorMsg::E_MISC_FAILURE,
-				  sprintf(gettext("Device '%s' not found"),
-				  $fs->getParentDeviceFile()));
-			}
-			if(!$sd->isUsb())
-				continue;
-			// Prepare result object.
-			$result[] = array(
-				"uuid" => $objectv['uuid'],
-				"devicefile" => $objectv['devicefile'],
-				"label" => $objectv['label'],
-				"type" => $objectv['type'],
-				"description" => $sd->getDescription()
-			);
-		}
-		return $result;
 	}
 
 	/**
@@ -244,7 +179,6 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 				  "mode":{"type":"string","enum":["push","pull"]},
 				  "sendemail":{"type":"boolean"},
 				  "comment":{"type":"string"},
-				  "fsuuid":{"type":"string","optional":true},
 				  "sharedfolderref":{'.$GLOBALS['OMV_JSONSCHEMA_UUID'].'},
 				  "usesubdir":{"type":"boolean"},
 				  "recursive":{"type":"boolean"},
@@ -268,7 +202,6 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			"mode" => $params['mode'],
 			"sendemail" => array_boolval($params, 'sendemail'),
 			"comment" => $params['comment'],
-			"fsuuid" => $params['fsuuid'],
 			"sharedfolderref" => $params['sharedfolderref'],
 			"usesubdir" => array_boolval($params, 'usesubdir'),
 			"recursive" => array_boolval($params, 'recursive'),

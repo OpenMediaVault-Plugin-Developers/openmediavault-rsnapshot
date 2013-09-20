@@ -99,64 +99,6 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
 				text: _("The shared folder to synchronise when the external storage device is connected.")
 			}]
 		},{
-			xtype: "combo",
-			name: "fsuuid",
-			fieldLabel: _("Device"),
-			emptyText: _("Select a device ..."),
-			allowBlank: false,
-			allowNone: false,
-			editable: false,
-			triggerAction: "all",
-			displayField: "description",
-			valueField: "uuid",
-			trigger2Cls: Ext.baseCSSPrefix + "form-search-trigger",
-			store: Ext.create("OMV.data.Store", {
-				autoLoad: true,
-				model: OMV.data.Model.createImplicit({
-					idProperty: "uuid",
-					fields: [
-						{ name: "uuid", type: "string" },
-						{ name: "devicefile", type: "string" },
-						{ name: "label", type: "string" },
-						{ name: "type", type: "string" },
-						{ name: "description", type: "string" }
-					]
-				}),
-				proxy: {
-					type: "rpc",
-					appendSortParams: false,
-					rpcData: {
-						service: "RSnapshot",
-						method: "getCandidates"
-					}
-				},
-				sorters: [{
-					direction: "ASC",
-					property: "devicefile"
-				}]
-			}),
-			plugins: [{
-				ptype: "fieldinfo",
-				text: _("The external storage device.")
-			}],
-			listeners: {
-				scope: me,
-				afterrender: function(c, eOpts) {
-					// Add tooltip to trigger button.
-					var trigger2El = c.getTriggerButtonEl(c.trigger2Cls);
-					Ext.tip.QuickTipManager.register({
-						target: trigger2El.id,
-						text: _("Scan")
-					});
-				}
-			},
-			onTrigger2Click: function(c) {
-				var me = this;
-				// Reload list of detected external storage devices.
-				delete me.lastQuery;
-				me.store.reload();
-			}
-		},{
 			xtype: "checkbox",
 			name: "usesubdir",
 			fieldLabel: "&nbsp",
@@ -287,11 +229,6 @@ Ext.define("OMV.module.admin.service.rsnapshot.Jobs", {
 		dataIndex: "sharedfoldername",
 		stateId: "sharedfoldername"
 	},{
-		text: _("External storage device"),
-		sortable: true,
-		dataIndex: "fsuuid",
-		stateId: "fsuuid"
-	},{
 		text: _("Comment"),
 		sortable: true,
 		dataIndex: "comment",
@@ -308,7 +245,6 @@ Ext.define("OMV.module.admin.service.rsnapshot.Jobs", {
 					fields: [
 						{ name: "uuid", type: "string" },
 						{ name: "enable", type: "boolean" },
-						{ name: "fsuuid", type: "string" },
 						{ name: "sharedfoldername", type: "string" },
 						{ name: "comment", type: "string" },
 						{ name: "running", type: "boolean" }
