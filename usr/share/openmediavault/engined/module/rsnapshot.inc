@@ -29,11 +29,6 @@ class OMVModuleRSnapshot extends OMVModuleServiceAbstract
 	 * Get the module name.
 	 */
 	public function getName() {
-		$cmd = "echo getName() >> /tmp/rsnapshot.log";
-		if(0 !== $this->exec($cmd, $output)) {
-			throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
-			  $cmd, implode("\n", $output));
-		}
 		return "rsnapshot";
 	}
 
@@ -42,11 +37,6 @@ class OMVModuleRSnapshot extends OMVModuleServiceAbstract
 	 * @throw E_EXEC_FAILED
 	 */
 	public function applyConfig() {
-		$cmd = "echo applyConfig() >> /tmp/rsnapshot.log";
-		if(0 !== $this->exec($cmd, $output)) {
-			throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
-			  $cmd, implode("\n", $output));
-		}
 		$cmd = "omv-mkconf rsnapshot 2>&1";
 		if(0 !== $this->exec($cmd, $output)) {
 			throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
