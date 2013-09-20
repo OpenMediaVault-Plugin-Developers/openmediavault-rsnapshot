@@ -142,8 +142,13 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 		}
 		// Modify result object.
 		$object['enable'] = boolval($object['enable']);
-		$objectv['numtries'] = intval($objectv['numtries']);
-		$objectv['onefs'] = boolval($objectv['onefs']);
+		$object['hourly'] = intval($object['hourly']);
+		$object['daily'] = intval($object['daily']);
+		$object['weekly'] = intval($object['weekly']);
+		$object['monthly'] = intval($object['monthly']);
+		$object['numtries'] = intval($object['numtries']);
+		$object['onefs'] = boolval($object['onefs']);
+
 		return $object;
 	}
 
@@ -171,6 +176,10 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 				  "targetfolderref":{'.$GLOBALS['OMV_JSONSCHEMA_UUID'].'},
 				  "onefs":{"type":"boolean"},
 				  "sourcefolderref":{'.$GLOBALS['OMV_JSONSCHEMA_UUID'].'},
+				  "hourly":{"type":"integer","minimum":0,"maximum":50},
+				  "daily":{"type":"integer","minimum":0,"maximum":50},
+				  "weekly":{"type":"integer","minimum":0,"maximum":50},
+				  "monthly":{"type":"integer","minimum":0,"maximum":50},
 				  "numtries":{"type":"integer","minimum":1,"maximum":65535},
 				  "rsyncargs":{"type":"string"}
 			  }
@@ -184,6 +193,10 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			"targetfolderref" => $params['targetfolderref'],
 			"onefs" => array_boolval($params, 'onefs'),
 			"sourcefolderref" => $params['sourcefolderref'],
+			"hourly" => $params['hourly'],
+			"daily" => $params['daily'],
+			"weekly" => $params['weekly'],
+			"monthly" => $params['monthly'],
 			"numtries" => $params['numtries'],
 			"rsyncargs" => $params['rsyncargs']
 		);
@@ -240,6 +253,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 	 * Execute a backup job.
 	 * @param params An array containing the following fields:
 	 *   \em uuid The UUID of the cron job to execute.
+	 *   \em level The backup level to execute.
 	 * @param context The context of the caller.
 	 * @return The name of the background process status file.
 	 * @throw E_CONFIG_DIRTY
@@ -262,6 +276,10 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 		if($this->isModuleDirty("rsnapshot")) {
 			throw new OMVException(OMVErrorMsg::E_CONFIG_DIRTY);
 		}
+
+		// get object
+		$object = $this->get($params, $context);
+
 		// Create a background process.
 		$bgStatusFilename = $this->createBgProcStatus();
 		$pid = $this->fork();
@@ -269,6 +287,18 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			$this->initializeBgProcStatus($bgStatusFilename, $pid);
 			return $bgStatusFilename;
 		}
+
+		$level = "unknown";
+		if ($object['hourly'] != 0) {
+			$level = "hourly";
+		} elseif ($object['daily'] != 0) {
+			$level = "daily";
+		} elseif ($object['weekly'] != 0) {
+			$level = "weekly";
+		} elseif ($object['monthly'] != 0) {
+			$level = "monthly";
+		}
+
 		// Child process.
 		try {
 			$bgOutputFilename = $this->createBgProcOutput();
@@ -276,8 +306,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			  $bgOutputFilename);
 			// Execute the backup script.
 			$cmd = "/bin/sh";
-			$cmdArgs = array(sprintf("%s daily %s",
-			  $GLOBALS['OMV_RSNAPSHOT_CRONSCRIPT'], $params['uuid']));
+			$cmdArgs = array($GLOBALS['OMV_RSNAPSHOT_CRONSCRIPT'], $level, $params['uuid']);
 			if(FALSE === $this->execve($cmd, $cmdArgs, $bgOutputFilename)) {
 				throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
 				  $cmd." ".implode(" ", $cmdArgs), "");

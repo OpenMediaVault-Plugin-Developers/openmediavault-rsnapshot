@@ -101,6 +101,54 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
 			}]
 		},{
 			xtype: "numberfield",
+			name: "hourly",
+			fieldLabel: _("Retain hourly"),
+			minValue: 0,
+			allowDecimals: false,
+			allowBlank: false,
+			value: 0,
+			plugins: [{
+				ptype: "fieldinfo",
+				text: _("Number of hourly backups to keep. After n backups are created, the first one will be overwritten.")
+			}]
+		},{
+			xtype: "numberfield",
+			name: "daily",
+			fieldLabel: _("Retain daily"),
+			minValue: 0,
+			allowDecimals: false,
+			allowBlank: false,
+			value: 7,
+			plugins: [{
+				ptype: "fieldinfo",
+				text: _("Number of daily backups to keep. After n backups are created, the first one will be overwritten.")
+			}]
+		},{
+			xtype: "numberfield",
+			name: "weekly",
+			fieldLabel: _("Retain weekly"),
+			minValue: 0,
+			allowDecimals: false,
+			allowBlank: false,
+			value: 4,
+			plugins: [{
+				ptype: "fieldinfo",
+				text: _("Number of weekly backups to keep. After n backups are created, the first one will be overwritten.")
+			}]
+		},{
+			xtype: "numberfield",
+			name: "monthly",
+			fieldLabel: _("Retain monthly"),
+			minValue: 0,
+			allowDecimals: false,
+			allowBlank: false,
+			value: 3,
+			plugins: [{
+				ptype: "fieldinfo",
+				text: _("Number of monthly backups to keep. After n backups are created, the first one will be overwritten.")
+			}]
+		},{
+			xtype: "numberfield",
 			name: "numtries",
 			fieldLabel: _("Rsync retries"),
 			minValue: 1,
@@ -278,6 +326,7 @@ Ext.define("OMV.module.admin.service.rsnapshot.Jobs", {
 	onRunButton: function() {
 		var me = this;
 		var record = me.getSelected();
+
 		Ext.create("OMV.window.Execute", {
 			title: _("Execute backup job"),
 			rpcService: "RSnapshot",

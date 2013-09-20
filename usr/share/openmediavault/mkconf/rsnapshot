@@ -89,10 +89,11 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 		-o "config_version	1.2" -n \
 		-o "snapshot_root	${targetpath}" -n \
 		-o "#no_create_root	1" -n \
-		-o "interval	hourly	6" -n \
-		-o "interval	daily	7" -n \
-		-o "interval	weekly	4" -n \
-		-o "verbose		2" -n \
+		-i "hourly != 0" -o "interval	hourly	" -v "hourly" -n -b \
+		-i "daily != 0" -o "interval	daily	" -v "daily" -n -b \
+		-i "weekly != 0" -o "interval	weekly	" -v "weekly" -n -b \
+		-i "monthly != 0" -o "interval	monthly	" -v "monthly" -n -b \
+		-o "verbose		3" -n \
 		-o "loglevel	3" -n \
 		-o "cmd_rm		/bin/rm" -n \
 		-o "cmd_rsync	/usr/bin/rsync" -n \
@@ -108,11 +109,12 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 	  # generate rsnapshot cron config
       xmlstarlet sel -t -m "//services/rsnapshot/jobs/job[uuid='${uuid}']" \
 		-o "# backup ${sourcepath} to ${targetpath} : " -n \
-		-o "if [ \"\$2\" = \"${uuid}\" ] || [ -z \"\$2\" ]; then /usr/bin/rsnapshot -c ${filename} \$1; fi" -n \
+		-o "if [ \"\$2\" = \"${uuid}\" ] || [ -z \"\$2\" ]; then echo \"starting \$1 backup for ${uuid}\"; /usr/bin/rsnapshot -c ${filename} \$1; fi" -n \
 		${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
 
-	  mv ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp ${OMV_RSNAPSHOT_CRONSCRIPT}
-	  chmod ${OMV_RSNAPSHOT_SCRIPTS_MASK} ${OMV_RSNAPSHOT_CRONSCRIPT}
-
   done
+
+  echo "\n echo \"Backup finished.\"" >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
+  mv ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp ${OMV_RSNAPSHOT_CRONSCRIPT}
+  chmod ${OMV_RSNAPSHOT_SCRIPTS_MASK} ${OMV_RSNAPSHOT_CRONSCRIPT}
 
