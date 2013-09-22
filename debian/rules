@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-include ../openmediavault.mk
+include ./openmediavault.mk
 
 clean:
 	dh_testdir
