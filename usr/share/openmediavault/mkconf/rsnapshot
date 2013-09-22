@@ -3,8 +3,8 @@
 # This file is part of OpenMediaVault.
 #
 # @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
-# @author    Volker Theile <volker.theile@openmediavault.org>
-# @copyright Copyright (c) 2009-2013 Volker Theile
+# @author    Julian Kalinowski <julakali@gmail.com>
+# @copyright Copyright (c) 2013 Julian Kalinowski
 #
 # OpenMediaVault is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,19 +19,6 @@
 # You should have received a copy of the GNU General Public License
 # along with OpenMediaVault. If not, see <http://www.gnu.org/licenses/>.
 
-# Documentation/Howto:
-# http://linux.die.net/man/7/udev
-# http://wiki.ubuntuusers.de/udev
-# https://wiki.archlinux.org/index.php/Udev#Mount_under_.2Fmedia.3B_use_partition_label_if_present
-# http://www.reactivated.net/writing_udev_rules.html#strsubst
-# http://webapp5.rrz.uni-hamburg.de/SuSe-Dokumentation/manual/sles-admin_de/manual/sec.udev.rules.html
-#
-# udevadm info -a -p $(udevadm info -q path -n /dev/sdX)
-# udevadm info -a --name=/dev/sdX
-# udevadm control --reload-rules
-# udevadm test /sys/block/sdX
-# udevadm monitor --environment
-
 set -e
 
 . /etc/default/openmediavault
@@ -44,31 +31,24 @@ OMV_RSNAPSHOT_CRONSCRIPT=${OMV_RSNAPSHOT_CRONSCRIPT:-"/var/lib/openmediavault/cr
 OMV_RSNAPSHOT_SCRIPTS_MASK=${OMV_RSNAPSHOT_SCRIPTS_MASK:-"755"}
 OMV_RSNAPSHOT_LOGFILE=${OMV_RSNAPSHOT_LOGFILE:-"/var/log/rsnapshot.log"}
 
-#OMV_RSNAPSHOT_CRONSCRIPT=${OMV_RSYNC_CRONSCRIPT:-"/etc/cron.d/openmediavault-rsnapshot"}
-#OMV_RSNAPSHOT_CRONSCRIPT_MASK=${OMV_RSYNC_CRONSCRIPT_MASK:-"755"}
-#OMV_RSNAPSHOT_CRONSCRIPT_TEMPLATE=${OMV_RSYNC_CRONSCRIPT_TEMPLATE:-"rsnapshot-"}
-
-
-#OMV_RSNAPSHOT_CRONUSER=${OMV_RSYNC_CRONUSER:-"root"}
-
-#OMV_CRONTAB_RSNAPSHOT_CONFIG=${OMV_CRONTAB_RSNAPSHOT_CONFIG:-"/etc/cron.d/openmediavault-rsnapshot"}
-
-
 GET_SOURCEFOLDER_PATH=${GET_SOURCEFOLDER_PATH=-m "//system/shares/sharedfolder[uuid=current()/sourcefolderref]" -v "concat(//system/fstab/mntent[uuid=current()/mnten
 tref]/dir,'/',reldirpath)" -b}
 
 GET_TARGETFOLDER_PATH=${GET_TARGETFOLDER_PATH=-m "//system/shares/sharedfolder[uuid=current()/targetfolderref]" -v "concat(//system/fstab/mntent[uuid=current()/mnten
 tref]/dir,'/',reldirpath)" -b}
 
-# Create the backup jobs. Each job is configured in a seperate script.
-mkdir -p ${OMV_RSNAPSHOT_CONFS_DIR}
-rm -f ${OMV_RSNAPSHOT_CONFS_DIR}/rsnapshot-*
-#rm -f ${OMV_RSNAPSHOT_CONFS_DIR}/sync-*
+# Create the backup jobs. Every job gets its own config file, but their execution
+# is managed through one single bash script that is executed by cron.
 
-# delete the temp cron script if existent
+# create the configuration directory
+mkdir -p ${OMV_RSNAPSHOT_CONFS_DIR}
+# delete all previous configurations, as they're all created from scratch
+rm -f ${OMV_RSNAPSHOT_CONFS_DIR}/rsnapshot-*
+
+# Create a new rsnapshot script containing argument check
 echo "if [ -z \"\$1\" ]; then echo No argument given; exit 1; fi" > ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
 
-# Create the scripts regardless if enabled or disabled.
+# Create the config files regardless if enabled or disabled.
 xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
   -v "uuid" \
   -i "position() != last()" -n -b \
@@ -81,7 +61,6 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 	  sourcepath="$(omv_get_sharedfolder_path "${sourcefolderref}")/"
 	  targetpath="$(omv_get_sharedfolder_path "${targetfolderref}")/"
 
-	  #runfile="/var/run/rsync-${uuid}"
 	  xmlstarlet sel -t -m "//services/rsnapshot/jobs/job[uuid='${uuid}']" \
 		-o "# rsnapshot-${uuid}.conf" -n \
 		-o "# This configuration file is auto-generated." -n \
@@ -106,7 +85,7 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 		${OMV_CONFIG_FILE} | xmlstarlet unesc > ${filename}
 	  chmod ${OMV_RSNAPSHOT_SCRIPTS_MASK} ${filename}
 
-	  # generate rsnapshot cron config
+	  # append to rsnapshot script
       xmlstarlet sel -t -m "//services/rsnapshot/jobs/job[uuid='${uuid}']" \
 	    -i "enable = 0" -o "#### DISABLED ####" -n -b \
 		-o "# backup ${sourcepath} to ${targetpath} : " -n \
@@ -124,6 +103,9 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
   done
 
 echo "\n echo \"Backups finished.\"" >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
+
+# replace previous cronscript by newly created
 mv ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp ${OMV_RSNAPSHOT_CRONSCRIPT}
+# make cronscript executable
 chmod ${OMV_RSNAPSHOT_SCRIPTS_MASK} ${OMV_RSNAPSHOT_CRONSCRIPT}
 

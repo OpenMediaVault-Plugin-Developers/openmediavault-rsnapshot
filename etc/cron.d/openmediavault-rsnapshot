@@ -1,9 +1,6 @@
-# This is a sample cron file for rsnapshot.
-# The values used correspond to the examples in /etc/rsnapshot.conf.
-# There you can also set the backup points and many other things.
-#
-# To activate this cron file you have to uncomment the lines below.
-# Feel free to adapt it to your needs.
+# This is the cron file for openmediavault-rsnapshot.
+# The file /var/lib/openmediavault/cron.d/rsnapshot will mirror
+# the jobs that are configured in the plugin.
 # m h 		dom mon dow user  command
 0 */4         * * *           root    /var/lib/openmediavault/cron.d/rsnapshot hourly
 30 3          * * *           root    /var/lib/openmediavault/cron.d/rsnapshot daily

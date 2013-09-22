@@ -3,8 +3,8 @@
  * This file is part of OpenMediaVault.
  *
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
- * @author    Volker Theile <volker.theile@openmediavault.org>
- * @copyright Copyright (c) 2009-2013 Volker Theile
+ * @author    Julian Kalinowski <julakali@gmail.com>
+ * @copyright Copyright (c) 2013 Julian Kalinowski
  *
  * OpenMediaVault is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 	}
 
 	/**
-	 * Get list of USB backup job configuration objects.
+	 * Get list of RSnapshot backup job configuration objects.
 	 * @param data An array containing the following fields:
 	 *   \em start The index where to start.
 	 *   \em limit The number of objects to process.
@@ -83,16 +83,17 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
 			  $xpath);
 		}
-		// Add additional share informations.
+		// Add additional source/target informations.
 		foreach($objects as $objectk => &$objectv) {
 			$objectv['sourcefoldername'] = gettext("n/a");
 			$objectv['targetfoldername'] = gettext("n/a");
-			// Get the shared folder configuration object.
+			// Get the source folder configuration object.
 			$sfobject = $xmlConfig->get("//system/shares/sharedfolder[" .
 			  "uuid='{$objectv['sourcefolderref']}']");
 			if(!is_null($sfobject) && !empty($sfobject)) {
 				$objectv['sourcefoldername'] = $sfobject['name'];
 			}
+			// Get the target folder configuration object
 			$sfobject = $xmlConfig->get("//system/shares/sharedfolder[" .
 			  "uuid='{$objectv['targetfolderref']}']");
 			if(!is_null($sfobject) && !empty($sfobject)) {
@@ -112,7 +113,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 	}
 
 	/**
-	 * Get a USB backup job configuration object.
+	 * Get a RSnapshot backup job configuration object.
 	 * @param params An array containing the following fields:
 	 *   \em uuid The UUID of the configuration object.
 	 * @param context The context of the caller.
@@ -153,7 +154,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 	}
 
 	/**
-	 * Set a USB backup job configuration object.
+	 * Set a RSnapshot backup job configuration object.
 	 * @param params The method parameters.
 	 * @param context The context of the caller.
 	 * @return The stored configuration object.
@@ -288,6 +289,8 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			return $bgStatusFilename;
 		}
 
+		// Determine backup level.
+		// Will use the smallest backup cycle upon manual execution.
 		$level = "unknown";
 		if ($object['hourly'] != 0) {
 			$level = "hourly";

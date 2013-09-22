@@ -10,14 +10,10 @@ http://en.wikipedia.org/wiki/Debian_build_toolchain
 Installieren:
 
 sudo apt-get install build-essential debhelper dh-make quilt fakeroot lintian 
-sudo apt-get install python-pip
+sudo apt-get install python-pip devscripts
 pip install transifex-client
 
-Auschecken:
-
-svn checkout svn://svn.code.sf.net/p/openmediavault/code/trunk openmediavault-code
-
-Dann dieses repo clonen nach openmediavault-code.
+Dann dieses repo clonen.
 
 Im Modulverzeichnis aufrufen:
 
@@ -28,3 +24,7 @@ Plugin installieren!
 Installation fehlgeschlagen/hängt? vermutlich konnte der omv-engined nicht starten:
 
 /usr/sbin/omv-engined -fd
+
+
+Debian Package tools
+======
