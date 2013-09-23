@@ -78,7 +78,7 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
 			fieldLabel: _("Target folder"),
 			plugins: [{
 				ptype: "fieldinfo",
-				text: _("The Folder used as target for backups.")
+				text: _("The Folder used as target for backups. Backups will go into a sub-folder <em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative path&gt;</em>")
 			}]
 		},{
 			xtype: "checkbox",
@@ -162,11 +162,11 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
 		},{
 			xtype: "textfield",
 			name: "rsyncargs",
-			fieldLabel: _("Rsync arguments"),
+			fieldLabel: _("Rsync long arguments"),
 			allowBlank: true,
 			plugins: [{
 				ptype: "fieldinfo",
-				text: _("Default rsync args. All rsync commands have at least these options set. Please check the <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual page</a> for more details.")
+				text: _("Default rsync long args. All rsync commands have at least these options set. Default is '--delete --numeric-ids --delete-excluded'. Please check the <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual page</a> for more details.")
 			}]
 		}];
 	}
