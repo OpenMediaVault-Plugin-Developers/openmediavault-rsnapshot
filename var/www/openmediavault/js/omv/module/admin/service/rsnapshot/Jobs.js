@@ -76,11 +76,11 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
 			vtype: "comment"
 		},{
 			xtype: "sharedfoldercombo",
-			name: "targetfolderref",
-			fieldLabel: _("Target folder"),
+			name: "sourcefolderref",
+			fieldLabel: _("Source folder"),
 			plugins: [{
 				ptype: "fieldinfo",
-				text: _("The Folder used as target for backups. Backups will go into a sub-folder <em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative path&gt;</em>")
+				text: _("The shared folder to Backup.")
 			}]
 		},{
 			xtype: "checkbox",
@@ -95,11 +95,11 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
 			}]
 		},{
 			xtype: "sharedfoldercombo",
-			name: "sourcefolderref",
-			fieldLabel: _("Source folder"),
+			name: "targetfolderref",
+			fieldLabel: _("Target folder"),
 			plugins: [{
 				ptype: "fieldinfo",
-				text: _("The shared folder to Backup.")
+				text: _("The Folder used as target for backups. Backups will go into a sub-folder <em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative path&gt;</em>")
 			}]
 		},{
 			xtype: "numberfield",
