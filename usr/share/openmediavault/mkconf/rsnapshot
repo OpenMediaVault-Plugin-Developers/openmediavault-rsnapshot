@@ -36,7 +36,9 @@ OMV_RSNAPSHOT_LOGFILE=${OMV_RSNAPSHOT_LOGFILE:-"/var/log/rsnapshot.log"}
 GET_SOURCEFOLDER_PATH=${GET_SOURCEFOLDER_PATH=-m "//system/shares/sharedfolder[uuid=current()/sourcefolderref]" -v "concat(//system/fstab/mntent[uuid=current()/mntentref]/dir,'/',reldirpath)" -b}
 GET_TARGETFOLDER_PATH=${GET_TARGETFOLDER_PATH=-m "//system/shares/sharedfolder[uuid=current()/targetfolderref]" -v "concat(//system/fstab/mntent[uuid=current()/mntentref]/dir,'/',reldirpath)" -b}
 GET_SOURCE_RELDIR=${GET_SOURCE_RELDIR=-m "//system/shares/sharedfolder[uuid=current()/sourcefolderref]" -v "reldirpath" -b}
-#
+
+# rsnapshot path
+RSNAPSHOT=$(which rsnapshot)
 
 # Create the backup jobs. Every job gets its own config file, but their execution
 # is managed through one single bash script that is executed by cron.
@@ -47,7 +49,12 @@ mkdir -p ${OMV_RSNAPSHOT_CONFS_DIR}
 rm -f ${OMV_RSNAPSHOT_CONFS_DIR}/rsnapshot-*
 
 # Create a new rsnapshot script containing argument check
-echo "if [ -z \"\$1\" ]; then echo No argument given; exit 1; fi" > ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
+echo "\
+#!/bin/bash\n\
+if [ -z \"\$1\" ]; then\n\
+	echo \"No argument given. Should be one of: hourly,daily,weekly,monthly. UUID of backup job can be passed as second argument to execute a single job.\"\n\
+	exit 1\n\
+fi" > ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
 
 # void omv_get_mount_point (char *uuid)
 # Get the mount point of the given shared folder
@@ -116,30 +123,30 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 	  # append to rsnapshot script
       xmlstarlet sel -t -m "//services/rsnapshot/jobs/job[uuid='${uuid}']" \
 	    -i "enable = 0" -o "#### DISABLED ####" -n -b \
-		-o "# backup " ${GET_SOURCEFOLDER_PATH} -o " to " ${GET_TARGETFOLDER_PATH} -o " : " -n \
+		-o "# backup " ${GET_SOURCEFOLDER_PATH} -o " to " ${GET_TARGETFOLDER_PATH} -n \
 		-i "enable = 1" \
 			-o "if [ \"\$2\" = \"${uuid}\" ] || [ -z \"\$2\" ]; then" -n \
-			-o "	targetdir=" ${GET_TARGETFOLDER_PATH} -o "/" -o "${sourcelabel}/" ${GET_SOURCE_RELDIR} -n \
-			-o "	if [ ! -e \"\${targetdir}\" ]; then " -n \
+			-o "	targetdir=\"" ${GET_TARGETFOLDER_PATH} -o "/" -o "${sourcelabel}/" ${GET_SOURCE_RELDIR} -o "\"" -n \
+			-o "	if [ ! -e \"\${targetdir}\" ]; then" -n \
 			-o "		echo \"Creating target directory structure ... \"" -n \
 			-o "		mkdir -p \"\${targetdir}\"" -n \
 			-o "	fi" -n \
 			-o "	echo \"Checking access rights on target directory structure ... \"" -n \
 			-o "	while [ -n \"\${targetdir}\" ] && [ \"\${targetdir}\" != \"" ${GET_TARGETFOLDER_PATH} -o "\" ]; do" -n \
-			-o "		echo \"... \${targetdir}\";" -n \
+			-o "		echo \"... \${targetdir}\"" -n \
 			-o "		chmod ${OMV_RSNAPSHOT_DIRS_MASK} \"\${targetdir}\"" -n \
 			-o "		chgrp " -v "gid" -o " \"\${targetdir}\"" -n \
-			-o "		targetdir=\"\${targetdir%/*}\";" -n \
+			-o "		targetdir=\"\${targetdir%/*}\"" -n \
 			-o "	done" -n \
-			-o "	echo \"starting \$1 backup for ${uuid}\";" -n \
-			-o "	/usr/bin/rsnapshot -c ${filename} \$1;" -n \
+			-o "	echo \"starting \$1 backup for ${uuid}\"" -n \
+			-o "	${RSNAPSHOT} -c \"${filename}\" \"\$1\"" -n \
 			-o "fi" -n \
 			-b \
 		${OMV_CONFIG_FILE} | xmlstarlet unesc >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
 
   done
 
-echo "\n echo \"Backups finished.\"" >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
+echo "echo \"Backups finished.\"" >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
 
 # replace previous cronscript by newly created
 mv ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp ${OMV_RSNAPSHOT_CRONSCRIPT}
