@@ -182,6 +182,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 				  "weekly":{"type":"integer","minimum":0,"maximum":50},
 				  "monthly":{"type":"integer","minimum":0,"maximum":50},
 				  "numtries":{"type":"integer","minimum":1,"maximum":65535},
+				  "gid":{"type":"string"},
 				  "rsyncargs":{"type":"string"}
 			  }
 		  }');
@@ -199,6 +200,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			"weekly" => $params['weekly'],
 			"monthly" => $params['monthly'],
 			"numtries" => $params['numtries'],
+			"gid" => $params['gid'],
 			"rsyncargs" => $params['rsyncargs']
 		);
 		// Set the configuration object.

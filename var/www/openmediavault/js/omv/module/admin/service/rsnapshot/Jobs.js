@@ -38,7 +38,9 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
 	requires: [
 		"OMV.data.Store",
 		"OMV.data.Model",
-		"OMV.data.proxy.Rpc"
+		"OMV.data.proxy.Rpc",
+		"OMV.form.field.SharedFolderComboBox",
+		"OMV.form.field.GroupComboBox"
 	],
 	uses: [
 		"OMV.workspace.window.plugin.ConfigObject"
@@ -159,6 +161,15 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
 				ptype: "fieldinfo",
 				text: _("Number of rsync tries. If you experience any network problems or network card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input' errors, for example, set this to a non-zero value to have the rsync operation re-tried")
 			}]
+		},{
+			xtype: "groupcombo",
+			name: "gid",
+			fieldLabel: _("Group"),
+			value: "users",
+			plugins: [{
+					ptype: "fieldinfo",
+					text: _("This option specifies the group that the backup directories will belong to. Note: This will only change the group of additionally created dirs. The backed-up files and directories will mirror the original permissions.")
+				}]
 		},{
 			xtype: "textfield",
 			name: "rsyncargs",
