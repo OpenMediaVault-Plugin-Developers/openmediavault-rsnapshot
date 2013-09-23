@@ -30,14 +30,13 @@ case "$1" in
 	purge)
 		# Remove the configuration data.
 		omv_config_delete "/config/services/rsnapshot"
-		# remove rsnapshot cron script
-		rm -f ${OMV_RSNAPSHOT_CRONSCRIPT}
 		# remove rsnapshot confs
 		rm -rf ${OMV_RSNAPSHOT_CONFS_DIR}
 	;;
 
 	remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
-		rm -f /etc/cron.d/openmediavault-rsnapshot
+		# disable rsnapshot cron script
+		echo "exit 0" > ${OMV_RSNAPSHOT_CRONSCRIPT}
 	;;
 
 	*)
