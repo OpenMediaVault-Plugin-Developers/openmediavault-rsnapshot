@@ -27,6 +27,7 @@
 // require("js/omv/data/Model.js")
 // require("js/omv/data/proxy/Rpc.js")
 // require("js/omv/window/Execute.js")
+// require("js/omv/form/field/GroupComboBox.js")
 // require("js/omv/form/field/SharedFolderComboBox.js")
 
 /**
