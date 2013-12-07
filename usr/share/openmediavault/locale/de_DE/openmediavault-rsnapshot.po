@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# julakali <julakali@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-rsnapshot\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-02 10:36-0600\n"
+"PO-Revision-Date: 2013-12-07 12:57+0000\n"
+"Last-Translator: julakali <julakali@gmail.com>\n"
+"Language-Team: German (Germany) (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/de_DE/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Add backup job"
+msgstr "Backup-Auftrag hinzufügen"
+
+msgid "Backup"
+msgstr "Backup"
+
+msgid "Backup jobs"
+msgstr "Backup-Aufträge"
+
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid ""
+"Default rsync long args. All rsync commands have at least these options set."
+" Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
+"href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
+"page</a> for more details."
+msgstr "Standard RSync \"long\" Argumente. Alle rsync Befehle werden mindestens mit diesen Optionen aufgerufen. Standard ist '--delete --numeric-ids --delete-excluded'. Bitte prüfen sie die <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>Anleitung</a> für weitere Details."
+
+msgid "Edit backup job"
+msgstr "Backup-Auftrag editieren"
+
+msgid "Enable"
+msgstr "Aktivieren"
+
+msgid "Enabled"
+msgstr "Aktiviert"
+
+msgid "Execute backup job"
+msgstr "Backup-Job ausführen"
+
+msgid "Group"
+msgstr "Gruppe"
+
+msgid ""
+"If this is enabled, rsync won't span filesystem partitions within a backup "
+"point."
+msgstr "Wenn aktiviert, werden andere Dateisysteme, die unterhalb des Backup-Verzeichnisses eingebunden sind, nicht einbezogen."
+
+msgid ""
+"Number of daily backups to keep. After n backups are created, the first one "
+"will be overwritten."
+msgstr "Anzahl der täglichen Backups, die aufgehoben werden sollen. Nach n erstellten Backups wird das erste wieder überschrieben."
+
+msgid ""
+"Number of hourly backups to keep. After n backups are created, the first one"
+" will be overwritten."
+msgstr "Anzahl der stündlichen Backups, die aufgehoben werden sollen. Nach n erstellten Backups wird das erste wieder überschrieben."
+
+msgid ""
+"Number of monthly backups to keep. After n backups are created, the first "
+"one will be overwritten."
+msgstr "Anzahl der monatlichen Backups, die aufgehoben werden sollen. Nach n erstellten Backups wird das erste wieder überschrieben."
+
+msgid ""
+"Number of rsync tries. If you experience any network problems or network "
+"card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
+" errors, for example, set this to a non-zero value to have the rsync "
+"operation re-tried"
+msgstr "Anzahl der Wiederholungen, die rsync verwenden soll. Wenn Sie Probleme mit dem Netzwerk oder der Netzwerkkarte haben, die dazu führen, das ssh z.B. mit dem Fehler \"Corrupted MAC on input\" abbricht, setzen Sie diesen Wert auf einen Wert größer als 1, damit rsync die Operation wiederholt."
+
+msgid ""
+"Number of weekly backups to keep. After n backups are created, the first one"
+" will be overwritten."
+msgstr "Anzahl der wöchentlichen Backups, die aufgehoben werden sollen. Nach n erstellten Backups wird das erste wieder überschrieben."
+
+msgid "One filesystem only"
+msgstr "Einzelnes Dateisystem"
+
+msgid "Retain daily"
+msgstr "Tägliche behalten"
+
+msgid "Retain hourly"
+msgstr "Stündliche behalten"
+
+msgid "Retain monthly"
+msgstr "Monatliche behalten"
+
+msgid "Retain weekly"
+msgstr "Wöchentliche behalten"
+
+msgid "Rsync long arguments"
+msgstr "RSync Argumente"
+
+msgid "Rsync retries"
+msgstr "RSync Wiederholungen"
+
+msgid "Run"
+msgstr "Ausführen"
+
+msgid "Source"
+msgstr "Quelle"
+
+msgid "Source folder"
+msgstr "Quellordner"
+
+msgid "Target"
+msgstr "Ziel"
+
+msgid "Target folder"
+msgstr "Zielordner"
+
+msgid ""
+"The Folder used as target for backups. Backups will go into a sub-folder "
+"<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
+"path&gt;</em>"
+msgstr "Der Ordner, der als Ziel für die Backups genutzt wird. Backups werden im Unterverzeichnis <em>localhost/&lt;Name des Quelldateisystems&gt;/&lt;Relativer Quellpfad&gt;</em> angelegt."
+
+msgid "The shared folder to Backup."
+msgstr "Der zu sichernde freigegebene Ordner."
+
+msgid ""
+"This option specifies the group that the backup directories will belong to. "
+"Note: This will only change the group of additionally created dirs. The "
+"backed-up files and directories will mirror the original permissions."
+msgstr "Diese Option spezifiziert die Gruppe, der das Backup Zielverzeichnis gehören soll. Hinweis: Diese Option ändert nur die Gruppe von zusätzlich erstellten Verzeichnissen. Die Rechte der gesicherten Dateien und Ordner bleiben bestehen."
+
+msgid "n/a"
+msgstr "n/a"
