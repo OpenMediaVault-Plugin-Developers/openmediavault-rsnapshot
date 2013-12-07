@@ -1,3 +1,14 @@
+openmediavault-rsnapshot (0.5.4) stable; urgency=low
+
+  [ Aaron Murray ]
+  * add locale file
+
+  [ Julian Kalinowski ]
+  * fixes error when a backup interval was disabled (e.g. hourly = 0)
+  * add german language file
+
+ -- Julian Kalinowski <julakali@gmail.com>  Sat, 07 Dec 2013 14:00:23 +0100
+
 openmediavault-rsnapshot (0.5.3) stable; urgency=low
 
   * Added require GroupComboBox.js entry in Jobs.js
