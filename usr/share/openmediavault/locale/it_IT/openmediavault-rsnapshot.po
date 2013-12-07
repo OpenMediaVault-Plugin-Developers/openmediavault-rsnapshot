@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-rsnapshot\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-07 08:33-0600\n"
+"PO-Revision-Date: 2013-12-03 12:20+0000\n"
+"Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Add backup job"
+msgstr ""
+
+msgid "Backup"
+msgstr ""
+
+msgid "Backup jobs"
+msgstr ""
+
+msgid "Comment"
+msgstr ""
+
+msgid ""
+"Default rsync long args. All rsync commands have at least these options set."
+" Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
+"href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
+"page</a> for more details."
+msgstr ""
+
+msgid "Edit backup job"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Execute backup job"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid ""
+"If this is enabled, rsync won't span filesystem partitions within a backup "
+"point."
+msgstr ""
+
+msgid ""
+"Number of daily backups to keep. After n backups are created, the first one "
+"will be overwritten."
+msgstr ""
+
+msgid ""
+"Number of hourly backups to keep. After n backups are created, the first one"
+" will be overwritten."
+msgstr ""
+
+msgid ""
+"Number of monthly backups to keep. After n backups are created, the first "
+"one will be overwritten."
+msgstr ""
+
+msgid ""
+"Number of rsync tries. If you experience any network problems or network "
+"card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
+" errors, for example, set this to a non-zero value to have the rsync "
+"operation re-tried"
+msgstr ""
+
+msgid ""
+"Number of weekly backups to keep. After n backups are created, the first one"
+" will be overwritten."
+msgstr ""
+
+msgid "One filesystem only"
+msgstr ""
+
+msgid "Retain daily"
+msgstr ""
+
+msgid "Retain hourly"
+msgstr ""
+
+msgid "Retain monthly"
+msgstr ""
+
+msgid "Retain weekly"
+msgstr ""
+
+msgid "Rsync long arguments"
+msgstr ""
+
+msgid "Rsync retries"
+msgstr ""
+
+msgid "Run"
+msgstr ""
+
+msgid "Source"
+msgstr ""
+
+msgid "Source folder"
+msgstr ""
+
+msgid "Target"
+msgstr ""
+
+msgid "Target folder"
+msgstr ""
+
+msgid ""
+"The Folder used as target for backups. Backups will go into a sub-folder "
+"<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
+"path&gt;</em>"
+msgstr ""
+
+msgid "The shared folder to Backup."
+msgstr ""
+
+msgid ""
+"This option specifies the group that the backup directories will belong to. "
+"Note: This will only change the group of additionally created dirs. The "
+"backed-up files and directories will mirror the original permissions."
+msgstr ""
+
+msgid "n/a"
+msgstr ""
