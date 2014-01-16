@@ -52,7 +52,7 @@ rm -f ${OMV_RSNAPSHOT_CONFS_DIR}/rsnapshot-*
 echo "\
 #!/bin/bash\n\
 if [ -z \"\$1\" ]; then\n\
-	echo \"No argument given. Should be one of: hourly,daily,weekly,monthly. UUID of backup job can be passed as second argument to execute a single job.\"\n\
+	echo \"No argument given. Should be one of: hourly,daily,weekly,monthly,yearly. UUID of backup job can be passed as second argument to execute a single job.\"\n\
 	exit 1\n\
 fi" > ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
 
@@ -104,6 +104,7 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 		-i "daily != 0" -o "interval	daily	" -v "daily" -n -b \
 		-i "weekly != 0" -o "interval	weekly	" -v "weekly" -n -b \
 		-i "monthly != 0" -o "interval	monthly	" -v "monthly" -n -b \
+		-i "yearly != 0" -o "interval	yearly	" -v "yearly" -n -b \
 		-o "verbose		2" -n \
 		-o "loglevel	3" -n \
 		-o "cmd_rm		/bin/rm" -n \
@@ -129,6 +130,7 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 		-i "daily = 0" -o "if [ \"\$1\" = \"daily\" ]; then exit 0; fi" -n -b \
 		-i "weekly = 0" -o "if [ \"\$1\" = \"weekly\" ]; then exit 0; fi" -n -b \
 		-i "monthly = 0" -o "if [ \"\$1\" = \"monthly\" ]; then exit 0; fi" -n -b \
+		-i "yearly = 0" -o "if [ \"\$1\" = \"yearly\" ]; then exit 0; fi" -n -b \
 			-o "if [ \"\$2\" = \"${uuid}\" ] || [ -z \"\$2\" ]; then" -n \
 			-o "	targetdir=\"" ${GET_TARGETFOLDER_PATH} -o "/" -o "${sourcelabel}/" ${GET_SOURCE_RELDIR} -o "\"" -n \
 			-o "	if [ ! -e \"\${targetdir}\" ]; then" -n \

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 08:33-0600\n"
+"POT-Creation-Date: 2014-01-16 19:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,10 +59,13 @@ msgstr ""
 msgid "Number of monthly backups to keep. After n backups are created, the first one will be overwritten."
 msgstr ""
 
-msgid "Number of rsync tries. If you experience any network problems or network card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input' errors, for example, set this to a non-zero value to have the rsync operation re-tried"
+msgid "Number of rsync tries. If you experience any network problems or network card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input' errors, for example, set this to a higher value to have the rsync operation re-tried"
 msgstr ""
 
 msgid "Number of weekly backups to keep. After n backups are created, the first one will be overwritten."
+msgstr ""
+
+msgid "Number of yearly backups to keep. After n backups are created, the first one will be overwritten."
 msgstr ""
 
 msgid "One filesystem only"
@@ -80,10 +83,13 @@ msgstr ""
 msgid "Retain weekly"
 msgstr ""
 
+msgid "Retain yearly"
+msgstr ""
+
 msgid "Rsync long arguments"
 msgstr ""
 
-msgid "Rsync retries"
+msgid "Rsync tries"
 msgstr ""
 
 msgid "Run"

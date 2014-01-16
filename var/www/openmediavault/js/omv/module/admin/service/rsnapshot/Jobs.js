@@ -152,15 +152,27 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
 			}]
 		},{
 			xtype: "numberfield",
+			name: "yearly",
+			fieldLabel: _("Retain yearly"),
+			minValue: 0,
+			allowDecimals: false,
+			allowBlank: false,
+			value: 0,
+			plugins: [{
+				ptype: "fieldinfo",
+				text: _("Number of yearly backups to keep. After n backups are created, the first one will be overwritten.")
+			}]
+		},{
+			xtype: "numberfield",
 			name: "numtries",
-			fieldLabel: _("Rsync retries"),
+			fieldLabel: _("Rsync tries"),
 			minValue: 1,
 			allowDecimals: false,
 			allowBlank: false,
 			value: 1,
 			plugins: [{
 				ptype: "fieldinfo",
-				text: _("Number of rsync tries. If you experience any network problems or network card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input' errors, for example, set this to a non-zero value to have the rsync operation re-tried")
+				text: _("Number of rsync tries. If you experience any network problems or network card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input' errors, for example, set this to a higher value to have the rsync operation re-tried")
 			}]
 		},{
 			xtype: "groupcombo",

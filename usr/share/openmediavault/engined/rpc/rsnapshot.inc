@@ -147,6 +147,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 		$object['daily'] = intval($object['daily']);
 		$object['weekly'] = intval($object['weekly']);
 		$object['monthly'] = intval($object['monthly']);
+		$object['yearly'] = intval($object['yearly']);
 		$object['numtries'] = intval($object['numtries']);
 		$object['onefs'] = boolval($object['onefs']);
 
@@ -181,6 +182,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 				  "daily":{"type":"integer","minimum":0,"maximum":50},
 				  "weekly":{"type":"integer","minimum":0,"maximum":50},
 				  "monthly":{"type":"integer","minimum":0,"maximum":50},
+				  "yearly":{"type":"integer","minimum":0,"maximum":50},
 				  "numtries":{"type":"integer","minimum":1,"maximum":65535},
 				  "gid":{"type":"string"},
 				  "rsyncargs":{"type":"string"}
@@ -199,6 +201,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			"daily" => $params['daily'],
 			"weekly" => $params['weekly'],
 			"monthly" => $params['monthly'],
+			"yearly" => $params['yearly'],
 			"numtries" => $params['numtries'],
 			"gid" => $params['gid'],
 			"rsyncargs" => $params['rsyncargs']
@@ -302,6 +305,8 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 			$level = "weekly";
 		} elseif ($object['monthly'] != 0) {
 			$level = "monthly";
+		} elseif ($object['yearly'] != 0) {
+			$level = "yearly";
 		}
 
 		// Child process.
