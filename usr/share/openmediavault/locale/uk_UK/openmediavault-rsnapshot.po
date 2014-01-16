@@ -3,75 +3,74 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Damtux <sun_lion@live.com>, 2013
-# paulox <paulox@paulox.net>, 2013-2014
+# zubr139 <zubr139@ukr.net>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-16 13:09-0600\n"
-"PO-Revision-Date: 2014-01-16 19:10+0000\n"
+"PO-Revision-Date: 2014-01-16 19:09+0000\n"
 "Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
-"Language-Team: Italian (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/it/)\n"
+"Language-Team: Ukrainian (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 msgid "Add backup job"
-msgstr "Aggiungi un backup"
+msgstr "Додати завдання резервного копіювання"
 
 msgid "Backup"
-msgstr "Backup"
+msgstr "Резервна копія"
 
 msgid "Backup jobs"
-msgstr "Operazioni di backup"
+msgstr ""
 
 msgid "Comment"
-msgstr "Commento"
+msgstr "Коментар"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
 " Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
 "href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
 "page</a> for more details."
-msgstr "Argomenti estesi predefiniti di rsync. Tutti i comandi rsync hanno almeno queste opzioni impostate. Il valore predefinito è '--delete --numeric-ids --delete-excluded'. Si prega di controllare la pagina <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manuale</a> per maggiori dettagli."
+msgstr ""
 
 msgid "Edit backup job"
-msgstr "Modifica un backup"
+msgstr ""
 
 msgid "Enable"
-msgstr "Abilita"
+msgstr "Увімкнути"
 
 msgid "Enabled"
-msgstr "Abilitato"
+msgstr "Увімкнено"
 
 msgid "Execute backup job"
-msgstr "Esegui il backup"
+msgstr ""
 
 msgid "Group"
-msgstr "Gruppo"
+msgstr "Група"
 
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr "Se questa opzione è abilitata, rsync non includerà altre partizioni del filesystem all'interno di un punto di backup."
+msgstr ""
 
 msgid ""
 "Number of daily backups to keep. After n backups are created, the first one "
 "will be overwritten."
-msgstr "Numero di backup giornalieri da conservare. Dopo n backup creati, il primo sarà sovrascritto."
+msgstr ""
 
 msgid ""
 "Number of hourly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr "Numero di backup orari da conservare. Dopo n backup creati, il primo sarà sovrascritto."
+msgstr ""
 
 msgid ""
 "Number of monthly backups to keep. After n backups are created, the first "
 "one will be overwritten."
-msgstr "Numero di backup mensili da conservare. Dopo n backup creati, il primo sarà sovrascritto."
+msgstr ""
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
@@ -83,7 +82,7 @@ msgstr ""
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr "Numero di backup settimanali da conservare. Dopo n backup creati, il primo sarà sovrascritto."
+msgstr ""
 
 msgid ""
 "Number of yearly backups to keep. After n backups are created, the first one"
@@ -91,58 +90,58 @@ msgid ""
 msgstr ""
 
 msgid "One filesystem only"
-msgstr "Un solo filesystem"
+msgstr ""
 
 msgid "Retain daily"
-msgstr "Conservazione giornaliera"
+msgstr "Щоденне збкркження"
 
 msgid "Retain hourly"
-msgstr "Conservazione oraria"
+msgstr ""
 
 msgid "Retain monthly"
-msgstr "Conservazione mensile"
+msgstr ""
 
 msgid "Retain weekly"
-msgstr "Conservazione settimanale"
+msgstr ""
 
 msgid "Retain yearly"
 msgstr ""
 
 msgid "Rsync long arguments"
-msgstr "Argomenti rsync estesi"
+msgstr ""
 
 msgid "Rsync tries"
 msgstr ""
 
 msgid "Run"
-msgstr "Esegui"
+msgstr ""
 
 msgid "Source"
-msgstr "Sorgente"
+msgstr ""
 
 msgid "Source folder"
-msgstr "Cartella sorgente"
+msgstr ""
 
 msgid "Target"
-msgstr "Destinazione"
+msgstr ""
 
 msgid "Target folder"
-msgstr "Cartella destinazione"
+msgstr "Тека призначення"
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
 "<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
 "path&gt;</em>"
-msgstr "La Cartella utilizzata come destinazione per i backup. I backup andranno in una sotto-cartella <em>localhost/&lt;nome del filesystem sorgente&gt;/&lt;percorso relativo della cartella sorgente&gt;</ em>"
+msgstr ""
 
 msgid "The shared folder to Backup."
-msgstr "La cartella condivisa di cui eseguire il Backup."
+msgstr "Спільна тека для резервного копіювання."
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note: This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr "Questa opzione specifica il gruppo a cui apparterranno le cartelle di backup. Nota: Verrà cambiato solo il gruppo delle cartelle aggiuntive. I file e le directory di backup rispecchieranno i permessi originali."
+msgstr ""
 
 msgid "n/a"
-msgstr "n/d"
+msgstr "н/д"

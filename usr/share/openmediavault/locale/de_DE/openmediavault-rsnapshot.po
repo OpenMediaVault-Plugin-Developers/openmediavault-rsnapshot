@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# julakali <julakali@gmail.com>, 2013
+# julakali <julakali@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-07 08:33-0600\n"
-"PO-Revision-Date: 2013-12-07 12:57+0000\n"
+"POT-Creation-Date: 2014-01-16 13:09-0600\n"
+"PO-Revision-Date: 2014-01-16 21:35+0000\n"
 "Last-Translator: julakali <julakali@gmail.com>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
@@ -75,14 +75,19 @@ msgstr "Anzahl der monatlichen Backups, die aufgehoben werden sollen. Nach n ers
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
 "card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
-" errors, for example, set this to a non-zero value to have the rsync "
-"operation re-tried"
-msgstr "Anzahl der Wiederholungen, die rsync verwenden soll. Wenn Sie Probleme mit dem Netzwerk oder der Netzwerkkarte haben, die dazu führen, das ssh z.B. mit dem Fehler \"Corrupted MAC on input\" abbricht, setzen Sie diesen Wert auf einen Wert größer als 1, damit rsync die Operation wiederholt."
+" errors, for example, set this to a higher value to have the rsync operation"
+" re-tried"
+msgstr "Anzahl der Versuche, die rsync verwenden soll. Wenn Sie Probleme mit dem Netzwerk oder der Netzwerkkarte haben, die dazu führen, das ssh z.B. mit dem Fehler \"Corrupted MAC on input\" abbricht, setzen Sie dies auf einen Wert größer als 1, damit rsync die Operation wiederholt."
 
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
 " will be overwritten."
 msgstr "Anzahl der wöchentlichen Backups, die aufgehoben werden sollen. Nach n erstellten Backups wird das erste wieder überschrieben."
+
+msgid ""
+"Number of yearly backups to keep. After n backups are created, the first one"
+" will be overwritten."
+msgstr "Anzahl der jährlichen Backups, die aufgehoben werden sollen. Nach n erstellten Backups wird das erste wieder überschrieben."
 
 msgid "One filesystem only"
 msgstr "Einzelnes Dateisystem"
@@ -99,11 +104,14 @@ msgstr "Monatliche behalten"
 msgid "Retain weekly"
 msgstr "Wöchentliche behalten"
 
+msgid "Retain yearly"
+msgstr "Jährliche behalten"
+
 msgid "Rsync long arguments"
 msgstr "RSync Argumente"
 
-msgid "Rsync retries"
-msgstr "RSync Wiederholungen"
+msgid "Rsync tries"
+msgstr "RSync Versuche"
 
 msgid "Run"
 msgstr "Ausführen"

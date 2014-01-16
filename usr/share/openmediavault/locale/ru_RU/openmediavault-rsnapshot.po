@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# артур Мудрых <arturmon82@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-rsnapshot\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-16 13:09-0600\n"
+"PO-Revision-Date: 2014-01-16 19:10+0000\n"
+"Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
+"Language-Team: Russian (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Add backup job"
+msgstr "Добавить задание резервного копирования"
+
+msgid "Backup"
+msgstr "Резервная копия"
+
+msgid "Backup jobs"
+msgstr "Задания резервных копий"
+
+msgid "Comment"
+msgstr "Комментарий"
+
+msgid ""
+"Default rsync long args. All rsync commands have at least these options set."
+" Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
+"href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
+"page</a> for more details."
+msgstr "По умолчанию Rsync имеет длинные аргументы. Все команды Rsync имеют по крайней мере установленные эти параметры. По умолчанию '--delete --numeric-ids --delete-excluded'. Пожалуйста, проверьте <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual page</a> для более подробной информации."
+
+msgid "Edit backup job"
+msgstr "Редактировать задание резервного копирования"
+
+msgid "Enable"
+msgstr "Включить"
+
+msgid "Enabled"
+msgstr "Включено"
+
+msgid "Execute backup job"
+msgstr "Выполнить задание резервного копирования"
+
+msgid "Group"
+msgstr "Группа"
+
+msgid ""
+"If this is enabled, rsync won't span filesystem partitions within a backup "
+"point."
+msgstr "Если эта опция включена, Rsync не будет охватывать разделы файловой системы в  точке резервной копии."
+
+msgid ""
+"Number of daily backups to keep. After n backups are created, the first one "
+"will be overwritten."
+msgstr "Количество ежедневных резервных копий. После n резервные копии создаются, первые будет перезаписаны."
+
+msgid ""
+"Number of hourly backups to keep. After n backups are created, the first one"
+" will be overwritten."
+msgstr "Количество почасовых резервных копий. После n резервные копии создаются, первые будет перезаписаны."
+
+msgid ""
+"Number of monthly backups to keep. After n backups are created, the first "
+"one will be overwritten."
+msgstr "Количество ежемесячных резервных копий. После n резервные копии создаются, первые будет перезаписаны."
+
+msgid ""
+"Number of rsync tries. If you experience any network problems or network "
+"card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
+" errors, for example, set this to a higher value to have the rsync operation"
+" re-tried"
+msgstr ""
+
+msgid ""
+"Number of weekly backups to keep. After n backups are created, the first one"
+" will be overwritten."
+msgstr "Количество еженедельных резервных копий. После n резервные копии создаются, первые будет перезаписаны."
+
+msgid ""
+"Number of yearly backups to keep. After n backups are created, the first one"
+" will be overwritten."
+msgstr ""
+
+msgid "One filesystem only"
+msgstr "Только одну файловую систему"
+
+msgid "Retain daily"
+msgstr "Сохранение ежедневно"
+
+msgid "Retain hourly"
+msgstr "Сохранение почасовое"
+
+msgid "Retain monthly"
+msgstr "Сохранение ежемесячное"
+
+msgid "Retain weekly"
+msgstr "Сохранение еженедельное"
+
+msgid "Retain yearly"
+msgstr ""
+
+msgid "Rsync long arguments"
+msgstr "Rsync длинные аргументы"
+
+msgid "Rsync tries"
+msgstr ""
+
+msgid "Run"
+msgstr "Запуск"
+
+msgid "Source"
+msgstr "Источник"
+
+msgid "Source folder"
+msgstr "Папка источника"
+
+msgid "Target"
+msgstr "Назначение"
+
+msgid "Target folder"
+msgstr "Папка назначения"
+
+msgid ""
+"The Folder used as target for backups. Backups will go into a sub-folder "
+"<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
+"path&gt;</em>"
+msgstr "Папка используется в качестве назначения для резервных копий. Резервные копии будут находиться в подпапке <em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative path&gt;</em>"
+
+msgid "The shared folder to Backup."
+msgstr "Общая папка для резервных копий."
+
+msgid ""
+"This option specifies the group that the backup directories will belong to. "
+"Note: This will only change the group of additionally created dirs. The "
+"backed-up files and directories will mirror the original permissions."
+msgstr "Этот параметр определяет группу, которой будут принадлежать каталоги резервных копий  . Примечание: Это только изменит группу созданных директорий. Файлы и каталоги резервных копий  будут отражать исходные разрешения."
+
+msgid "n/a"
+msgstr "н/д"
