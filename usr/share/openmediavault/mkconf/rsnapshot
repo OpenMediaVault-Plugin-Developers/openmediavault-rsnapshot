@@ -105,8 +105,8 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 		-i "weekly != 0" -o "interval	weekly	" -v "weekly" -n -b \
 		-i "monthly != 0" -o "interval	monthly	" -v "monthly" -n -b \
 		-i "yearly != 0" -o "interval	yearly	" -v "yearly" -n -b \
-		-o "verbose		2" -n \
-		-o "loglevel	3" -n \
+		-o "verbose		3" -n \
+		-o "loglevel	2" -n \
 		-o "cmd_rm		/bin/rm" -n \
 		-o "cmd_rsync	/usr/bin/rsync" -n \
 		-o "cmd_logger	/usr/bin/logger" -n \

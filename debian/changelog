@@ -1,5 +1,6 @@
 openmediavault-rsnapshot (0.5.6) stable; urgency=low
-
+  
+  * added rsnapshot log plugin
   * updated locale source file
   * added "retain yearly" configuration option"
 

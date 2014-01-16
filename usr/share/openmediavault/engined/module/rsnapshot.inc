@@ -82,4 +82,19 @@ class OMVModuleRSnapshot extends OMVModuleServiceAbstract
 // Register module.
 $moduleMgr = &OMVModuleMgr::getInstance();
 $moduleMgr->registerModule(new OMVModuleRSnapshot());
+
+// Register new logfile type
+// log format: [06/Dec/2013:19:18:57]  :(
+OMVLogFile::registerType("rsnapshot", array(
+    "filename" => "rsnapshot.log",
+    "filepath" => "/var/log/rsnapshot.log",
+    "regex" => "/^\[(\d+\/\w+\/\d+:\d+:\d+:\d+)\]\s+(.*)$/",
+    "columns" => array(
+    	"date" => array(
+            "index" => 1,
+            "func" => create_function('$v', 'return strtotime(preg_replace("/(\d{4})\:/","$1 ", preg_replace("/[\/]/"," ", $v)));')
+        ),
+        "message" => 2
+    )
+));
 ?>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-16 13:09-0600\n"
+"POT-Creation-Date: 2014-01-16 22:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,9 @@ msgid "Backup jobs"
 msgstr ""
 
 msgid "Comment"
+msgstr ""
+
+msgid "Date & Time"
 msgstr ""
 
 msgid "Default rsync long args. All rsync commands have at least these options set. Default is '--delete --numeric-ids --delete-excluded'. Please check the <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual page</a> for more details."
@@ -48,6 +51,9 @@ msgid "Group"
 msgstr ""
 
 msgid "If this is enabled, rsync won't span filesystem partitions within a backup point."
+msgstr ""
+
+msgid "Message"
 msgstr ""
 
 msgid "Number of daily backups to keep. After n backups are created, the first one will be overwritten."
@@ -84,6 +90,9 @@ msgid "Retain weekly"
 msgstr ""
 
 msgid "Retain yearly"
+msgstr ""
+
+msgid "Rsnapshot (Backup)"
 msgstr ""
 
 msgid "Rsync long arguments"
