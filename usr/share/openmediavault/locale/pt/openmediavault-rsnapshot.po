@@ -3,145 +3,145 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# dezi121 <by@songming.me>, 2013-2014
+# luisp <luis.pereira.978+transifex@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-16 13:09-0600\n"
-"PO-Revision-Date: 2014-01-17 00:22+0000\n"
-"Last-Translator: dezi121 <by@songming.me>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/zh_CN/)\n"
+"PO-Revision-Date: 2014-01-16 23:59+0000\n"
+"Last-Translator: luisp <luis.pereira.978+transifex@gmail.com>\n"
+"Language-Team: Portuguese (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: pt\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add backup job"
-msgstr "添加备份任务"
+msgstr "Adicionar trabalho de ..."
 
 msgid "Backup"
-msgstr "rsnapshot 备份"
+msgstr "backup\ncópia de segurança"
 
 msgid "Backup jobs"
-msgstr "备份任务"
+msgstr "Trabalhos de ..."
 
 msgid "Comment"
-msgstr "备注"
+msgstr "Comentário"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
 " Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
 "href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
 "page</a> for more details."
-msgstr "默认 rsync 长变量，所有 rsync 命令至少有这些参数： '--delete --numeric-ids --delete-excluded'。详情请查阅 <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>手册</a> 。"
+msgstr ""
 
 msgid "Edit backup job"
-msgstr "编辑备份任务"
+msgstr "Editar trabalho de ..."
 
 msgid "Enable"
-msgstr "启动"
+msgstr "Activar\nAtivar"
 
 msgid "Enabled"
-msgstr "运行"
+msgstr "Ativado\nActivado"
 
 msgid "Execute backup job"
-msgstr "执行备份任务"
+msgstr "Executar trabalho de ..."
 
 msgid "Group"
-msgstr "组"
+msgstr "Grupo"
 
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr "如果启用该参数，rsync 将不会在一个备份点跨越文件系统分区。"
+msgstr ""
 
 msgid ""
 "Number of daily backups to keep. After n backups are created, the first one "
 "will be overwritten."
-msgstr "每日备份保留的数量，创建 n 个备份后，第一个将被覆盖。"
+msgstr ""
 
 msgid ""
 "Number of hourly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr "每小时备份保留的数量，创建 n 个备份后，第一个将被覆盖。"
+msgstr ""
 
 msgid ""
 "Number of monthly backups to keep. After n backups are created, the first "
 "one will be overwritten."
-msgstr "每月备份保留的数量，创建 n 个备份后，第一个将被覆盖。"
+msgstr ""
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
 "card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
 " errors, for example, set this to a higher value to have the rsync operation"
 " re-tried"
-msgstr "rsync 尝试次数，你可能遇到过由于网络故障或者网卡故障而导致的 ssh 错误\"损坏的 MAC 输入\"，该值是出错后 rsync 重试次数。"
+msgstr ""
 
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr "每周备份保留的数量，创建 n 个备份后，第一个将被覆盖。"
+msgstr ""
 
 msgid ""
 "Number of yearly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr "每年备份保留的数量，创建 n 个备份后，第一个将被覆盖。"
+msgstr ""
 
 msgid "One filesystem only"
-msgstr "仅单文件系统"
+msgstr ""
 
 msgid "Retain daily"
-msgstr "每日备份"
+msgstr "diariamente"
 
 msgid "Retain hourly"
-msgstr "每小时备份"
+msgstr ""
 
 msgid "Retain monthly"
-msgstr "每月备份"
+msgstr "mensal"
 
 msgid "Retain weekly"
-msgstr "每周备份"
+msgstr "semanal"
 
 msgid "Retain yearly"
-msgstr "每年备份"
+msgstr "anual"
 
 msgid "Rsync long arguments"
-msgstr "Rsync 长变量"
+msgstr "Argumentos longos Rsync"
 
 msgid "Rsync tries"
-msgstr "Rsync 重试"
+msgstr ""
 
 msgid "Run"
-msgstr "运行"
+msgstr "Executar"
 
 msgid "Source"
-msgstr "源"
+msgstr "Origem"
 
 msgid "Source folder"
-msgstr "源文件夹"
+msgstr "Pasta de origem"
 
 msgid "Target"
-msgstr "目标"
+msgstr "Destino"
 
 msgid "Target folder"
-msgstr "目标文件夹"
+msgstr "Pasta de destino"
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
 "<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
 "path&gt;</em>"
-msgstr "备份到该文件夹，将备份到一个子文件夹 <em>localhost/&lt;源文件系统标签&gt;/&lt;源文件夹对应路径&gt;</em>"
+msgstr ""
 
 msgid "The shared folder to Backup."
-msgstr "这个"
+msgstr ""
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note: This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr "此选项指定备份目录属于该组。注意：这只会改变创建文件夹的组属性，备份文件和目录的权限保持不变。"
+msgstr ""
 
 msgid "n/a"
-msgstr "N/A"
+msgstr "n/a"
