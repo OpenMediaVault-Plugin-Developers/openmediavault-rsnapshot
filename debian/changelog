@@ -1,3 +1,10 @@
+openmediavault-rsnapshot (0.5.6.2) stable; urgency=low
+
+  * added newline to crontab so yearly task will execute
+  * updated locales from transifex
+
+ -- Julian Kalinowski <julakali@gmail.com>  Fri, 24 Jan 2014 15:31:25 +0100
+
 openmediavault-rsnapshot (0.5.6.1) stable; urgency=low
   
   * updated locales from transifex
