@@ -1,3 +1,10 @@
+openmediavault-rsnapshot (0.5.7) stable; urgency=low
+
+  * Avoid race condition on yearly interval
+  * Update locales
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 06 Feb 2014 10:03:26 -0500
+
 openmediavault-rsnapshot (0.5.6.2) stable; urgency=low
 
   * added newline to crontab so yearly task will execute
