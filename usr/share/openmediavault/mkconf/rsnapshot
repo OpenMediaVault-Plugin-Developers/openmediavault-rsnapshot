@@ -100,11 +100,11 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 		-o "config_version	1.2" -n \
 		-o "snapshot_root	" ${GET_TARGETFOLDER_PATH} -o "/" -o "${sourcelabel}/" ${GET_SOURCE_RELDIR} -o "/"  -n \
 		-o "no_create_root	1	# target root will be created before rsnapshot is running" -n \
-		-i "hourly != 0" -o "interval	hourly	" -v "hourly" -n -b \
-		-i "daily != 0" -o "interval	daily	" -v "daily" -n -b \
-		-i "weekly != 0" -o "interval	weekly	" -v "weekly" -n -b \
-		-i "monthly != 0" -o "interval	monthly	" -v "monthly" -n -b \
-		-i "yearly != 0" -o "interval	yearly	" -v "yearly" -n -b \
+		-i "hourly != 0" -o "retain	hourly	" -v "hourly" -n -b \
+		-i "daily != 0" -o "retain	daily	" -v "daily" -n -b \
+		-i "weekly != 0" -o "retain	weekly	" -v "weekly" -n -b \
+		-i "monthly != 0" -o "retain	monthly	" -v "monthly" -n -b \
+		-i "yearly != 0" -o "retain	yearly	" -v "yearly" -n -b \
 		-o "verbose		3" -n \
 		-o "loglevel	2" -n \
 		-o "cmd_rm		/bin/rm" -n \
@@ -118,6 +118,7 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 		-o "# no extra destination dir" -n \
 		-o "backup	" ${GET_SOURCEFOLDER_PATH} -o "	" -n \
 		-o "rsync_numtries	" -v "numtries" -n \
+		-o "lockfile	/var/run/rsnapshot-${uuid}.pid" -n \
 		${OMV_CONFIG_FILE} | xmlstarlet unesc > ${filename}
 	  chmod ${OMV_RSNAPSHOT_SCRIPTS_MASK} ${filename}
 
