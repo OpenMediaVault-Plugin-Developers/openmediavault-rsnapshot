@@ -3,7 +3,7 @@ Upstream-Contact: Julian Kalinowski <julakali@gmail.com>
 Source: http://www.openmediavault.org
 
 Files: *
-Copyright: 2013 Julian Kalinowski <julakali@gmail.com>
+Copyright: 2013-2014 Julian Kalinowski <julakali@gmail.com>
 License: GPL-3
 
 Files: /var/www/openmediavault/images/rsnapshot.png

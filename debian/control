@@ -2,13 +2,13 @@ Source: openmediavault-rsnapshot
 Section: net
 Priority: optional
 Maintainer: Julian Kalinowski <julakali@gmail.com>
-Build-Depends: debhelper (>> 7), gettext
-Standards-Version: 3.6.10
-Homepage: http://www.openmediavault.org
+Build-Depends: debhelper (>= 9.0.0), gettext
+Standards-Version: 3.9.3
+Homepage: http://omv-extras.org
 
 Package: openmediavault-rsnapshot
 Architecture: all
-Depends: rsnapshot, openmediavault (>= 0.5.7), openmediavault (<< 0.6)
+Depends: rsnapshot, openmediavault (>= 0.5.40)
 Priority: optional
 Description: OpenMediaVault rsnapshot backup plugin.
  Configures Backups by using rsnapshot, allowing rotating

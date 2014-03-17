@@ -24,33 +24,33 @@
 Ext.define("OMV.module.admin.diagnostic.log.plugin.Rsnapshot", {
     extend : "OMV.module.admin.diagnostic.log.plugin.Plugin",
 
-    id : "rsnapshot",
-    text : _("Rsnapshot (Backup)"),
+    id       : "rsnapshot",
+    text     : _("Rsnapshot (Backup)"),
     stateful : true,
-    stateId : "e61b7810-7ee4-11e3-baa7-0800200c9a66",
-    columns : [{
-        text : _("Date & Time"),
-        sortable : true,
+    stateId  : "e61b7810-7ee4-11e3-baa7-0800200c9a66",
+    columns  : [{
+        text      : _("Date & Time"),
+        sortable  : true,
         dataIndex : "date",
-        id : "date",
-        renderer : OMV.util.Format.localeTimeRenderer()
+        id        : "date",
+        renderer  : OMV.util.Format.localeTimeRenderer()
     },{
-        text : _("Message"),
-        sortable : true,
+        text      : _("Message"),
+        sortable  : true,
         dataIndex : "message",
-        id : "message"
+        id        : "message"
     }],
     rpcParams : {
-        id: "rsnapshot"
+        id : "rsnapshot"
     },
     rpcFields : [
-        { name : "date", type: "string" },
-        { name : "message", type: "string" }
+        { name : "date", type : "string" },
+        { name : "message", type : "string" }
     ]
 });
 
 OMV.PluginManager.register({
-    ptype: "diagnostic",
-    id: "log",
-    className: "OMV.module.admin.diagnostic.log.plugin.Rsnapshot"
+    ptype     : "diagnostic",
+    id        : "log",
+    className : "OMV.module.admin.diagnostic.log.plugin.Rsnapshot"
 });

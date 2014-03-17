@@ -1,3 +1,10 @@
+openmediavault-rsnapshot (0.6.0) stable; urgency=low
+
+  * Change to work on sardaukar and kralizec
+  * Update locales
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 17 Mar 2014 14:13:26 -0500
+
 openmediavault-rsnapshot (0.5.7) stable; urgency=low
 
   * Avoid race condition on yearly interval
@@ -13,13 +20,13 @@ openmediavault-rsnapshot (0.5.6.2) stable; urgency=low
  -- Julian Kalinowski <julakali@gmail.com>  Fri, 24 Jan 2014 15:31:25 +0100
 
 openmediavault-rsnapshot (0.5.6.1) stable; urgency=low
-  
+
   * updated locales from transifex
 
  -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 17 Jan 2014 09:43:26 -0500
 
 openmediavault-rsnapshot (0.5.6) stable; urgency=low
-  
+
   * added rsnapshot log plugin
   * updated locale source file
   * updated locales from transifex
@@ -48,4 +55,4 @@ openmediavault-rsnapshot (0.5.0) stable; urgency=low
 
   * Initial release
 
- -- Julian Kalinowski <julakali@gmail.com>  Sun, 22 Sep 2013 22:53:20 +0200 
+ -- Julian Kalinowski <julakali@gmail.com>  Sun, 22 Sep 2013 22:53:20 +0200

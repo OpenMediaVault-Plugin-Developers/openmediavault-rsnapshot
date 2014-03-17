@@ -1,23 +1,21 @@
 #!/bin/sh
 #
-# This file is part of OpenMediaVault.
-#
 # @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
 # @author    Julian Kalinowski <julakali@gmail.com>
-# @copyright Copyright (c) 2013 Julian Kalinowski
+# @copyright Copyright (c) 2013-2014 Julian Kalinowski
 #
-# OpenMediaVault is free software: you can redistribute it and/or modify
+# This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # any later version.
 #
-# OpenMediaVault is distributed in the hope that it will be useful,
+# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with OpenMediaVault. If not, see <http://www.gnu.org/licenses/>.
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 set -e
 
@@ -80,11 +78,11 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 	  #targetfolderref=$(omv_config_get "//services/rsnapshot/jobs/job[uuid='${uuid}']/targetfolderref")
 	  #sourcepath="$(omv_get_sharedfolder_path "${sourcefolderref}")/"
 	  #targetpath="$(omv_get_sharedfolder_path "${targetfolderref}")/"
-	  
+
 	  # determine the mountpoint of the source shared folder
 	  mountpoint="$(omv_get_mount_point "${sourcefolderref}")"
 	  sourcedevice="$(cat /etc/mtab | grep ${mountpoint} | cut -d " " -f 1)"
-	  
+
 	  if [ -e "${mountpoint}" ] && [ -b "${sourcedevice}" ] && [ -n "$(e2label ${sourcedevice})" ]; then
 		# if mountpoint exists, sourcedevice is block and filesystem has a label, use it as backup subdir name
 		sourcelabel=$(e2label ${sourcedevice});
@@ -159,4 +157,3 @@ echo "echo \"Backups finished.\"" >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
 mv ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp ${OMV_RSNAPSHOT_CRONSCRIPT}
 # make cronscript executable
 chmod ${OMV_RSNAPSHOT_SCRIPTS_MASK} ${OMV_RSNAPSHOT_CRONSCRIPT}
-
