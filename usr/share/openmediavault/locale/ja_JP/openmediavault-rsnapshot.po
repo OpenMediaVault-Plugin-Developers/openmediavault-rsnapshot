@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-rsnapshot\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-16 13:09-0600\n"
+"PO-Revision-Date: 2014-02-14 00:29+0000\n"
+"Last-Translator: kansuke <kansuke4649@gmail.com>\n"
+"Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/ja_JP/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Add backup job"
+msgstr "バックアップジョブの追加"
+
+msgid "Backup"
+msgstr "バックアップ"
+
+msgid "Backup jobs"
+msgstr "バックアップジョブ"
+
+msgid "Comment"
+msgstr "コメント"
+
+msgid ""
+"Default rsync long args. All rsync commands have at least these options set."
+" Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
+"href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
+"page</a> for more details."
+msgstr "デフォルトのrsyncの長い引数。すべてのrsyncコマンドのうち、少なくともこれらのオプションは設定してください。デフォルトは '--delete --numeric-ids --delete-excluded' です。詳細は <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>マニュアルページ</a> を参照してください。"
+
+msgid "Edit backup job"
+msgstr "バックアップジョブの編集"
+
+msgid "Enable"
+msgstr "有効"
+
+msgid "Enabled"
+msgstr "有効化済み"
+
+msgid "Execute backup job"
+msgstr "バックアップジョブの実行"
+
+msgid "Group"
+msgstr "グループ"
+
+msgid ""
+"If this is enabled, rsync won't span filesystem partitions within a backup "
+"point."
+msgstr "これが有効になっている場合、rsyncはバックアップポイント内のファイルシステムのパーティションをまたがることはありません。"
+
+msgid ""
+"Number of daily backups to keep. After n backups are created, the first one "
+"will be overwritten."
+msgstr "日ごとのバックアップを保持する数です。Nのバックアップが作成された後、最初のものは上書きされます。"
+
+msgid ""
+"Number of hourly backups to keep. After n backups are created, the first one"
+" will be overwritten."
+msgstr "1時間ごとのバックアップを保持する数です。Nのバックアップが作成された後、最初のものは上書きされます。"
+
+msgid ""
+"Number of monthly backups to keep. After n backups are created, the first "
+"one will be overwritten."
+msgstr "月ごとのバックアップを保持する数です。Nのバックアップが作成された後、最初のものは上書きされます。"
+
+msgid ""
+"Number of rsync tries. If you experience any network problems or network "
+"card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
+" errors, for example, set this to a higher value to have the rsync operation"
+" re-tried"
+msgstr "rsyncを試行する回数です。もし、ネットワークの問題やネットワークカードの問題のいずれかが発生した場合、SSHが'Corrupted MAC on input' エラーを起こすことがあります。たとえば、rsyncの操作のリトライを高い値に設定した場合など。"
+
+msgid ""
+"Number of weekly backups to keep. After n backups are created, the first one"
+" will be overwritten."
+msgstr "週ごとのバックアップを保持する数です。Nのバックアップが作成された後、最初のものは上書きされます。"
+
+msgid ""
+"Number of yearly backups to keep. After n backups are created, the first one"
+" will be overwritten."
+msgstr "年ごとのバックアップを保持する数です。Nのバックアップが作成された後、最初のものは上書きされます。"
+
+msgid "One filesystem only"
+msgstr "1つのファイルシステムのみ"
+
+msgid "Retain daily"
+msgstr "日ごとに保持"
+
+msgid "Retain hourly"
+msgstr "時間ごとに保持"
+
+msgid "Retain monthly"
+msgstr "月ごとに保持"
+
+msgid "Retain weekly"
+msgstr "週ごとに保持"
+
+msgid "Retain yearly"
+msgstr "年ごとに保持"
+
+msgid "Rsync long arguments"
+msgstr "Rsyncの長い引数"
+
+msgid "Rsync tries"
+msgstr "Rsyncの試行"
+
+msgid "Run"
+msgstr "実行"
+
+msgid "Source"
+msgstr "ソース"
+
+msgid "Source folder"
+msgstr "ソースフォルダ"
+
+msgid "Target"
+msgstr "ターゲット"
+
+msgid "Target folder"
+msgstr "ターゲットフォルダ"
+
+msgid ""
+"The Folder used as target for backups. Backups will go into a sub-folder "
+"<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
+"path&gt;</em>"
+msgstr "バックアップのためのターゲットとして使用するフォルダです。バックアップはサブフォルダに入ります <em>localhost/&lt;ソースファイルシステムのラベル&gt;/&lt;ソースフォルダの相対パス&gt;</em>"
+
+msgid "The shared folder to Backup."
+msgstr "バックアップする共有フォルダ。"
+
+msgid ""
+"This option specifies the group that the backup directories will belong to. "
+"Note: This will only change the group of additionally created dirs. The "
+"backed-up files and directories will mirror the original permissions."
+msgstr "このオプションは、バックアップディレクトリが属するグループを指定します。注意:これは、追加的に作成されたディレクトリのグループを変更します。バックアップされたファイルとディレクトリは、元のアクセス権をミラーします。"
+
+msgid "n/a"
+msgstr "n/a"
