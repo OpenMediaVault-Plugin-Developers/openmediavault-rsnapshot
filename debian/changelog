@@ -1,3 +1,10 @@
+openmediavault-rsnapshot (1.0) stable; urgency=low
+
+  * Simplify grid toolbar 'selectionchange' event processing. (OMV svn r1327)
+  * Update locales
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 21 Jul 2014 10:27:48 -0500
+
 openmediavault-rsnapshot (0.6.0) stable; urgency=low
 
   * Change to work on sardaukar and kralizec

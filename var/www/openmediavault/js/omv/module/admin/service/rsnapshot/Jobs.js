@@ -290,14 +290,17 @@ Ext.define("OMV.module.admin.service.rsnapshot.Jobs", {
     onSelectionChange : function(model, records) {
         var me = this;
         me.callParent(arguments);
-        // Process additional buttons.
-        var tbarRunCtrl = me.queryById(me.getId() + "-run");
-        if(records.length <= 0)
-            tbarRunCtrl.disable();
-        else if(records.length == 1)
-            tbarRunCtrl.enable();
-        else
-            tbarRunCtrl.disable();
+		// Process additional buttons.
+		var tbarBtnDisabled = {
+			"run" : true
+		};
+        if(records.length == 1) {
+            tbarBtnDisabled["run"] = false;
+        }
+		// Update the button controls.
+		Ext.Object.each(tbarBtnDisabled, function(key, value) {
+			this.setToolbarButtonDisabled(key, value);
+		}, me);
     },
 
     onAddButton : function() {
