@@ -8,7 +8,7 @@ Homepage: http://omv-extras.org
 
 Package: openmediavault-rsnapshot
 Architecture: all
-Depends: rsnapshot, openmediavault (>= 0.5.40)
+Depends: rsnapshot, openmediavault (>= 1.0.7)
 Priority: optional
 Description: OpenMediaVault rsnapshot backup plugin.
  Configures Backups by using rsnapshot, allowing rotating
