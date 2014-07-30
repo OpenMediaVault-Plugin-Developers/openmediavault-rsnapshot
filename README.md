@@ -1,7 +1,7 @@
 openmediavault-rsnapshot
 ========================
 
-This is a plugin for OpenMediaVault 0.5 and 0.6.
+This is a plugin for OpenMediaVault.
 It allows the user to configure incremental backups of any shared folder to any other shared folder.
 
 It uses rsnapshot for creating the backups, which uses hardlinks to save disk space, and also
