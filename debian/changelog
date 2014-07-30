@@ -1,3 +1,10 @@
+openmediavault-rsnapshot (1.0.1) stable; urgency=low
+
+  * Make mkconf file executable
+  * Fix remove code
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 30 Jul 2014 05:56:17 -0500
+
 openmediavault-rsnapshot (1.0) stable; urgency=low
 
   * Simplify grid toolbar 'selectionchange' event processing. (OMV svn r1327)

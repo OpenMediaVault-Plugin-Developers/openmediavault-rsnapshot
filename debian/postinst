@@ -31,13 +31,13 @@ case "$1" in
             omv_set_default "OMV_RSNAPSHOT_CRONSCRIPT" "/var/lib/openmediavault/cron.d/rsnapshot"
         fi
 
-        if ! omv_config_exists "/config/services/rsnapshot"; then
-            echo "Initialize configuration"
-            omv_config_add_element "/config/services" "rsnapshot" ""
-            omv_config_add_element "/config/services/rsnapshot" "jobs" ""
-        fi
+        SERVICE_XPATH_NAME="rsnapshot"
+        SERVICE_XPATH="/config/services/${SERVICE_XPATH_NAME}"
 
-        echo "Updating configuration ..."
+        if ! omv_config_exists "${SERVICE_XPATH}"; then
+            omv_config_add_element "/config/services" "${SERVICE_XPATH_NAME}"
+            omv_config_add_element "${SERVICE_XPATH}" "jobs"
+        fi
 
         dpkg-trigger update-fixperms
         dpkg-trigger update-locale
