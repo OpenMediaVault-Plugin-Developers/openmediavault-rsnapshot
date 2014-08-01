@@ -83,7 +83,9 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 	  mountpoint="$(omv_get_mount_point "${sourcefolderref}")"
 	  sourcedevice="$(cat /etc/mtab | grep ${mountpoint} | cut -d " " -f 1)"
 
-	  if [ -e "${mountpoint}" ] && [ -b "${sourcedevice}" ] && [ -n "$(e2label ${sourcedevice})" ]; then
+          #block check doesn't seem to be needed, e2label only works with ext3/4
+	  #if [ -e "${mountpoint}" ] && [ -b "${sourcedevice}" ] && [ -n "$(e2label ${sourcedevice})" ]; then
+	  if [ -e "${mountpoint}" ] && [ -n "$(e2label ${sourcedevice})" ]; then
 		# if mountpoint exists, sourcedevice is block and filesystem has a label, use it as backup subdir name
 		sourcelabel=$(e2label ${sourcedevice});
 	  else
