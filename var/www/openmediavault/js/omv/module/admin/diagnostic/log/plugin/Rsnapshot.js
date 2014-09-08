@@ -23,7 +23,8 @@
 
 Ext.define("OMV.module.admin.diagnostic.log.plugin.Rsnapshot", {
     extend : "OMV.module.admin.diagnostic.log.plugin.Plugin",
-
+    alias  : "omv.plugin.diagnostic.log.rsnapshot",
+    
     id       : "rsnapshot",
     text     : _("Rsnapshot (Backup)"),
     stateful : true,
@@ -47,10 +48,4 @@ Ext.define("OMV.module.admin.diagnostic.log.plugin.Rsnapshot", {
         { name : "date", type : "string" },
         { name : "message", type : "string" }
     ]
-});
-
-OMV.PluginManager.register({
-    ptype     : "diagnostic",
-    id        : "log",
-    className : "OMV.module.admin.diagnostic.log.plugin.Rsnapshot"
 });

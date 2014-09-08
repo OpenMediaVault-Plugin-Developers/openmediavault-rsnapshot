@@ -1,3 +1,10 @@
+openmediavault-rsnapshot (1.0.3) stable; urgency=low
+
+  * Fix logging
+  * Update locales
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 08 Sep 2014 12:44:53 -0500
+
 openmediavault-rsnapshot (1.0.2) stable; urgency=low
 
   * Modify backup directory naming
