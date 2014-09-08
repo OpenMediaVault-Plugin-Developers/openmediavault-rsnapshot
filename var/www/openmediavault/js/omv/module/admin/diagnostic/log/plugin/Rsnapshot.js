@@ -24,7 +24,7 @@
 Ext.define("OMV.module.admin.diagnostic.log.plugin.Rsnapshot", {
     extend : "OMV.module.admin.diagnostic.log.plugin.Plugin",
     alias  : "omv.plugin.diagnostic.log.rsnapshot",
-    
+
     id       : "rsnapshot",
     text     : _("Rsnapshot (Backup)"),
     stateful : true,
