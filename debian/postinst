@@ -26,10 +26,8 @@ set -e
 
 case "$1" in
     configure)
-        if [ -z "$2" ]; then
-            omv_set_default "OMV_RSNAPSHOT_CONFS_DIR" "/var/lib/openmediavault/rsnapshot.d"
-            omv_set_default "OMV_RSNAPSHOT_CRONSCRIPT" "/var/lib/openmediavault/cron.d/rsnapshot"
-        fi
+        omv_set_default "OMV_RSNAPSHOT_CONFS_DIR" "/var/lib/openmediavault/rsnapshot.d"
+        omv_set_default "OMV_RSNAPSHOT_CRONSCRIPT" "/var/lib/openmediavault/cron.d/rsnapshot"
 
         SERVICE_XPATH_NAME="rsnapshot"
         SERVICE_XPATH="/config/services/${SERVICE_XPATH_NAME}"
@@ -41,6 +39,8 @@ case "$1" in
 
         dpkg-trigger update-fixperms
         dpkg-trigger update-locale
+
+        omv-mkconf rsnapshot
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

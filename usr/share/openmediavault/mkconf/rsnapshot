@@ -23,8 +23,8 @@ set -e
 . /usr/share/openmediavault/scripts/helper-functions
 
 # already set during postinst
-#OMV_RSNAPSHOT_CONFS_DIR=${OMV_RSNAPSHOT_CONFS_DIR:-"/var/lib/openmediavault/rsnapshot.d"}
-#OMV_RSNAPSHOT_CRONSCRIPT=${OMV_RSNAPSHOT_CRONSCRIPT:-"/var/lib/openmediavault/cron.d/rsnapshot"}
+OMV_RSNAPSHOT_CONFS_DIR=${OMV_RSNAPSHOT_CONFS_DIR:-"/var/lib/openmediavault/rsnapshot.d"}
+OMV_RSNAPSHOT_CRONSCRIPT=${OMV_RSNAPSHOT_CRONSCRIPT:-"/var/lib/openmediavault/cron.d/rsnapshot"}
 
 OMV_RSNAPSHOT_SCRIPTS_MASK=${OMV_RSNAPSHOT_SCRIPTS_MASK:-"755"}
 OMV_RSNAPSHOT_DIRS_MASK=${OMV_RSNAPSHOT_DIRS_MASK:-"2775"}
