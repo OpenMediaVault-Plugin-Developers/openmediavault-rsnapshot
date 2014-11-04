@@ -21,7 +21,7 @@
 OMV.WorkspaceManager.registerNode({
     id      : "rsnapshot",
     path    : "/service",
-    text    : _("Backup"),
+    text    : _("Rsnapshot"),
     icon16  : "images/rsnapshot.png",
     iconSvg : "images/rsnapshot.svg"
 });
