@@ -1,3 +1,10 @@
+openmediavault-rsnapshot (1.0.5) stable; urgency=low
+
+  * Add github pull request #6 - Rename menu entry to "Rsnapshot"
+  * Add github pull request #7 - Add default rsnapshot cron job
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 04 Nov 2014 06:35:42 -0600
+
 openmediavault-rsnapshot (1.0.4) stable; urgency=low
 
   * Fix bug in mkconf
