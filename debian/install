@@ -1,3 +1,4 @@
 usr/share/openmediavault/* usr/share/openmediavault
 var/www/openmediavault/* var/www/openmediavault
+var/lib/openmediavault/cron.d/* var/lib/openmediavault/cron.d
 etc/cron.d/* etc/cron.d
