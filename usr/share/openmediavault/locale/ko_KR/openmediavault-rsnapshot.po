@@ -3,145 +3,145 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# luisp <luis.pereira.978+transifex@gmail.com>, 2014
+# Hyeonkyu Chu <hyeonkyu@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-16 13:09-0600\n"
-"PO-Revision-Date: 2014-11-14 19:50+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
-"Language-Team: Portuguese (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/pt/)\n"
+"PO-Revision-Date: 2014-11-19 18:25+0000\n"
+"Last-Translator: Hyeonkyu Chu <hyeonkyu@gmail.com>\n"
+"Language-Team: Korean (Korea) (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/ko_KR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ko_KR\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Add backup job"
-msgstr "Adicionar trabalho de ..."
+msgstr "백업 작업 추가"
 
 msgid "Backup"
-msgstr "backup\ncópia de segurança"
+msgstr "백업"
 
 msgid "Backup jobs"
-msgstr "Trabalhos de ..."
+msgstr "백업 작업"
 
 msgid "Comment"
-msgstr "Comentário"
+msgstr "설명"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
 " Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
 "href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
 "page</a> for more details."
-msgstr ""
+msgstr "기본 rsync 긴 인수. 모든 rsync 명령들은 대체로 옵션 모음을 가집니다. 기본은 '--delete --numeric-ids --delete-excluded' 입니다. 자세한 내용은 <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>설명서 페이지</a> 참조."
 
 msgid "Edit backup job"
-msgstr "Editar trabalho de ..."
+msgstr "백업 작업 편집"
 
 msgid "Enable"
-msgstr "Activar\nAtivar"
+msgstr "활성화"
 
 msgid "Enabled"
-msgstr "Ativado\nActivado"
+msgstr "활성화됨"
 
 msgid "Execute backup job"
-msgstr "Executar trabalho de ..."
+msgstr "백업 작업 실행"
 
 msgid "Group"
-msgstr "Grupo"
+msgstr "그룹"
 
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr ""
+msgstr "활성화한 경우, rsync는 백업 지점에서 파일 시스템 파티션을 확장하지 않을 것입니다."
 
 msgid ""
 "Number of daily backups to keep. After n backups are created, the first one "
 "will be overwritten."
-msgstr ""
+msgstr "보존할 일-단위 백업의 수. n 개의 백업을 만든 후, 첫 번째는 덮어씁니다."
 
 msgid ""
 "Number of hourly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr ""
+msgstr "보존할 시간-단위 백업의 수. n 개의 백업을 만든 후, 첫 번째는 덮어씁니다."
 
 msgid ""
 "Number of monthly backups to keep. After n backups are created, the first "
 "one will be overwritten."
-msgstr ""
+msgstr "보존할 월-단위 백업의 수. n 개의 백업을 만든 후, 첫 번째는 덮어씁니다."
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
 "card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
 " errors, for example, set this to a higher value to have the rsync operation"
 " re-tried"
-msgstr ""
+msgstr "rsync 시도의 수. 네트워크 문제 또는 네트워크 카드 문제가 발생하면, rsync 실행의 재-시도가 더 높은 값을 갖도록 설정"
 
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr ""
+msgstr "보존할 주-단위 백업의 수. n 개의 백업을 만든 후, 첫 번째는 덮어씁니다."
 
 msgid ""
 "Number of yearly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr ""
+msgstr "보존할 년-단위 백업의 수. n 개의 백업을 만든 후, 첫 번째는 덮어씁니다."
 
 msgid "One filesystem only"
-msgstr ""
+msgstr "파일 시스템 하나만"
 
 msgid "Retain daily"
-msgstr "diariamente"
+msgstr "보유 일"
 
 msgid "Retain hourly"
-msgstr ""
+msgstr "보유 시간"
 
 msgid "Retain monthly"
-msgstr "mensal"
+msgstr "보유 월"
 
 msgid "Retain weekly"
-msgstr "semanal"
+msgstr "보유 주"
 
 msgid "Retain yearly"
-msgstr "anual"
+msgstr "보유 년"
 
 msgid "Rsync long arguments"
-msgstr "Argumentos longos Rsync"
+msgstr "rsync 긴 인수"
 
 msgid "Rsync tries"
-msgstr ""
+msgstr "rsync 시도"
 
 msgid "Run"
-msgstr "Executar"
+msgstr "실행"
 
 msgid "Source"
-msgstr "Origem"
+msgstr "원본"
 
 msgid "Source folder"
-msgstr "Pasta de origem"
+msgstr "원본 폴더"
 
 msgid "Target"
-msgstr "Destino"
+msgstr "대상"
 
 msgid "Target folder"
-msgstr "Pasta de destino"
+msgstr "대상 폴더"
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
 "<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
 "path&gt;</em>"
-msgstr ""
+msgstr "백업의 대상으로 사용할 공유 폴더. 백업은 하위 폴더에 위치합니다 <br/><em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative path&gt;</em>"
 
 msgid "The shared folder to Backup."
-msgstr ""
+msgstr "백업할 공유 폴더."
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note: This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr ""
+msgstr "백업 디렉터리들이 속할 그룹. 이것은 추가적으로 생성되는 디렉터리들의 그룹 만을 변경합니다. 백업 파일 및 디렉터리는 원래 권한을 반영합니다."
 
 msgid "n/a"
 msgstr "n/a"

@@ -3,145 +3,145 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# luisp <luis.pereira.978+transifex@gmail.com>, 2014
+# kochin <kochinc@outlook.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-16 13:09-0600\n"
-"PO-Revision-Date: 2014-11-14 19:50+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
-"Language-Team: Portuguese (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/pt/)\n"
+"PO-Revision-Date: 2014-11-22 14:15+0000\n"
+"Last-Translator: kochin <kochinc@outlook.com>\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Add backup job"
-msgstr "Adicionar trabalho de ..."
+msgstr "新增備份工作"
 
 msgid "Backup"
-msgstr "backup\ncópia de segurança"
+msgstr "備份"
 
 msgid "Backup jobs"
-msgstr "Trabalhos de ..."
+msgstr "備份工作"
 
 msgid "Comment"
-msgstr "Comentário"
+msgstr "註釋"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
 " Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
 "href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
 "page</a> for more details."
-msgstr ""
+msgstr "預設 rsync 長參數。所有的 rsync 指令至少會有這些選項。預設為 '--delete --numeric-ids --delete-excluded'。詳情請查閱 <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>手冊頁</a>。"
 
 msgid "Edit backup job"
-msgstr "Editar trabalho de ..."
+msgstr "編輯備份工作"
 
 msgid "Enable"
-msgstr "Activar\nAtivar"
+msgstr "啟用"
 
 msgid "Enabled"
-msgstr "Ativado\nActivado"
+msgstr "已啟用"
 
 msgid "Execute backup job"
-msgstr "Executar trabalho de ..."
+msgstr "執行備份工作"
 
 msgid "Group"
-msgstr "Grupo"
+msgstr "群組"
 
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr ""
+msgstr "如果啟用，rsync 將不會在一個備份點內跨越檔案系統分割。"
 
 msgid ""
 "Number of daily backups to keep. After n backups are created, the first one "
 "will be overwritten."
-msgstr ""
+msgstr "要保留的每日備份數目。在 n 個備份建立後，第一個備份將被蓋寫過。"
 
 msgid ""
 "Number of hourly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr ""
+msgstr "要保留的每小時備份數目。在 n 個備份建立後，第一個備份將被蓋寫過。"
 
 msgid ""
 "Number of monthly backups to keep. After n backups are created, the first "
 "one will be overwritten."
-msgstr ""
+msgstr "要保留的每月備份數目。在 n 個備份建立後，第一個備份將被蓋寫過。"
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
 "card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
 " errors, for example, set this to a higher value to have the rsync operation"
 " re-tried"
-msgstr ""
+msgstr "Rsync 重試的次數。如果您經驗到任何的網路問題或網路卡困難，通常會讓 ssh 吐出 像是 'Corrupted MAC on input' 的錯誤。將這個設定成較高的數值來讓 rsync 重試作業。"
 
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr ""
+msgstr "要保留的每週備份數目。在 n 個備份建立後，第一個備份將被蓋寫過。"
 
 msgid ""
 "Number of yearly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr ""
+msgstr "要保留的每年備份數目。在 n 個備份建立後，第一個備份將被蓋寫過。"
 
 msgid "One filesystem only"
-msgstr ""
+msgstr "只對單一檔案系統"
 
 msgid "Retain daily"
-msgstr "diariamente"
+msgstr "保留每日備份"
 
 msgid "Retain hourly"
-msgstr ""
+msgstr "保留每小時備份"
 
 msgid "Retain monthly"
-msgstr "mensal"
+msgstr "保留每月備份"
 
 msgid "Retain weekly"
-msgstr "semanal"
+msgstr "保留每週備份"
 
 msgid "Retain yearly"
-msgstr "anual"
+msgstr "保留每年備份"
 
 msgid "Rsync long arguments"
-msgstr "Argumentos longos Rsync"
+msgstr "Rsync 長參數"
 
 msgid "Rsync tries"
-msgstr ""
+msgstr "Rsync 重試"
 
 msgid "Run"
-msgstr "Executar"
+msgstr "執行"
 
 msgid "Source"
-msgstr "Origem"
+msgstr "來源"
 
 msgid "Source folder"
-msgstr "Pasta de origem"
+msgstr "來源檔案夾"
 
 msgid "Target"
-msgstr "Destino"
+msgstr "目標"
 
 msgid "Target folder"
-msgstr "Pasta de destino"
+msgstr "目標檔案夾"
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
 "<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
 "path&gt;</em>"
-msgstr ""
+msgstr "當作備份目標的檔案夾。備份將被放進一個子檔案夾 <em>localhost/&lt;來源檔案系統標籤&gt;/&lt;來源檔案夾相對路徑&gt;</em>。"
 
 msgid "The shared folder to Backup."
-msgstr ""
+msgstr "要備份的共享檔案夾。"
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note: This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr ""
+msgstr "此選項指定備份目錄將屬於的群組。附註：這將只改變額外產生之目錄的群組。被備份的檔案及目錄將反映原本的權限。"
 
 msgid "n/a"
 msgstr "n/a"
