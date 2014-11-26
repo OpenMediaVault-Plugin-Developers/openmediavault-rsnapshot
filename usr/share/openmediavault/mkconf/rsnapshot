@@ -75,22 +75,18 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 	  gid=$(omv_config_get "//services/rsnapshot/jobs/job[uuid='${uuid}']/gid")
 
 	  sourcefolderref=$(omv_config_get "//services/rsnapshot/jobs/job[uuid='${uuid}']/sourcefolderref")
-	  #targetfolderref=$(omv_config_get "//services/rsnapshot/jobs/job[uuid='${uuid}']/targetfolderref")
-	  #sourcepath="$(omv_get_sharedfolder_path "${sourcefolderref}")/"
-	  #targetpath="$(omv_get_sharedfolder_path "${targetfolderref}")/"
 
 	  # determine the mountpoint of the source shared folder
 	  mountpoint="$(omv_get_mount_point "${sourcefolderref}")"
 	  sourcedevice="$(cat /etc/mtab | grep ${mountpoint} | cut -d " " -f 1)"
+      label="$(lsblk -o mountpoint,label | grep ${mountpoint} | cut -d " " -f 2)"
 
-          #block check doesn't seem to be needed, e2label only works with ext3/4
-	  #if [ -e "${mountpoint}" ] && [ -b "${sourcedevice}" ] && [ -n "$(e2label ${sourcedevice})" ]; then
-	  if [ -e "${mountpoint}" ] && [ -n "$(e2label ${sourcedevice})" ]; then
-		# if mountpoint exists, sourcedevice is block and filesystem has a label, use it as backup subdir name
-		sourcelabel=$(e2label ${sourcedevice});
+	  if [ -e "${mountpoint}" ] && [ -n "${label}" ]; then
+		# if mountpoint exists and filesystem has a label, use label as backup subdir name
+		sourcelabel=${label}
 	  else
 		# else, use the fs mountpoint
-		sourcelabel=${mountpoint#/};
+		sourcelabel=${mountpoint#/}
 	  fi
 
 	  xmlstarlet sel -t -m "//services/rsnapshot/jobs/job[uuid='${uuid}']" \
