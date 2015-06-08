@@ -129,7 +129,7 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 		-i "weekly = 0" -o "if [ \"\$1\" = \"weekly\" ]; then skip=true; fi" -n -b \
 		-i "monthly = 0" -o "if [ \"\$1\" = \"monthly\" ]; then skip=true; fi" -n -b \
 		-i "yearly = 0" -o "if [ \"\$1\" = \"yearly\" ]; then skip=true; fi" -n -b \
-			-o "if [ \"\$2\" = \"${uuid}\" ] || ([ -z \"\$2\" ] && [ $skip = false ]); then" -n \
+			-o "if [ \"\$2\" = \"${uuid}\" ] || ([ -z \"\$2\" ] && [ \$skip = false ]); then" -n \
 			-o "	targetdir=\"" ${GET_TARGETFOLDER_PATH} -o "/" -o "${sourcelabel}/" ${GET_SOURCE_RELDIR} -o "\"" -n \
 			-o "	if [ ! -e \"\${targetdir}\" ]; then" -n \
 			-o "		echo \"Creating target directory structure ... \"" -n \
