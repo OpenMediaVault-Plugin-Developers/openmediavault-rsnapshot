@@ -52,7 +52,8 @@ echo "\
 if [ -z \"\$1\" ]; then\n\
 	echo \"No argument given. Should be one of: hourly,daily,weekly,monthly,yearly. UUID of backup job can be passed as second argument to execute a single job.\"\n\
 	exit 1\n\
-fi" > ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
+fi
+mail=false" > ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
 
 # void omv_get_mount_point (char *uuid)
 # Get the mount point of the given shared folder
@@ -124,7 +125,6 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 		-o "# backup " ${GET_SOURCEFOLDER_PATH} -o " to " ${GET_TARGETFOLDER_PATH} -n \
 		-i "enable = 1" \
 		-o "skip=false" -n \
-		-o "mail=false" -n \
 		-i "hourly = 0" -o "if [ \"\$1\" = \"hourly\" ]; then skip=true; fi" -n -b \
 		-i "daily = 0" -o "if [ \"\$1\" = \"daily\" ]; then skip=true; fi" -n -b \
 		-i "weekly = 0" -o "if [ \"\$1\" = \"weekly\" ]; then skip=true; fi" -n -b \
