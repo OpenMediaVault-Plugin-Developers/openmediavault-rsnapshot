@@ -123,7 +123,8 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 	    -i "enable = 0" -o "#### DISABLED ####" -n -b \
 		-o "# backup " ${GET_SOURCEFOLDER_PATH} -o " to " ${GET_TARGETFOLDER_PATH} -n \
 		-i "enable = 1" \
-        -o "skip=false" -n \
+		-o "skip=false" -n \
+		-o "mail=false" -n \
 		-i "hourly = 0" -o "if [ \"\$1\" = \"hourly\" ]; then skip=true; fi" -n -b \
 		-i "daily = 0" -o "if [ \"\$1\" = \"daily\" ]; then skip=true; fi" -n -b \
 		-i "weekly = 0" -o "if [ \"\$1\" = \"weekly\" ]; then skip=true; fi" -n -b \
@@ -142,6 +143,7 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 			-o "		chgrp " -v "gid" -o " \"\${targetdir}\"" -n \
 			-o "		targetdir=\"\${targetdir%/*}\"" -n \
 			-o "	done" -n \
+			-o "	mail=true" -n \
 			-o "	echo \"starting \$1 backup for ${uuid}\"" -n \
 			-o "	${RSNAPSHOT} -c \"${filename}\" \"\$1\"" -n \
 			-o "fi" -n \
@@ -150,7 +152,9 @@ xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
 
   done
 
-echo "echo \"Backups finished.\"" >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
+echo "if [ \$mail = true ]; then" >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
+echo "	echo \"Backups finished.\"" >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
+echo "fi" >> ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
 
 # replace previous cronscript by newly created
 mv ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp ${OMV_RSNAPSHOT_CRONSCRIPT}
