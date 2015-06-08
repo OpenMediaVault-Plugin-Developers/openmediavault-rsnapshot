@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-16 13:09-0600\n"
-"PO-Revision-Date: 2013-12-02 16:36+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2015-02-17 16:31+0000\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,129 +19,129 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add backup job"
-msgstr ""
+msgstr "Engadir un traballo de copia de seguranza"
 
 msgid "Backup"
-msgstr ""
+msgstr "Copia de seguranza"
 
 msgid "Backup jobs"
-msgstr ""
+msgstr "Traballos de copia de seguranza"
 
 msgid "Comment"
-msgstr ""
+msgstr "Comentario"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
 " Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
 "href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
 "page</a> for more details."
-msgstr ""
+msgstr "Argumentos longos predeterminados de rsyncs. Todas as ordes de rsync deben ter polo menos esta opción. «--delete --numeric-ids --delete-excluded». Lea a <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>páxina do manual</a> para obter máis detalles."
 
 msgid "Edit backup job"
-msgstr ""
+msgstr "Editar un traballo de copia de seguranza"
 
 msgid "Enable"
-msgstr ""
+msgstr "Activar"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Activado"
 
 msgid "Execute backup job"
-msgstr ""
+msgstr "Executar un traballo de copia de seguranza"
 
 msgid "Group"
-msgstr ""
+msgstr "Grupo"
 
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr ""
+msgstr "Se está activada esta opción, rsync non utilizará as particións do sistema de ficheiros para facer unha copia de seguranza."
 
 msgid ""
 "Number of daily backups to keep. After n backups are created, the first one "
 "will be overwritten."
-msgstr ""
+msgstr "Número de copias de seguranza diarias que facer. Após n copias de seguranza, sobrescribirase a máis antiga."
 
 msgid ""
 "Number of hourly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr ""
+msgstr "Número de copias de seguranza cada hora que facer. Após n copias de seguranza, sobrescribirase a máis antiga."
 
 msgid ""
 "Number of monthly backups to keep. After n backups are created, the first "
 "one will be overwritten."
-msgstr ""
+msgstr "Número de copias de seguranza mensuais que facer. Após n copias de seguranza, sobrescribirase a máis antiga."
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
 "card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
 " errors, for example, set this to a higher value to have the rsync operation"
 " re-tried"
-msgstr ""
+msgstr "Número de intentos de rsync. Se ten algún problema coa rede ou coa tarxeta de rede, tendentes, por exemplo, a ensuciar ssh cunha MAC estragada na entrada de erros, estabeleza isto a un valor máis alto para provocar novos intentos de rsync"
 
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr ""
+msgstr "Número de copias de seguranza semanais que facer. Após n copias de seguranza, sobrescribirase a máis antiga."
 
 msgid ""
 "Number of yearly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr ""
+msgstr "Número de copias de seguranza anuais que facer. Após n copias de seguranza, sobrescribirase a máis antiga."
 
 msgid "One filesystem only"
-msgstr ""
+msgstr "Só un sistema de ficheiros"
 
 msgid "Retain daily"
-msgstr ""
+msgstr "Gardar cada día"
 
 msgid "Retain hourly"
-msgstr ""
+msgstr "Gardar cada hora"
 
 msgid "Retain monthly"
-msgstr ""
+msgstr "Gardar cada mes"
 
 msgid "Retain weekly"
-msgstr ""
+msgstr "Gardar cada semana"
 
 msgid "Retain yearly"
-msgstr ""
+msgstr "Gardar cada ano"
 
 msgid "Rsync long arguments"
-msgstr ""
+msgstr "Argumentos longos de rsync"
 
 msgid "Rsync tries"
-msgstr ""
+msgstr "Intentos de rsync"
 
 msgid "Run"
-msgstr ""
+msgstr "Executar"
 
 msgid "Source"
-msgstr ""
+msgstr "Orixe"
 
 msgid "Source folder"
-msgstr ""
+msgstr "Cartafol de orixe"
 
 msgid "Target"
-msgstr ""
+msgstr "Destino"
 
 msgid "Target folder"
-msgstr ""
+msgstr "Cartafol de destino"
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
 "<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
 "path&gt;</em>"
-msgstr ""
+msgstr "O cartafol de destino das copias de seguranza. As copias de seguranza realizaranse no subcartafol <em>localhost/&lt;etiqueta do sistema de ficheiros orixe&gt;/&lt;ruta relativa do cartafol orixe&gt;</em>"
 
 msgid "The shared folder to Backup."
-msgstr ""
+msgstr "Cartafol compartido ao que facerlle a copia de seguranza"
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note: This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr ""
+msgstr "Esta opción especifica o grupo ao que pertence o directorio de copia de seguranza. Nota: Só pode cambiarse o  grupo de directorios novos, os xa existentes, manterán o seu grupo actual."
 
 msgid "n/a"
-msgstr ""
+msgstr "n/d"

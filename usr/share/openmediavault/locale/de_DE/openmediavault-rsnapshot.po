@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Raiko, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-16 13:09-0600\n"
-"PO-Revision-Date: 2014-11-14 19:50+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
+"PO-Revision-Date: 2015-05-24 15:23+0000\n"
+"Last-Translator: Raiko\n"
 "Language-Team: German (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,16 +19,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add backup job"
-msgstr ""
+msgstr "Hinzufügen eines Backup-Auftrages"
 
 msgid "Backup"
-msgstr ""
+msgstr "Backup"
 
 msgid "Backup jobs"
-msgstr ""
+msgstr "Backup-Aufträge"
 
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
@@ -37,39 +38,39 @@ msgid ""
 msgstr ""
 
 msgid "Edit backup job"
-msgstr ""
+msgstr "Backup-Auftrag bearbeiten"
 
 msgid "Enable"
-msgstr ""
+msgstr "Aktivieren"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Aktiviert"
 
 msgid "Execute backup job"
-msgstr ""
+msgstr "Backup-Auftrag ausführen"
 
 msgid "Group"
-msgstr ""
+msgstr "Gruppe"
 
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr ""
+msgstr "Wenn dies aktiviert ist, rsync führt nicht über die Dateisystem-Partitionen innerhalb eines Sicherungspunkt."
 
 msgid ""
 "Number of daily backups to keep. After n backups are created, the first one "
 "will be overwritten."
-msgstr ""
+msgstr "Anzahl der zu behaltenden täglichen Backups. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
 
 msgid ""
 "Number of hourly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr ""
+msgstr "Anzahl der zu behaltenden stündlichen Backups. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
 
 msgid ""
 "Number of monthly backups to keep. After n backups are created, the first "
 "one will be overwritten."
-msgstr ""
+msgstr "Anzahl der zu behaltenden monatlichen Backups. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
@@ -81,60 +82,60 @@ msgstr ""
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr ""
+msgstr "Anzahl der zu behaltenden wöchentlichen Backups. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
 
 msgid ""
 "Number of yearly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr ""
+msgstr "Anzahl der zu behaltenden jährlichen Backups. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
 
 msgid "One filesystem only"
-msgstr ""
+msgstr "Nur ein Dateisystem"
 
 msgid "Retain daily"
-msgstr ""
+msgstr "Tägliche behalten"
 
 msgid "Retain hourly"
-msgstr ""
+msgstr "Stündliche behalten"
 
 msgid "Retain monthly"
-msgstr ""
+msgstr "Monatliche behalten"
 
 msgid "Retain weekly"
-msgstr ""
+msgstr "Wöchentliche behalten"
 
 msgid "Retain yearly"
-msgstr ""
+msgstr "Jährliche behalten"
 
 msgid "Rsync long arguments"
-msgstr ""
+msgstr "Rsync lange Argumente"
 
 msgid "Rsync tries"
-msgstr ""
+msgstr "Rsync versuche"
 
 msgid "Run"
-msgstr ""
+msgstr "Starten"
 
 msgid "Source"
-msgstr ""
+msgstr "Quelle"
 
 msgid "Source folder"
-msgstr ""
+msgstr "Quellordner"
 
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
 msgid "Target folder"
-msgstr ""
+msgstr "Ziel Ordner"
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
 "<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
 "path&gt;</em>"
-msgstr ""
+msgstr "Den Ordner als Ziel für Backups verwendet. Sicherungen werden in einen Unterordner gespeichert <em>localhost/&lt;Label des Quelle-Dateisystem&gt;/&lt;Quelle relative Pfad&gt;</em>"
 
 msgid "The shared folder to Backup."
-msgstr ""
+msgstr "Der freigegebene Ordner welcher gesichert wird."
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
@@ -143,4 +144,4 @@ msgid ""
 msgstr ""
 
 msgid "n/a"
-msgstr ""
+msgstr "n/a"

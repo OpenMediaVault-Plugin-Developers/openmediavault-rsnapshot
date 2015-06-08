@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Stefan Thrane Overby <stoverby@gmail.com>, 2014
+# Stefan Thrane Overby <stoverby@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-16 13:09-0600\n"
-"PO-Revision-Date: 2014-11-14 19:50+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
+"PO-Revision-Date: 2015-05-23 21:07+0000\n"
+"Last-Translator: Stefan Thrane Overby <stoverby@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +35,7 @@ msgid ""
 " Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
 "href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
 "page</a> for more details."
-msgstr "Standard rsync lange argumenter. Alle rsync kommandoer har mindst disse valgmuligheder indstilt. Standard er '--delete --numeric-ids --delete-excluded'. Se venligst  <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual page</a> for flere detajler."
+msgstr "Standard rsync lange argumenter. Alle rsync kommandoer har mindst disse valgmuligheder indstilt. Standard er '--delete --numeric-ids --delete-excluded'. Kontroller venligst  <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual page</a> for flere detajler."
 
 msgid "Edit backup job"
 msgstr "Rediger backup opgave"
@@ -55,7 +55,7 @@ msgstr "Gruppe"
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr "Hvis dette er aktiveret, vil rsync ikke span filsystem partitioner indeni et backup punkt."
+msgstr "Hvis dette er aktiveret, vil rsync ikke udvide filsystem partitioner indeni et backup punkt."
 
 msgid ""
 "Number of daily backups to keep. After n backups are created, the first one "

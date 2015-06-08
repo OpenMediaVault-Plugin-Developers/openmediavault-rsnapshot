@@ -3,145 +3,145 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# luisp <luis.pereira.978+transifex@gmail.com>, 2014
+# Andi Chandler <andi@gowling.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-16 13:09-0600\n"
-"PO-Revision-Date: 2014-11-14 19:50+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/fr/)\n"
+"PO-Revision-Date: 2015-04-17 15:06+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/openmediavault-rsnapshot/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add backup job"
-msgstr "Ajouter un travail de sauvegarde"
+msgstr "Add backup job"
 
 msgid "Backup"
-msgstr "Sauvegarde"
+msgstr "Backup"
 
 msgid "Backup jobs"
-msgstr "Travaux de sauvegarde"
+msgstr "Backup jobs"
 
 msgid "Comment"
-msgstr "Commentaire"
+msgstr "Comment"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
 " Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
 "href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
 "page</a> for more details."
-msgstr ""
+msgstr "Default rsync long args. All rsync commands have at least these options set. Default is '--delete --numeric-ids --delete-excluded'. Please check the <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual page</a> for more details."
 
 msgid "Edit backup job"
-msgstr "Editer travail de sauvegarde"
+msgstr "Edit backup job"
 
 msgid "Enable"
-msgstr "Activer"
+msgstr "Enable"
 
 msgid "Enabled"
-msgstr "Activé"
+msgstr "Enabled"
 
 msgid "Execute backup job"
-msgstr "Exécuter le travail de sauvegarde"
+msgstr "Execute backup job"
 
 msgid "Group"
-msgstr "Groupe"
+msgstr "Group"
 
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr "Si cette option est activée,"
+msgstr "If this is enabled, rsync won't span filesystem partitions within a backup point."
 
 msgid ""
 "Number of daily backups to keep. After n backups are created, the first one "
 "will be overwritten."
-msgstr "Nombre de sauvegardes quotidiennes à conserver. Après avoir créer n sauvegardes, la première sera écrasée."
+msgstr "Number of daily backups to keep. After n backups are created, the first one will be overwritten."
 
 msgid ""
 "Number of hourly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr "Nombre de sauvegardes horaires à conserver. Après avoir créer n sauvegardes, la première sera écrasée."
+msgstr "Number of hourly backups to keep. After n backups are created, the first one will be overwritten."
 
 msgid ""
 "Number of monthly backups to keep. After n backups are created, the first "
 "one will be overwritten."
-msgstr "Nombre de sauvegardes mensuels à conserver. Après avoir créer n sauvegardes, la première sera écrasée."
+msgstr "Number of monthly backups to keep. After n backups are created, the first one will be overwritten."
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
 "card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
 " errors, for example, set this to a higher value to have the rsync operation"
 " re-tried"
-msgstr "Nombre de tentatives Rsync.\n\nSi vous rencontrez des problèmes réseau ou des problèmes de carte réseau qui ont tendance à causer ssh à déconner avec des erreurs 'Corrupted MAC on input', par exemple, définissez ceci à une valeur supérieure afin que l'opération rsync ré-essaye"
+msgstr "Number of rsync tries. If you experience any network problems or network card issues that tend to cause ssh to fail with 'Corrupted MAC on input' errors, for example, set this to a higher value to have the rsync operation re-tried"
 
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr "Nombre de sauvegardes hebdomadaires à conserver. Après avoir créer n sauvegardes, la première sera écrasée."
+msgstr "Number of weekly backups to keep. After n backups are created, the first one will be overwritten."
 
 msgid ""
 "Number of yearly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr "Nombre de sauvegardes annuels à conserver. Après avoir créer n sauvegardes, la première sera écrasée."
+msgstr "Number of yearly backups to keep. After n backups are created, the first one will be overwritten."
 
 msgid "One filesystem only"
-msgstr "Un système de fichiers uniquement"
+msgstr "One filesystem only"
 
 msgid "Retain daily"
-msgstr "Conservation quotidienne"
+msgstr "Retain daily"
 
 msgid "Retain hourly"
-msgstr "Conservation horaire"
+msgstr "Retain hourly"
 
 msgid "Retain monthly"
-msgstr "Conservation mensuelle"
+msgstr "Retain monthly"
 
 msgid "Retain weekly"
-msgstr "Conservation hebdomadaire"
+msgstr "Retain weekly"
 
 msgid "Retain yearly"
-msgstr "Conservation annuelle"
+msgstr "Retain yearly"
 
 msgid "Rsync long arguments"
-msgstr "Arguments Rsync"
+msgstr "Rsync long arguments"
 
 msgid "Rsync tries"
-msgstr "Tentatives Rsync"
+msgstr "Rsync tries"
 
 msgid "Run"
-msgstr "Exécuter"
+msgstr "Run"
 
 msgid "Source"
 msgstr "Source"
 
 msgid "Source folder"
-msgstr "Dossier source"
+msgstr "Source folder"
 
 msgid "Target"
-msgstr "Cible"
+msgstr "Target"
 
 msgid "Target folder"
-msgstr "Dossier cible"
+msgstr "Target folder"
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
 "<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
 "path&gt;</em>"
-msgstr ""
+msgstr "The Folder used as target for backups. Backups will go into a sub-folder <em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative path&gt;</em>"
 
 msgid "The shared folder to Backup."
-msgstr "Le dossier partagé à sauvegarder."
+msgstr "The shared folder to Backup."
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note: This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr "Cette option spécifie le groupe auquel les répertoires de sauvegarde vont appartenir. Remarque : Cela va seulement changer le groupe des répertoires supplémentaires crées. Les fichiers et répertoires sauvegardés refléteront les permissions d'origine."
+msgstr "This option specifies the group that the backup directories will belong to. Note: This will only change the group of additionally created dirs. The backed-up files and directories will mirror the original permissions."
 
 msgid "n/a"
 msgstr "n/a"
