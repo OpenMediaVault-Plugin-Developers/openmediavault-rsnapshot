@@ -3,6 +3,7 @@
 # @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
 # @author    Julian Kalinowski <julakali@gmail.com>
 # @copyright Copyright (c) 2013-2014 Julian Kalinowski
+# @copyright Copyright (c) 2015-2016 OpenMediaVault Plugin Developers
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -66,9 +67,10 @@ omv_get_mount_point() {
 }
 
 # Create the config files regardless if enabled or disabled.
-xmlstarlet sel -t -m "//services/rsnapshot/jobs/job" \
-  -v "uuid" \
-  -i "position() != last()" -n -b \
+xmlstarlet sel -t \
+  -m "//services/rsnapshot/jobs/job" \
+    -v "uuid" -n \
+  -b \
   ${OMV_CONFIG_FILE} | xmlstarlet unesc |
   while read uuid; do
 	  filename="${OMV_RSNAPSHOT_CONFS_DIR}/rsnapshot-${uuid}.conf"

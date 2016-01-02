@@ -3,6 +3,7 @@
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
  * @author    Julian Kalinowski <julakali@gmail.com>
  * @copyright Copyright (c) 2013-2014 Julian Kalinowski
+ * @copyright Copyright (c) 2015-2016 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,11 +53,11 @@ class OMVModuleRSnapshot extends OMVModuleServiceAbstract
      */
     final public function onSharedFolder($type, $path, $object) {
         global $xmlConfig;
-        $xpath = sprintf("//services/rsnapshot/jobs/job[sourcefolderref='%s']",
+        $xpath = sprintf("/config/services/rsnapshot/jobs/job[sourcefolderref='%s']",
           $object['uuid']);
         if(TRUE === $xmlConfig->exists($xpath))
             $this->setDirty();
-        $xpath = sprintf("//services/rsnapshot/jobs/job[targetfolderref='%s']",
+        $xpath = sprintf("/config/services/rsnapshot/jobs/job[targetfolderref='%s']",
           $object['uuid']);
         if(TRUE === $xmlConfig->exists($xpath))
             $this->setDirty();
@@ -95,4 +96,3 @@ OMVLogFile::registerType("rsnapshot", array(
         "message" => 2
     )
 ));
-?>

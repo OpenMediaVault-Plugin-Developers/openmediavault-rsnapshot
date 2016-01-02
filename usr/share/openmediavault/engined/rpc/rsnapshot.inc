@@ -3,6 +3,7 @@
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
  * @author    Julian Kalinowski <julakali@gmail.com>
  * @copyright Copyright (c) 2013-2014 Julian Kalinowski
+ * @copyright Copyright (c) 2015-2016 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -76,7 +77,7 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
         }');
 
         // Get the configuration objects.
-        $xpath = "//services/rsnapshot/jobs/job";
+        $xpath = "/config/services/rsnapshot/jobs/job";
         $objects = $xmlConfig->getList($xpath);
         if(is_null($objects)) {
             throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
@@ -330,4 +331,3 @@ class OMVRpcServiceRSnapshot extends OMVRpcServiceAbstract {
 // Register the RPC service.
 $rpcServiceMgr = &OMVRpcServiceMgr::getInstance();
 $rpcServiceMgr->registerService(new OMVRpcServiceRSnapshot());
-?>

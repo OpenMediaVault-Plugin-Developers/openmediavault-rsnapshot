@@ -4,12 +4,12 @@ XB-Plugin-Section: backup
 Priority: optional
 Maintainer: OpenMediaVault Plugin Developers <plugins@omv-extras.org>
 Build-Depends: debhelper (>= 9.0.0), gettext
-Standards-Version: 3.9.3
+Standards-Version: 3.9.6
 Homepage: http://omv-extras.org
 
 Package: openmediavault-rsnapshot
 Architecture: all
-Depends: rsnapshot, openmediavault (>= 1.0.7)
+Depends: rsnapshot, openmediavault (>= 3.0)
 Priority: optional
 Description: OpenMediaVault rsnapshot backup plugin.
  Configures Backups by using rsnapshot, allowing rotating
