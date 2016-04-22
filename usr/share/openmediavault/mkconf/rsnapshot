@@ -106,6 +106,7 @@ xmlstarlet sel -t \
 		-i "yearly != 0" -o "retain	yearly	" -v "yearly" -n -b \
 		-o "verbose		3" -n \
 		-o "loglevel	2" -n \
+		-o "cmd_cp	/bin/cp" -n \
 		-o "cmd_rm		/bin/rm" -n \
 		-o "cmd_rsync	/usr/bin/rsync" -n \
 		-o "cmd_logger	/usr/bin/logger" -n \
