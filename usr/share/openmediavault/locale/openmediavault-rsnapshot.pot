@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-16 22:29+0100\n"
+"POT-Creation-Date: 2016-05-05 17:22-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Add backup job"
-msgstr ""
-
-msgid "Backup"
 msgstr ""
 
 msgid "Backup jobs"
@@ -90,6 +87,9 @@ msgid "Retain weekly"
 msgstr ""
 
 msgid "Retain yearly"
+msgstr ""
+
+msgid "Rsnapshot"
 msgstr ""
 
 msgid "Rsnapshot (Backup)"

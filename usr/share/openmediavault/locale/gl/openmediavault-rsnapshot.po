@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-16 13:09-0600\n"
-"PO-Revision-Date: 2015-02-17 16:31+0000\n"
-"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
+"POT-Creation-Date: 2016-05-05 17:22-0500\n"
+"PO-Revision-Date: 2016-05-05 22:22+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Galician (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,14 +21,14 @@ msgstr ""
 msgid "Add backup job"
 msgstr "Engadir un traballo de copia de seguranza"
 
-msgid "Backup"
-msgstr "Copia de seguranza"
-
 msgid "Backup jobs"
 msgstr "Traballos de copia de seguranza"
 
 msgid "Comment"
 msgstr "Comentario"
+
+msgid "Date & Time"
+msgstr ""
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
@@ -56,6 +56,9 @@ msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
 msgstr "Se está activada esta opción, rsync non utilizará as particións do sistema de ficheiros para facer unha copia de seguranza."
+
+msgid "Message"
+msgstr ""
 
 msgid ""
 "Number of daily backups to keep. After n backups are created, the first one "
@@ -106,6 +109,12 @@ msgstr "Gardar cada semana"
 
 msgid "Retain yearly"
 msgstr "Gardar cada ano"
+
+msgid "Rsnapshot"
+msgstr ""
+
+msgid "Rsnapshot (Backup)"
+msgstr ""
 
 msgid "Rsync long arguments"
 msgstr "Argumentos longos de rsync"

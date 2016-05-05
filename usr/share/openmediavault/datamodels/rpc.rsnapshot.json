@@ -1,6 +1,6 @@
 [{
 	"type": "rpc",
-	"id": "rpc.developer.setsettings",
+	"id": "rpc.rsnapshot.set",
 	"params": {
 		"type": "object",
 		"properties": {

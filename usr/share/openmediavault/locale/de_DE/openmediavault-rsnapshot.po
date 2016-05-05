@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Ettore Atalan <atalanttore@googlemail.com>, 2016
 # Raiko, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-16 13:09-0600\n"
-"PO-Revision-Date: 2015-05-24 15:23+0000\n"
-"Last-Translator: Raiko\n"
+"POT-Creation-Date: 2016-05-05 17:22-0500\n"
+"PO-Revision-Date: 2016-05-05 22:22+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,16 +20,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add backup job"
-msgstr "Hinzufügen eines Backup-Auftrages"
-
-msgid "Backup"
-msgstr "Backup"
+msgstr "Hinzufügen eines Sicherungsauftrages"
 
 msgid "Backup jobs"
-msgstr "Backup-Aufträge"
+msgstr "Sicherungsaufträge"
 
 msgid "Comment"
 msgstr "Kommentar"
+
+msgid "Date & Time"
+msgstr ""
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
@@ -38,7 +39,7 @@ msgid ""
 msgstr ""
 
 msgid "Edit backup job"
-msgstr "Backup-Auftrag bearbeiten"
+msgstr "Sicherungsauftrag bearbeiten"
 
 msgid "Enable"
 msgstr "Aktivieren"
@@ -47,7 +48,7 @@ msgid "Enabled"
 msgstr "Aktiviert"
 
 msgid "Execute backup job"
-msgstr "Backup-Auftrag ausführen"
+msgstr "Sicherungsauftrag ausführen"
 
 msgid "Group"
 msgstr "Gruppe"
@@ -55,22 +56,25 @@ msgstr "Gruppe"
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr "Wenn dies aktiviert ist, rsync führt nicht über die Dateisystem-Partitionen innerhalb eines Sicherungspunkt."
+msgstr "Wenn dies aktiviert ist, rsync führt nicht über die Dateisystem-Partitionen innerhalb eines Sicherungspunktes."
+
+msgid "Message"
+msgstr ""
 
 msgid ""
 "Number of daily backups to keep. After n backups are created, the first one "
 "will be overwritten."
-msgstr "Anzahl der zu behaltenden täglichen Backups. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
+msgstr "Anzahl der zu behaltenden täglichen Sicherungen. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
 
 msgid ""
 "Number of hourly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr "Anzahl der zu behaltenden stündlichen Backups. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
+msgstr "Anzahl der zu behaltenden stündlichen Sicherungen. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
 
 msgid ""
 "Number of monthly backups to keep. After n backups are created, the first "
 "one will be overwritten."
-msgstr "Anzahl der zu behaltenden monatlichen Backups. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
+msgstr "Anzahl der zu behaltenden monatlichen Sicherungen. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
@@ -82,12 +86,12 @@ msgstr ""
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr "Anzahl der zu behaltenden wöchentlichen Backups. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
+msgstr "Anzahl der zu behaltenden wöchentlichen Sicherungen. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
 
 msgid ""
 "Number of yearly backups to keep. After n backups are created, the first one"
 " will be overwritten."
-msgstr "Anzahl der zu behaltenden jährlichen Backups. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
+msgstr "Anzahl der zu behaltenden jährlichen Sicherungen. Nachdem n Sicherungen erstellt wurden, wird die älteste überschrieben."
 
 msgid "One filesystem only"
 msgstr "Nur ein Dateisystem"
@@ -107,11 +111,17 @@ msgstr "Wöchentliche behalten"
 msgid "Retain yearly"
 msgstr "Jährliche behalten"
 
+msgid "Rsnapshot"
+msgstr ""
+
+msgid "Rsnapshot (Backup)"
+msgstr ""
+
 msgid "Rsync long arguments"
 msgstr "Rsync lange Argumente"
 
 msgid "Rsync tries"
-msgstr "Rsync versuche"
+msgstr "Rsync-Versuche"
 
 msgid "Run"
 msgstr "Starten"
@@ -126,16 +136,16 @@ msgid "Target"
 msgstr "Ziel"
 
 msgid "Target folder"
-msgstr "Ziel Ordner"
+msgstr "Zielordner"
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
 "<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
 "path&gt;</em>"
-msgstr "Den Ordner als Ziel für Backups verwendet. Sicherungen werden in einen Unterordner gespeichert <em>localhost/&lt;Label des Quelle-Dateisystem&gt;/&lt;Quelle relative Pfad&gt;</em>"
+msgstr "Der als Ziel für Sicherungen verwendete Ordner. Sicherungen werden in einen Unterordner gespeichert <em>localhost/&lt;Label des Quelle-Dateisystem&gt;/&lt;Quelle relative Pfad&gt;</em>"
 
 msgid "The shared folder to Backup."
-msgstr "Der freigegebene Ordner welcher gesichert wird."
+msgstr "Der freigegebene Ordner, welcher gesichert wird."
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
@@ -144,4 +154,4 @@ msgid ""
 msgstr ""
 
 msgid "n/a"
-msgstr "n/a"
+msgstr "n/v"

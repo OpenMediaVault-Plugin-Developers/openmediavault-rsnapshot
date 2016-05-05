@@ -24,6 +24,10 @@
 			"type": "string",
 			"format": "uuidv4"
 		},
+		"targetfoldername": {
+			"type": "string",
+			"default": ""
+		},
 		"onefs": {
 			"type": "boolean",
 			"default": false
@@ -31,6 +35,10 @@
 		"sourcefolderref": {
 			"type": "string",
 			"format": "uuidv4"
+		},
+		"sourcefoldername": {
+			"type": "string",
+			"default": ""
 		},
 		"hourly": {
 			"type": "integer",

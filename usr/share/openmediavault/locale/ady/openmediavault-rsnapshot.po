@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-16 13:09-0600\n"
-"PO-Revision-Date: 2014-11-14 19:50+0000\n"
+"POT-Creation-Date: 2016-05-05 17:22-0500\n"
+"PO-Revision-Date: 2016-05-05 22:22+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Adyghe (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/ady/)\n"
 "MIME-Version: 1.0\n"
@@ -20,13 +20,13 @@ msgstr ""
 msgid "Add backup job"
 msgstr ""
 
-msgid "Backup"
-msgstr ""
-
 msgid "Backup jobs"
 msgstr ""
 
 msgid "Comment"
+msgstr ""
+
+msgid "Date & Time"
 msgstr ""
 
 msgid ""
@@ -54,6 +54,9 @@ msgstr ""
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
+msgstr ""
+
+msgid "Message"
 msgstr ""
 
 msgid ""
@@ -104,6 +107,12 @@ msgid "Retain weekly"
 msgstr ""
 
 msgid "Retain yearly"
+msgstr ""
+
+msgid "Rsnapshot"
+msgstr ""
+
+msgid "Rsnapshot (Backup)"
 msgstr ""
 
 msgid "Rsync long arguments"

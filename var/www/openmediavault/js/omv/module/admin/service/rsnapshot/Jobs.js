@@ -240,7 +240,8 @@ Ext.define("OMV.module.admin.service.rsnapshot.Jobs", {
         text      : _("Comment"),
         sortable  : true,
         dataIndex : "comment",
-        stateId   : "comment"
+        stateId   : "comment",
+        flex      : 1
     }],
 
     initComponent : function() {
