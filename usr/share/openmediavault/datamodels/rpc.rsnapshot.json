@@ -1,0 +1,80 @@
+[{
+	"type": "rpc",
+	"id": "rpc.developer.setsettings",
+	"params": {
+		"type": "object",
+		"properties": {
+			"uuid": {
+				"type": "string",
+				"format": "uuidv4",
+				"required": true
+			},
+			"enable": {
+				"type": "boolean",
+				"required": true
+			},
+			"comment": {
+				"type": "string",
+				"required": true
+			},
+			"targetfolderref": {
+				"type": "string",
+				"format": "uuidv4",
+				"required": true
+			},
+			"onefs": {
+				"type": "boolean",
+				"required": true
+			},
+			"sourcefolderref": {
+				"type": "string",
+				"format": "uuidv4",
+				"required": true
+			},
+			"hourly": {
+				"type": "integer",
+				"minimum": 0,
+				"maximum": 50,
+				"required": true
+			},
+			"daily": {
+				"type": "integer",
+				"minimum": 0,
+				"maximum": 50,
+				"required": true
+			},
+			"weekly": {
+				"type": "integer",
+				"minimum": 0,
+				"maximum": 50,
+				"required": true
+			},
+			"monthly": {
+				"type": "integer",
+				"minimum": 0,
+				"maximum": 50,
+				"required": true
+			},
+			"yearly": {
+				"type": "integer",
+				"minimum": 0,
+				"maximum": 50,
+				"required": true
+			},
+			"numtries": {
+				"type": "integer",
+				"minimum": 1,
+				"maximum": 65535,
+				"required": true
+			},
+			"gid": {
+				"type": "string",
+				"required": true
+			},
+			"rsyncargs": {
+				"type": "string",
+				"required": false
+			}
+		}
+	}
+}]
