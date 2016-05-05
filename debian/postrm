@@ -33,6 +33,8 @@ case "$1" in
         omv_config_delete "/config/services/rsnapshot"
         # remove rsnapshot confs
         rm -rf ${OMV_RSNAPSHOT_CONFS_DIR}
+        # remove cron.d file
+        rm -f /etc/cron.d/openmediavault-rsnapshot
     ;;
 
     remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

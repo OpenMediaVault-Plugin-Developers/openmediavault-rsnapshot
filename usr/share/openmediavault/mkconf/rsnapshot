@@ -37,7 +37,21 @@ GET_TARGETFOLDER_PATH=${GET_TARGETFOLDER_PATH=-m "//system/shares/sharedfolder[u
 GET_SOURCE_RELDIR=${GET_SOURCE_RELDIR=-m "//system/shares/sharedfolder[uuid=current()/sourcefolderref]" -v "reldirpath" -b}
 
 # rsnapshot path
-RSNAPSHOT=$(which rsnapshot)
+RSNAPSHOT=/usr/bin/rsnapshot
+
+cat <<EOF > /etc/cron.d/openmediavault-rsnapshot
+# Create cron file
+# This is the cron file for openmediavault-rsnapshot.
+# The file /var/lib/openmediavault/cron.d/rsnapshot will mirror
+# the jobs that are configured in the plugin.
+# m h 		dom mon dow user  command
+5 *         * * *           root    /var/lib/openmediavault/cron.d/rsnapshot hourly
+30 3        * * *           root    /var/lib/openmediavault/cron.d/rsnapshot daily
+0  3        * * 1           root    /var/lib/openmediavault/cron.d/rsnapshot weekly
+30 2        1 * *           root    /var/lib/openmediavault/cron.d/rsnapshot monthly
+00 2        1 1 *           root    /var/lib/openmediavault/cron.d/rsnapshot yearly
+EOF
+
 
 # Create the backup jobs. Every job gets its own config file, but their execution
 # is managed through one single bash script that is executed by cron.
