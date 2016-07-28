@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Stefan Thrane Overby <stoverby@gmail.com>, 2014-2015
+# Stefan Thrane Overby <stoverby@gmail.com>, 2014-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-05 17:22-0500\n"
-"PO-Revision-Date: 2016-05-05 22:22+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
+"PO-Revision-Date: 2016-06-09 11:33+0000\n"
+"Last-Translator: Stefan Thrane Overby <stoverby@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +28,7 @@ msgid "Comment"
 msgstr "Kommentar"
 
 msgid "Date & Time"
-msgstr ""
+msgstr "Dato & Tid"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
@@ -58,7 +58,7 @@ msgid ""
 msgstr "Hvis dette er aktiveret, vil rsync ikke udvide filsystem partitioner indeni et backup punkt."
 
 msgid "Message"
-msgstr ""
+msgstr "Besked"
 
 msgid ""
 "Number of daily backups to keep. After n backups are created, the first one "
@@ -111,10 +111,10 @@ msgid "Retain yearly"
 msgstr "Bibehold årligt"
 
 msgid "Rsnapshot"
-msgstr ""
+msgstr "Rsnapshot"
 
 msgid "Rsnapshot (Backup)"
-msgstr ""
+msgstr "Rsnapshot (Backup)"
 
 msgid "Rsync long arguments"
 msgstr "Rsync lange argumenter"
