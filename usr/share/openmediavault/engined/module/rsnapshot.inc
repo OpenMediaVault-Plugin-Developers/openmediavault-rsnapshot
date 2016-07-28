@@ -51,11 +51,13 @@ class OMVModuleRSnapshot extends \OMV\Engine\Module\ServiceAbstract
     final public function onModifySharedFolder($type, $path, $object)
     {
         $db = \OMV\Config\Database::getInstance();
-        $object = $db->get("conf.service.rsnapshot.job");
-        if (TRUE === $object->isEqual("sourcefolderref", $object['uuid']))
-            $this->setDirty();
-        if (TRUE === $object->isEqual("targetfolderref", $object['uuid']))
-            $this->setDirty();
+        $objects = $db->get("conf.service.rsnapshot.job");
+        foreach ((array)$objects as $object) {
+            if (TRUE === $object->isEqual("sourcefolderref", $object->get('uuid')))
+                $this->setDirty();
+            if (TRUE === $object->isEqual("targetfolderref", $object->get('uuid')))
+                $this->setDirty();
+        }
     }
 
     /**
