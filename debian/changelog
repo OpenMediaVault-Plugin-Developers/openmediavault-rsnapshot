@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (3.4) stable; urgency=low
+
+  * Fix per github pull request #14
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 28 Jul 2016 07:19:43 -0500
+
 openmediavault-rsnapshot (3.3) stable; urgency=low
 
   * Update for auto notifications
