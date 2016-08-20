@@ -183,6 +183,15 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
                 text  : _("This option specifies the group that the backup directories will belong to. Note: This will only change the group of additionally created dirs. The backed-up files and directories will mirror the original permissions.")
             }]
         },{
+            xtype      : "checkbox",
+            name       : "erroroutputonly",
+            fieldLabel : _("Error output only"),
+            checked    : true,
+            plugins       : [{
+                ptype : "fieldinfo",
+                text  : _("Show output on error only. If set, no output will be shown on successful execution.  If no output is generated, no email will be sent if configured.")
+            }]
+        },{
             xtype      : "textfield",
             name       : "rsyncargs",
             fieldLabel : _("Rsync long arguments"),

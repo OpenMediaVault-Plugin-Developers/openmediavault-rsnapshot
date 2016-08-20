@@ -71,6 +71,10 @@
 				"type": "string",
 				"required": true
 			},
+			"erroroutputonly": {
+				"type": "boolean",
+				"required": false
+			},
 			"rsyncargs": {
 				"type": "string",
 				"required": false

@@ -118,7 +118,8 @@ xmlstarlet sel -t \
 		-i "weekly != 0" -o "retain	weekly	" -v "weekly" -n -b \
 		-i "monthly != 0" -o "retain	monthly	" -v "monthly" -n -b \
 		-i "yearly != 0" -o "retain	yearly	" -v "yearly" -n -b \
-		-o "verbose		3" -n \
+		-i "erroroutputonly != 1" -o "verbose		3" -n -b \
+		-i "erroroutputonly = 1" -o "verbose		2" -n -b \
 		-o "loglevel	2" -n \
 		-o "cmd_cp	/bin/cp" -n \
 		-o "cmd_rm		/bin/rm" -n \
@@ -153,15 +154,15 @@ xmlstarlet sel -t \
 			-o "		echo \"Creating target directory structure ... \"" -n \
 			-o "		mkdir -p \"\${targetdir}\"" -n \
 			-o "	fi" -n \
-			-o "	echo \"Checking access rights on target directory structure ... \"" -n \
+			-i "erroroutputonly != 1" -o "	echo \"Checking access rights on target directory structure ... \"" -n -b \
 			-o "	while [ -n \"\${targetdir}\" ] && [ \"\${targetdir}\" != \"" ${GET_TARGETFOLDER_PATH} -o "\" ]; do" -n \
-			-o "		echo \"... \${targetdir}\"" -n \
+			-i "erroroutputonly != 1" -o "		echo \"... \${targetdir}\"" -n -b \
 			-o "		chmod ${OMV_RSNAPSHOT_DIRS_MASK} \"\${targetdir}\"" -n \
 			-o "		chgrp " -v "gid" -o " \"\${targetdir}\"" -n \
 			-o "		targetdir=\"\${targetdir%/*}\"" -n \
 			-o "	done" -n \
-			-o "	mail=true" -n \
-			-o "	echo \"starting \$1 backup for ${uuid}\"" -n \
+			-i "erroroutputonly != 1" -o "	mail=true" -n -b \
+			-i "erroroutputonly != 1" -o "	echo \"starting \$1 backup for ${uuid}\"" -n -b \
 			-o "	${RSNAPSHOT} -c \"${filename}\" \"\$1\"" -n \
 			-o "fi" -n \
 			-b \

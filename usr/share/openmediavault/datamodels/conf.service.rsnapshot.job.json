@@ -80,6 +80,10 @@
 			"type": "string",
 			"default": ""
 		},
+		"erroroutputonly": {
+			"type": "boolean",
+			"default": true
+		},
 		"rsyncargs": {
 			"type": "string",
 			"default": ""
