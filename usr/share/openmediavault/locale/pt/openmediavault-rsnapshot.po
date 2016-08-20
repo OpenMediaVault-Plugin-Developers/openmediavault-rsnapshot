@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-05 17:22-0500\n"
-"PO-Revision-Date: 2016-05-05 22:22+0000\n"
+"POT-Creation-Date: 2016-08-20 10:10-0500\n"
+"PO-Revision-Date: 2016-08-20 15:10+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -45,6 +45,9 @@ msgstr "Activar\nAtivar"
 
 msgid "Enabled"
 msgstr "Ativado\nActivado"
+
+msgid "Error output only"
+msgstr ""
 
 msgid "Execute backup job"
 msgstr "Executar trabalho de ..."
@@ -124,6 +127,11 @@ msgstr ""
 
 msgid "Run"
 msgstr "Executar"
+
+msgid ""
+"Show output on error only. If set, no output will be shown on successful "
+"execution.  If no output is generated, no email will be sent if configured."
+msgstr ""
 
 msgid "Source"
 msgstr "Origem"

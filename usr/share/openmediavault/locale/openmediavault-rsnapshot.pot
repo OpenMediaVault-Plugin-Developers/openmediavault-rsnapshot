@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-05 17:22-0500\n"
+"POT-Creation-Date: 2016-08-20 10:10-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,6 +39,9 @@ msgid "Enable"
 msgstr ""
 
 msgid "Enabled"
+msgstr ""
+
+msgid "Error output only"
 msgstr ""
 
 msgid "Execute backup job"
@@ -102,6 +105,9 @@ msgid "Rsync tries"
 msgstr ""
 
 msgid "Run"
+msgstr ""
+
+msgid "Show output on error only. If set, no output will be shown on successful execution.  If no output is generated, no email will be sent if configured."
 msgstr ""
 
 msgid "Source"
