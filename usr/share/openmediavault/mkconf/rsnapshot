@@ -151,7 +151,7 @@ xmlstarlet sel -t \
 			-o "if [ \"\$2\" = \"${uuid}\" ] || ([ -z \"\$2\" ] && [ \$skip = false ]); then" -n \
 			-o "	targetdir=\"" ${GET_TARGETFOLDER_PATH} -o "/" -o "${sourcelabel}/" ${GET_SOURCE_RELDIR} -o "\"" -n \
 			-o "	if [ ! -e \"\${targetdir}\" ]; then" -n \
-			-o "		echo \"Creating target directory structure ... \"" -n \
+			-i "erroroutputonly != 1" -o "		echo \"Creating target directory structure ... \"" -n -b \
 			-o "		mkdir -p \"\${targetdir}\"" -n \
 			-o "	fi" -n \
 			-i "erroroutputonly != 1" -o "	echo \"Checking access rights on target directory structure ... \"" -n -b \
