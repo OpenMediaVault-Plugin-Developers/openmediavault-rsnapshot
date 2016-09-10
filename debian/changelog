@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (3.6) UNRELEASED; urgency=medium
+
+  * Use execBgProc
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 10 Sep 2016 09:32:05 -0500
+
 openmediavault-rsnapshot (3.5) stable; urgency=low
 
   * Add option to show output on error only

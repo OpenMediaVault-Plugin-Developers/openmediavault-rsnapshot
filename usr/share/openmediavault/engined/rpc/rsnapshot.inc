@@ -185,28 +185,20 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
         } elseif ($object->get('yearly') != 0) {
             $level = "yearly";
         }
-        // Create a background process.
-        $bgStatusFilename = $this->createBgProcStatus();
-        $pid = $this->fork();
-        if ($pid > 0) { // Parent process.
-            $this->initializeBgProcStatus($bgStatusFilename, $pid);
-            return $bgStatusFilename;
-        }
-        // Child process.
-        try {
-            $bgOutputFilename = $this->createBgProcOutput();
-            $this->updateBgProcStatus($bgStatusFilename, "outputfilename", $bgOutputFilename);
-            // Execute the rsync cron script.
-            $cmd = "/bin/sh";
-            $cmdArgs = [];
-            $cmdArgs[] = $GLOBALS['OMV_RSNAPSHOT_CRONSCRIPT'];
-            $cmdArgs[] = $level;
-            $cmdArgs[] = $params['uuid'];
-            if (FALSE === $this->execve($cmd, $cmdArgs, $bgOutputFilename))
-                throw new \OMV\ExecException($cmd." ".implode(" ", $cmdArgs));
-        } catch(\Exception $e) {
-            $this->finalizeBgProcStatus($bgStatusFilename, "", $e);
-            exit(1);
-        }
+        // Create the background process.
+        return $this->execBgProc(function($bgStatusFilename, $bgOutputFilename)
+            use ($params) {
+                $cmdArgs = [];
+                $cmdArgs[] = $GLOBALS['OMV_RSNAPSHOT_CRONSCRIPT'];
+                $cmdArgs[] = $level;
+                $cmdArgs[] = $params['uuid'];
+                $cmd = new \OMV\System\Process("/bin/sh", $cmdArgs);
+                $cmd->setRedirect2to1();
+                $cmdLine = $cmd->getCommandLine();
+                if (0 !== $this->exec($cmdLine, $output, $bgOutputFilename))
+                    throw new \OMV\ExecException($cmdLine, $output);
+                return $output;
+            }
+        );
     }
 }
