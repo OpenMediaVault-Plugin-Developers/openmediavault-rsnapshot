@@ -1,8 +1,8 @@
-openmediavault-rsnapshot (3.6) UNRELEASED; urgency=medium
+openmediavault-rsnapshot (3.6) stable; urgency=low
 
   * Use execBgProc
 
- -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 10 Sep 2016 09:32:05 -0500
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sun, 11 Sep 2016 15:26:29 -0500
 
 openmediavault-rsnapshot (3.5) stable; urgency=low
 
