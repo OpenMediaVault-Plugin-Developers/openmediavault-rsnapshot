@@ -187,7 +187,7 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
         }
         // Create the background process.
         return $this->execBgProc(function($bgStatusFilename, $bgOutputFilename)
-            use ($params) {
+            use ($params, $level) {
                 $cmdArgs = [];
                 $cmdArgs[] = $GLOBALS['OMV_RSNAPSHOT_CRONSCRIPT'];
                 $cmdArgs[] = $level;

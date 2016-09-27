@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (3.7) stable; urgency=low
+
+  * Fix bug in manual execution
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 27 Sep 2016 18:00:39 -0500
+
 openmediavault-rsnapshot (3.6) stable; urgency=low
 
   * Use execBgProc
