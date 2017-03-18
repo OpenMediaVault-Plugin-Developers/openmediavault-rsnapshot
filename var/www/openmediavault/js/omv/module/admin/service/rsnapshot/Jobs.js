@@ -2,7 +2,7 @@
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
  * @author    Julian Kalinowski <julakali@gmail.com>
  * @copyright Copyright (c) 2013-2014 Julian Kalinowski
- * @copyright Copyright (c) 2015-2016 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2015-2017 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -236,16 +236,19 @@ Ext.define("OMV.module.admin.service.rsnapshot.Jobs", {
         trueIcon  : "switch_on.png",
         falseIcon : "switch_off.png"
     },{
+        xtype     : "textcolumn",
         text      : _("Source"),
         sortable  : true,
         dataIndex : "sourcefoldername",
         stateId   : "sourcefoldername"
     },{
+        xtype     : "textcolumn",
         text      : _("Target"),
         sortable  : true,
         dataIndex : "targetfoldername",
         stateId   : "targetfoldername"
     },{
+        xtype     : "textcolumn",
         text      : _("Comment"),
         sortable  : true,
         dataIndex : "comment",
