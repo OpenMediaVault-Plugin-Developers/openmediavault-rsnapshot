@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (3.9) stable; urgency=low
+
+  * Fix github issue #17
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 22 May 2017 07:19:52 -0500
+
 openmediavault-rsnapshot (3.8) stable; urgency=low
 
   * Improve foreign content handling

@@ -87,7 +87,6 @@ Ext.define("OMV.module.admin.service.rsnapshot.Job", {
             name       : "onefs",
             fieldLabel : "&nbsp",
             checked    : false,
-            inputValue : 1,
             boxLabel   : _("One filesystem only"),
             plugins    : [{
                 ptype : "fieldinfo",
@@ -304,17 +303,17 @@ Ext.define("OMV.module.admin.service.rsnapshot.Jobs", {
     onSelectionChange : function(model, records) {
         var me = this;
         me.callParent(arguments);
-		// Process additional buttons.
-		var tbarBtnDisabled = {
-			"run" : true
-		};
+        // Process additional buttons.
+        var tbarBtnDisabled = {
+            "run" : true
+        };
         if(records.length == 1) {
             tbarBtnDisabled["run"] = false;
         }
-		// Update the button controls.
-		Ext.Object.each(tbarBtnDisabled, function(key, value) {
-			this.setToolbarButtonDisabled(key, value);
-		}, me);
+        // Update the button controls.
+        Ext.Object.each(tbarBtnDisabled, function(key, value) {
+            this.setToolbarButtonDisabled(key, value);
+        }, me);
     },
 
     onAddButton : function() {
