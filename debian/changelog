@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (3.10) UNRELEASED; urgency=medium
+
+  * Improve drive label detection
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 23 May 2017 07:44:56 -0500
+
 openmediavault-rsnapshot (3.9) stable; urgency=low
 
   * Fix github issue #17
