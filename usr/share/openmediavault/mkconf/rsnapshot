@@ -131,7 +131,7 @@ xmlstarlet sel -t \
 		-i "string-length(rsyncargs) = 0" -o "--delete --numeric-ids --delete-excluded" -n -b \
 		-o "one_fs	" -v "onefs" -n \
 		-o "# no extra destination dir" -n \
-		-o "backup	" ${GET_SOURCEFOLDER_PATH} -o "	localhost/" -n \
+		-o "backup	" ${GET_SOURCEFOLDER_PATH} -o "	./" -n \
 		-o "rsync_numtries	" -v "numtries" -n \
 		-o "lockfile	/var/run/rsnapshot-${uuid}.pid" -n \
 		${OMV_CONFIG_FILE} | xmlstarlet unesc > ${filename}

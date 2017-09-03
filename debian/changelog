@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (4.1) stable; urgency=low
+
+  * Tweak to use same directory structure as 3.x plugin
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sun, 03 Sep 2017 10:08:49 -0500
+
 openmediavault-rsnapshot (4.0) stable; urgency=low
 
   * Improve drive label detection
