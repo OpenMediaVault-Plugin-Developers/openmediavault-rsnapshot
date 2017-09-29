@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (4.1.1) stable; urgency=low
+
+  * Fix label detection bug
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 29 Sep 2017 17:00:23 -0500
+
 openmediavault-rsnapshot (4.1) stable; urgency=low
 
   * Tweak to use same directory structure as 3.x plugin
