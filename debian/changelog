@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (4.1.2) stable; urgency=low
+
+  * Fix label detection bug again
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 30 Sep 2017 07:16:35 -0500
+
 openmediavault-rsnapshot (4.1.1) stable; urgency=low
 
   * Fix label detection bug
