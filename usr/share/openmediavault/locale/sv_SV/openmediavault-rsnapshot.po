@@ -3,29 +3,28 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# luisp <luis.pereira.978+transifex@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-08-20 10:10-0500\n"
-"PO-Revision-Date: 2017-09-23 19:31+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Portuguese (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/pt/)\n"
+"PO-Revision-Date: 2013-12-02 16:36+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Swedish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
+"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add backup job"
-msgstr "Adicionar trabalho de ..."
+msgstr ""
 
 msgid "Backup jobs"
-msgstr "Trabalhos de ..."
+msgstr ""
 
 msgid "Comment"
-msgstr "Comentário"
+msgstr ""
 
 msgid "Date & Time"
 msgstr ""
@@ -38,22 +37,22 @@ msgid ""
 msgstr ""
 
 msgid "Edit backup job"
-msgstr "Editar trabalho de ..."
+msgstr ""
 
 msgid "Enable"
-msgstr "Activar\nAtivar"
+msgstr ""
 
 msgid "Enabled"
-msgstr "Ativado\nActivado"
+msgstr ""
 
 msgid "Error output only"
 msgstr ""
 
 msgid "Execute backup job"
-msgstr "Executar trabalho de ..."
+msgstr ""
 
 msgid "Group"
-msgstr "Grupo"
+msgstr ""
 
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
@@ -99,19 +98,19 @@ msgid "One filesystem only"
 msgstr ""
 
 msgid "Retain daily"
-msgstr "diariamente"
+msgstr ""
 
 msgid "Retain hourly"
 msgstr ""
 
 msgid "Retain monthly"
-msgstr "mensal"
+msgstr ""
 
 msgid "Retain weekly"
-msgstr "semanal"
+msgstr ""
 
 msgid "Retain yearly"
-msgstr "anual"
+msgstr ""
 
 msgid "Rsnapshot"
 msgstr ""
@@ -120,13 +119,13 @@ msgid "Rsnapshot (Backup)"
 msgstr ""
 
 msgid "Rsync long arguments"
-msgstr "Argumentos longos Rsync"
+msgstr ""
 
 msgid "Rsync tries"
 msgstr ""
 
 msgid "Run"
-msgstr "Executar"
+msgstr ""
 
 msgid ""
 "Show output on error only. If set, no output will be shown on successful "
@@ -134,16 +133,16 @@ msgid ""
 msgstr ""
 
 msgid "Source"
-msgstr "Origem"
+msgstr ""
 
 msgid "Source folder"
-msgstr "Pasta de origem"
+msgstr ""
 
 msgid "Target"
-msgstr "Destino"
+msgstr ""
 
 msgid "Target folder"
-msgstr "Pasta de destino"
+msgstr ""
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
@@ -161,4 +160,4 @@ msgid ""
 msgstr ""
 
 msgid "n/a"
-msgstr "n/a"
+msgstr ""
