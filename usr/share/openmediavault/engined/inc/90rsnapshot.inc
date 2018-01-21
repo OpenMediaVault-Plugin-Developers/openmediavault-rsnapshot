@@ -3,7 +3,7 @@
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
  * @author    Julian Kalinowski <julakali@gmail.com>
  * @copyright Copyright (c) 2013-2014 Julian Kalinowski
- * @copyright Copyright (c) 2015-2017 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2015-2018 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
 \OMV\System\LogFileSpec::registerSpecification("rsnapshot", [
     "filename" => "rsnapshot.log",
     "filepath" => "/var/log/rsnapshot.log",
-    "regex"    => "/^\[(\d+\/\w+\/\d+:\d+:\d+:\d+)\]\s+(.*)$/",
+    "regex"    => "/^\[(\d+-\d+-\d+T\d+:\d+:\d+)\]\s+(.*)$/",
     "columns"  => [
         "date"    => [
             "index" => 1,
