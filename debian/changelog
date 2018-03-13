@@ -1,8 +1,9 @@
-openmediavault-rsnapshot (3.10) UNRELEASED; urgency=medium
+openmediavault-rsnapshot (3.10) stable; urgency=low
 
   * Improve drive label detection
+  * Back port OMV 4.x changes to 3.x
 
- -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 23 May 2017 07:44:56 -0500
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 12 Mar 2018 19:03:52 -0500
 
 openmediavault-rsnapshot (3.9) stable; urgency=low
 
