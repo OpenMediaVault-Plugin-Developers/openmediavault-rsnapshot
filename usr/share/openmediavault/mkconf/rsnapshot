@@ -96,7 +96,7 @@ xmlstarlet sel -t \
 	  # determine the mountpoint of the source shared folder
 	  mountpoint="$(omv_get_mount_point "${sourcefolderref}")"
 	  sourcedevice="$(cat /etc/mtab | grep -w "${mountpoint}" | awk '{print $1}')"
-	  label="$(lsblk -o mountpoint,label -n | grep -w "${mountpoint}" | awk '{print $2}')"
+	  label="$(lsblk -o mountpoint,label -n | grep -w "${mountpoint}" | awk '{print $2}') | uniq"
 
 	  if [ -e "${mountpoint}" ] && [ -n "${label}" ]; then
 		# if mountpoint exists and filesystem has a label, use label as backup subdir name
