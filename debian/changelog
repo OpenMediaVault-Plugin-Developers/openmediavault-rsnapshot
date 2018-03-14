@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (3.12) stable; urgency=low
+
+  * fix same stupid typo from 4.x version
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 14 Mar 2018 11:27:10 -0500
+
 openmediavault-rsnapshot (3.11) stable; urgency=low
 
   * Actually implement the change
