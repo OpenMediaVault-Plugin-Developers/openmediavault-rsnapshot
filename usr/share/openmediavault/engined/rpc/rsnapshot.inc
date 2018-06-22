@@ -3,7 +3,7 @@
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
  * @author    Julian Kalinowski <julakali@gmail.com>
  * @copyright Copyright (c) 2013-2014 Julian Kalinowski
- * @copyright Copyright (c) 2015-2017 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2015-2018 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,8 +18,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-require_once("openmediavault/globals.inc");
-require_once("openmediavault/functions.inc");
+require_once('openmediavault/globals.inc');
+require_once('openmediavault/functions.inc');
 
 class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
     /**
@@ -27,7 +27,7 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
      */
     public function getName()
     {
-        return "RSnapshot";
+        return 'RSnapshot';
     }
 
     /**
@@ -35,11 +35,11 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
      */
     public function initialize()
     {
-        $this->registerMethod("getList");
-        $this->registerMethod("get");
-        $this->registerMethod("set");
-        $this->registerMethod("delete");
-        $this->registerMethod("execute");
+        $this->registerMethod('getList');
+        $this->registerMethod('get');
+        $this->registerMethod('set');
+        $this->registerMethod('delete');
+        $this->registerMethod('execute');
     }
 
     /**
@@ -57,24 +57,23 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
     public function getList($params, $context)
     {
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, "rpc.common.getlist");
+        $this->validateMethodParams($params, 'rpc.common.getlist');
         // Get configuration objects.
         $db = \OMV\Config\Database::getInstance();
-        $objects = $db->get("conf.service.rsnapshot.job");
+        $objects = $db->get('conf.service.rsnapshot');
         // Add additional information.
         $objectsAssoc = [];
         foreach ($objects as $objectk => &$objectv) {
-            $objectv->setIndexed([
-                "sourcefoldername" => gettext("n/a"),
-                "targetfoldername" => gettext("n/a")
-            ]);
-            $sfObject = $db->get("conf.system.sharedfolder", $objectv->get("sourcefolderref"));
-            $objectv->set("sourcefoldername", $sfObject->get("name"));
-            $sfObject = $db->get("conf.system.sharedfolder", $objectv->get("targetfolderref"));
-            $objectv->set("targetfoldername", $sfObject->get("name"));
-            $objectv->add("running", file_exists(sprintf("/var/run/rsnapshot-%s", $objectv->get('uuid'))));
+            // Add the new property 'sharedfoldername'.
+            $objectv->add('sourcefoldername', 'string', gettext("n/a"));
+            $objectv->add('targetfoldername', 'string', gettext("n/a"));
+            $sfObject = $db->get('conf.system.sharedfolder', $objectv->get('src.sharedfolderref'));
+            $objectv->set('sourcefoldername', $sfObject->get('name'));
+            $sfObject = $db->get('conf.system.sharedfolder', $objectv->get('dest.sharedfolderref'));
+            $objectv->set('targetfoldername', $sfObject->get('name'));
+            $objectv->add('running', file_exists(sprintf('/var/run/rsnapshot-%s', $objectv->get('uuid'))));
             $objectsAssoc[] = $objectv->getAssoc();
         }
 
@@ -94,12 +93,14 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
     function get($params, $context)
     {
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, "rpc.common.objectuuid");
+        $this->validateMethodParams($params, 'rpc.common.objectuuid');
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $object = $db->get("conf.service.rsnapshot.job", $params['uuid']);
+        $object = $db->get('conf.service.rsnapshot', $params['uuid']);
+        $object->copy('src.sharedfolderref', 'srcsharedfolderref');
+		$object->copy('dest.sharedfolderref', 'destsharedfolderref');
         return $object->getAssoc();
     }
 
@@ -114,12 +115,14 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
     function set($params, $context)
     {
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, "rpc.rsnapshot.set");
+        $this->validateMethodParams($params, 'rpc.rsnapshot.set');
         // Prepare the configuration data.
-        $object = new \OMV\Config\ConfigObject("conf.service.rsnapshot.job");
-        $object->setAssoc($params);
+        $object = new \OMV\Config\ConfigObject('conf.service.rsnapshot');
+        $object->setAssoc($params, TRUE, TRUE);
+        $object->set('src.sharedfolderref', $params['srcsharedfolderref']);
+		$object->set('dest.sharedfolderref', $params['destsharedfolderref']);
         // Set the configuration object.
         $db = \OMV\Config\Database::getInstance();
         $db->set($object);
@@ -137,12 +140,12 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
     public function delete($params, $context)
     {
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, "rpc.common.objectuuid");
+        $this->validateMethodParams($params, 'rpc.common.objectuuid');
         // Delete the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $object = $db->get("conf.service.rsnapshot.job", $params['uuid']);
+        $object = $db->get('conf.service.rsnapshot', $params['uuid']);
         $db->delete($object);
         // Return the deleted configuration object.
         return $object->getAssoc();
@@ -160,30 +163,30 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
     public function execute($params, $context)
     {
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, "rpc.common.objectuuid");
+        $this->validateMethodParams($params, 'rpc.common.objectuuid');
         // Check if the module is marked as dirty. This is an indication
         // that the rsync cron script has not been created or updated
         // until now.
-        if ($this->isModuleDirty("rsnapshot"))
+        if ($this->isModuleDirty('rsnapshot'))
             throw new \OMV\Config\ConfigDirtyException();
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $object = $db->get("conf.service.rsnapshot.job", $params['uuid']);
+        $object = $db->get('conf.service.rsnapshot', $params['uuid']);
         // Determine backup level.
         // Will use the smallest backup cycle upon manual execution.
-        $level = "unknown";
+        $level = 'unknown';
         if ($object->get('hourly') != 0) {
-            $level = "hourly";
+            $level = 'hourly';
         } elseif ($object->get('daily') != 0) {
-            $level = "daily";
+            $level = 'daily';
         } elseif ($object->get('weekly') != 0) {
-            $level = "weekly";
+            $level = 'weekly';
         } elseif ($object->get('monthly') != 0) {
-            $level = "monthly";
+            $level = 'monthly';
         } elseif ($object->get('yearly') != 0) {
-            $level = "yearly";
+            $level = 'yearly';
         }
         // Create the background process.
         return $this->execBgProc(function($bgStatusFilename, $bgOutputFilename)
@@ -192,7 +195,7 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
                 $cmdArgs[] = $GLOBALS['OMV_RSNAPSHOT_CRONSCRIPT'];
                 $cmdArgs[] = $level;
                 $cmdArgs[] = $params['uuid'];
-                $cmd = new \OMV\System\Process("/bin/sh", $cmdArgs);
+                $cmd = new \OMV\System\Process('/bin/sh', $cmdArgs);
                 $cmd->setRedirect2to1();
                 $cmdLine = $cmd->getCommandLine();
                 if (0 !== $this->exec($cmdLine, $output, $bgOutputFilename))

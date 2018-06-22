@@ -4,7 +4,7 @@
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @author    Julian Kalinowski <julakali@gmail.com>
  * @copyright Copyright (c) 2013-2014 Julian Kalinowski
- * @copyright Copyright (c) 2015-2017 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2015-2018 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ class OMVModuleRSnapshot extends \OMV\Engine\Module\ServiceAbstract
      */
     public function getName()
     {
-        return "rsnapshot";
+        return 'rsnapshot';
     }
 
     /**
@@ -35,7 +35,7 @@ class OMVModuleRSnapshot extends \OMV\Engine\Module\ServiceAbstract
      */
     public function applyConfig()
     {
-        $cmd = new \OMV\System\Process("omv-mkconf", "rsnapshot");
+        $cmd = new \OMV\System\Process('omv-mkconf', 'rsnapshot');
         $cmd->setRedirect2to1(TRUE);
         $cmd->execute();
     }
@@ -51,11 +51,11 @@ class OMVModuleRSnapshot extends \OMV\Engine\Module\ServiceAbstract
     final public function onModifySharedFolder($type, $path, $object)
     {
         $db = \OMV\Config\Database::getInstance();
-        $objects = $db->get("conf.service.rsnapshot.job");
+        $objects = $db->get('conf.service.rsnapshot');
         foreach ((array)$objects as $object) {
-            if (TRUE === $object->isEqual("sourcefolderref", $object->get('uuid')))
+            if (TRUE === $object->isEqual('src.sharedfolderref', $object->get('uuid')))
                 $this->setDirty();
-            if (TRUE === $object->isEqual("targetfolderref", $object->get('uuid')))
+            if (TRUE === $object->isEqual('dest.sharedfolderref', $object->get('uuid')))
                 $this->setDirty();
         }
     }
@@ -66,13 +66,13 @@ class OMVModuleRSnapshot extends \OMV\Engine\Module\ServiceAbstract
     function bindListeners(\OMV\Engine\Notify\Dispatcher $dispatcher) {
         $dispatcher->addListener(
             OMV_NOTIFY_CREATE | OMV_NOTIFY_MODIFY | OMV_NOTIFY_DELETE,
-            "org.openmediavault.conf.service.rsnapshot.job",
-            [ $this, "setDirty" ]
+            'org.openmediavault.conf.service.rsnapshot',
+            [ $this, 'setDirty' ]
         );
         $dispatcher->addListener(
             OMV_NOTIFY_MODIFY,
-            "org.openmediavault.conf.system.sharedfolder",
-            [ $this, "onModifySharedFolder" ]
+            'org.openmediavault.conf.system.sharedfolder',
+            [ $this, 'onModifySharedFolder' ]
         );
     }
 }

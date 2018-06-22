@@ -21,41 +21,14 @@
 
 set -e
 
-. /etc/default/openmediavault
 . /usr/share/openmediavault/scripts/helper-functions
 
-OMV_RSNAPSHOT_CONFS_DIR=${OMV_RSNAPSHOT_CONFS_DIR:-"/var/lib/openmediavault/rsnapshot.d"}
-OMV_RSNAPSHOT_CRONSCRIPT=${OMV_RSNAPSHOT_CRONSCRIPT:-"/var/lib/openmediavault/cron.d/rsnapshot"}
+SERVICE_XPATH_NAME="rsnapshot"
+SERVICE_XPATH="/config/services/${SERVICE_XPATH_NAME}"
 
-remove_action() {
-    # Activate trigger to purge cached files.
-    dpkg-trigger update-fixperms
-}
-
-case "$1" in
-    purge)
-        remove_action
-        # Remove the configuration data.
-        omv_config_delete "/config/services/rsnapshot"
-        # remove rsnapshot confs
-        rm -rf ${OMV_RSNAPSHOT_CONFS_DIR}
-        # remove cron.d file
-        rm -f /etc/cron.d/openmediavault-rsnapshot
-    ;;
-
-    remove)
-        remove_action
-        # disable rsnapshot cron script
-        echo "exit 0" > ${OMV_RSNAPSHOT_CRONSCRIPT}
-    ;;
-
-    upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
-    ;;
-
-    *)
-        echo "postrm called with unknown argument '$1'" >&2
-        exit 1
-    ;;
-esac
+if ! omv_config_exists "${SERVICE_XPATH}"; then
+    omv_config_add_node "/config/services" "${SERVICE_XPATH_NAME}"
+    omv_config_add_node "${SERVICE_XPATH}" "jobs"
+fi
 
 exit 0

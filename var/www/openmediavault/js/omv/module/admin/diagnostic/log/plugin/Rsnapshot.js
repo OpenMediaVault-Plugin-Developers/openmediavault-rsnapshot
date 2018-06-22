@@ -4,7 +4,7 @@
 * @author    Julian Kalinowski <julakali@gmail.com>
 * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
 * @copyright Copyright (c) 2014 Julian Kalinowski
-* @copyright Copyright (c) 2015-2017 OpenMediaVault Plugin Developers
+* @copyright Copyright (c) 2015-2018 OpenMediaVault Plugin Developers
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -23,31 +23,31 @@
 // require("js/omv/module/admin/diagnostic/log/plugin/Plugin.js")
 // require("js/omv/util/Format.js")
 
-Ext.define("OMV.module.admin.diagnostic.log.plugin.Rsnapshot", {
-    extend : "OMV.module.admin.diagnostic.log.plugin.Plugin",
-    alias  : "omv.plugin.diagnostic.log.rsnapshot",
+Ext.define('OMV.module.admin.diagnostic.log.plugin.Rsnapshot', {
+    extend: 'OMV.module.admin.diagnostic.log.plugin.Plugin',
+    alias: 'omv.plugin.diagnostic.log.rsnapshot',
 
-    id       : "rsnapshot",
-    text     : _("Rsnapshot (Backup)"),
-    stateful : true,
-    stateId  : "e61b7810-7ee4-11e3-baa7-0800200c9a66",
-    columns  : [{
-        text      : _("Date & Time"),
-        sortable  : true,
-        dataIndex : "date",
-        id        : "date",
-        renderer  : OMV.util.Format.localeTimeRenderer()
+    id: 'rsnapshot',
+    text: _('Rsnapshot (Backup)'),
+    stateful: true,
+    stateId: 'e61b7810-7ee4-11e3-baa7-0800200c9a66',
+    columns: [{
+        text: _('Date & Time'),
+        sortable: true,
+        dataIndex: 'date',
+        id: 'date',
+        renderer: OMV.util.Format.localeTimeRenderer()
     },{
-        text      : _("Message"),
-        sortable  : true,
-        dataIndex : "message",
-        id        : "message"
+        text: _('Message'),
+        sortable: true,
+        dataIndex: 'message',
+        id: 'message'
     }],
-    rpcParams : {
-        id : "rsnapshot"
+    rpcParams: {
+        id: 'rsnapshot'
     },
-    rpcFields : [
-        { name : "date", type : "string" },
-        { name : "message", type : "string" }
+    rpcFields: [
+        { name: 'date', type: 'string' },
+        { name: 'message', type: 'string' }
     ]
 });

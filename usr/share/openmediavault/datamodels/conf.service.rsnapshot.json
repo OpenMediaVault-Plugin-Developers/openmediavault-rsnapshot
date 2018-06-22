@@ -1,6 +1,6 @@
 {
 	"type": "config",
-	"id": "conf.service.rsnapshot.job",
+	"id": "conf.service.rsnapshot",
 	"title": "rsnapshot job",
 	"queryinfo": {
 		"xpath": "//services/rsnapshot/jobs/job",
@@ -20,25 +20,27 @@
 			"type": "string",
 			"default": ""
 		},
-		"targetfolderref": {
-			"type": "string",
-			"format": "uuidv4"
-		},
-		"targetfoldername": {
-			"type": "string",
-			"default": ""
+		"dest": {
+			"type": "object",
+			"properties": {
+				"sharedfolderref": {
+					"type": "string",
+					"format": "uuidv4"
+				}
+			}
 		},
 		"onefs": {
 			"type": "boolean",
 			"default": false
 		},
-		"sourcefolderref": {
-			"type": "string",
-			"format": "uuidv4"
-		},
-		"sourcefoldername": {
-			"type": "string",
-			"default": ""
+		"src": {
+			"type": "object",
+			"properties": {
+				"sharedfolderref": {
+					"type": "string",
+					"format": "uuidv4"
+				}
+			}
 		},
 		"hourly": {
 			"type": "integer",

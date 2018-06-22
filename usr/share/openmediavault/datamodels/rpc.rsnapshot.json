@@ -17,7 +17,7 @@
 				"type": "string",
 				"required": true
 			},
-			"targetfolderref": {
+			"destsharedfolderref": {
 				"type": "string",
 				"format": "uuidv4",
 				"required": true
@@ -26,7 +26,7 @@
 				"type": "boolean",
 				"required": true
 			},
-			"sourcefolderref": {
+			"srcsharedfolderref": {
 				"type": "string",
 				"format": "uuidv4",
 				"required": true
