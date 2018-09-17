@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (4.2.1) stable; urgency=low
+
+  * Fix Github issue #22 - sharedfoldersrc is not a uuid
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 17 Sep 2018 18:51:54 -0500
+
 openmediavault-rsnapshot (4.2) stable; urgency=low
 
   * Fix shared folder references do not have sharedfolderref in name -
