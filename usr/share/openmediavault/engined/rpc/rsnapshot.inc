@@ -100,7 +100,7 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
         $db = \OMV\Config\Database::getInstance();
         $object = $db->get('conf.service.rsnapshot', $params['uuid']);
         $object->copy('src.sharedfolderref', 'srcsharedfolderref');
-		$object->copy('dest.sharedfolderref', 'destsharedfolderref');
+        $object->copy('dest.sharedfolderref', 'destsharedfolderref');
         return $object->getAssoc();
     }
 
@@ -122,7 +122,7 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
         $object = new \OMV\Config\ConfigObject('conf.service.rsnapshot');
         $object->setAssoc($params, TRUE, TRUE);
         $object->set('src.sharedfolderref', $params['srcsharedfolderref']);
-		$object->set('dest.sharedfolderref', $params['destsharedfolderref']);
+        $object->set('dest.sharedfolderref', $params['destsharedfolderref']);
         // Set the configuration object.
         $db = \OMV\Config\Database::getInstance();
         $db->set($object);

@@ -35,14 +35,8 @@
  */
 Ext.define('OMV.module.admin.service.rsnapshot.Job', {
     extend: 'OMV.workspace.window.Form',
-    requires: [
-        'OMV.data.Store',
-        'OMV.data.Model',
-        'OMV.data.proxy.Rpc',
-        'OMV.form.field.SharedFolderComboBox',
-        'OMV.form.field.GroupComboBox'
-    ],
     uses: [
+        'OMV.form.field.SharedFolderComboBox',
         'OMV.workspace.window.plugin.ConfigObject'
     ],
 
