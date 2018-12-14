@@ -103,6 +103,14 @@
 		"rsyncargs": {
 			"type": "string",
 			"default": ""
+		},
+		"cmd_preexec": {
+			"type": "string",
+			"default": ""
+		},
+		"cmd_postexec": {
+			"type": "string",
+			"default": ""
 		}
 	}
 }

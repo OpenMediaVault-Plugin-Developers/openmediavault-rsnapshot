@@ -78,6 +78,14 @@
 			"rsyncargs": {
 				"type": "string",
 				"required": false
+			},
+			"cmd_preexec": {
+				"type": "string",
+				"required": false
+			},
+			"cmd_postexec": {
+				"type": "string",
+				"required": false
 			}
 		}
 	}

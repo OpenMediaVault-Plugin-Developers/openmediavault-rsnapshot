@@ -192,6 +192,24 @@ Ext.define('OMV.module.admin.service.rsnapshot.Job', {
                 ptype: 'fieldinfo',
                 text: _('Default rsync long args. All rsync commands have at least these options set. Default is "--delete --numeric-ids --delete-excluded". Please check the <a href="http://www.samba.org/ftp/rsync/rsync.html" target="_blank">manual page</a> for more details.')
             }]
+        },{
+            xtype: 'textfield',
+            name: 'cmd_preexec',
+            fieldLabel: _('Pre-exec command'),
+            allowBlank: true,
+            plugins: [{
+                ptype: 'fieldinfo',
+                text: _('Command to be run before rsnapshot execution.')
+            }]
+        },{
+            xtype: 'textfield',
+            name: 'cmd_postexec',
+            fieldLabel: _('Post-exec command'),
+            allowBlank: true,
+            plugins: [{
+                ptype: 'fieldinfo',
+                text: _('Command to be run after rsnapshot execution.')
+            }]
         }];
     }
 });

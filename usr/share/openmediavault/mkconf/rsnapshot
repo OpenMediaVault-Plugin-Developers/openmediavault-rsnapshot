@@ -123,6 +123,8 @@ xmlstarlet sel -t \
 		-o "loglevel	2" -n \
 		-o "cmd_cp	/bin/cp" -n \
 		-o "cmd_rm		/bin/rm" -n \
+		-i "string-length(cmd_preexec) > 0" -o "cmd_preexec   " -v "cmd_preexec" -n -b \
+		-i "string-length(cmd_postexec) > 0" -o "cmd_postexec  " -v "cmd_postexec" -n -b \
 		-o "cmd_rsync	/usr/bin/rsync" -n \
 		-o "cmd_logger	/usr/bin/logger" -n \
 		-o "logfile		${OMV_RSNAPSHOT_LOGFILE}" -n \

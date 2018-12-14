@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-rsnapshot package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 10:10-0500\n"
+"POT-Creation-Date: 2018-12-14 11:41-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,13 +23,19 @@ msgstr ""
 msgid "Backup jobs"
 msgstr ""
 
+msgid "Command to be run after rsnapshot execution."
+msgstr ""
+
+msgid "Command to be run before rsnapshot execution."
+msgstr ""
+
 msgid "Comment"
 msgstr ""
 
 msgid "Date & Time"
 msgstr ""
 
-msgid "Default rsync long args. All rsync commands have at least these options set. Default is '--delete --numeric-ids --delete-excluded'. Please check the <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual page</a> for more details."
+msgid "Default rsync long args. All rsync commands have at least these options set. Default is \"--delete --numeric-ids --delete-excluded\". Please check the <a href=\"http://www.samba.org/ftp/rsync/rsync.html\" target=\"_blank\">manual page</a> for more details."
 msgstr ""
 
 msgid "Edit backup job"
@@ -65,7 +71,7 @@ msgstr ""
 msgid "Number of monthly backups to keep. After n backups are created, the first one will be overwritten."
 msgstr ""
 
-msgid "Number of rsync tries. If you experience any network problems or network card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input' errors, for example, set this to a higher value to have the rsync operation re-tried"
+msgid "Number of rsync tries. If you experience any network problems or network card issues that tend to cause ssh to crap-out with \"Corrupted MAC on input\" errors, for example, set this to a higher value to have the rsync operation re-tried"
 msgstr ""
 
 msgid "Number of weekly backups to keep. After n backups are created, the first one will be overwritten."
@@ -75,6 +81,12 @@ msgid "Number of yearly backups to keep. After n backups are created, the first 
 msgstr ""
 
 msgid "One filesystem only"
+msgstr ""
+
+msgid "Post-exec command"
+msgstr ""
+
+msgid "Pre-exec command"
 msgstr ""
 
 msgid "Retain daily"
