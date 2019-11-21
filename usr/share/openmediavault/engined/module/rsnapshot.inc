@@ -4,7 +4,7 @@
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @author    Julian Kalinowski <julakali@gmail.com>
  * @copyright Copyright (c) 2013-2014 Julian Kalinowski
- * @copyright Copyright (c) 2015-2018 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2015-2019 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ class OMVModuleRSnapshot extends \OMV\Engine\Module\ServiceAbstract
      */
     public function applyConfig()
     {
-        $cmd = new \OMV\System\Process('omv-mkconf', 'rsnapshot');
+        $cmd = new \OMV\System\Process('usr/sbin/omv-rsnapshot-conf');
         $cmd->setRedirect2to1(TRUE);
         $cmd->execute();
     }

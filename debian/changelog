@@ -1,8 +1,9 @@
-openmediavault-rsnapshot (4.2.2) UNRELEASED; urgency=medium
+openmediavault-rsnapshot (5.0) stable; urgency=low
 
   * Add pre-exec and post-exec script fields
+  * Update for OMV 5.x
 
- -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 14 Dec 2018 11:35:04 -0600
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 21 Nov 2019 18:35:04 -0600
 
 openmediavault-rsnapshot (4.2.1) stable; urgency=low
 

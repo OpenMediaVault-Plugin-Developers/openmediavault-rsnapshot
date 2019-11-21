@@ -40,7 +40,7 @@ case "$1" in
             omv-confdbadm migrate "conf.service.rsnapshot" "${2}"
         fi
 
-        omv-mkconf rsnapshot
+        /usr/sbin/omv-rsnapshot-conf
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
