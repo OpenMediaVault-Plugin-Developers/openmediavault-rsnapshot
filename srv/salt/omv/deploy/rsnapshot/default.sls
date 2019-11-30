@@ -15,6 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-remove_openmediavault_rsnapshot_default:
-  file.absent:
-    - name: "/etc/default/openmediavault-rsnapshot"
+update_openmediavault_rsnapshot_config:
+  cmd.run:
+    - name: "/usr/sbin/omv-rsnapshot-conf"

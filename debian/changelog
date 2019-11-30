@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (5.0.1) stable; urgency=low
+
+  * Fix Github issue #25
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 30 Nov 2019 08:14:50 -0600
+
 openmediavault-rsnapshot (5.0) stable; urgency=low
 
   * Add pre-exec and post-exec script fields

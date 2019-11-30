@@ -62,13 +62,14 @@ mkdir -p ${OMV_RSNAPSHOT_CONFS_DIR}
 rm -f ${OMV_RSNAPSHOT_CONFS_DIR}/rsnapshot-*
 
 # Create a new rsnapshot script containing argument check
-echo "\
-#!/bin/bash\n\
-if [ -z \"\$1\" ]; then\n\
-	echo \"No argument given. Should be one of: hourly,daily,weekly,monthly,yearly. UUID of backup job can be passed as second argument to execute a single job.\"\n\
-	exit 1\n\
+cat <<EOF > ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
+#!/bin/bash
+if [ -z "\$1" ]; then
+	echo "No argument given. Should be one of: hourly,daily,weekly,monthly,yearly. UUID of backup job can be passed as second argument to execute a single job."
+	exit 1
 fi
-mail=false" > ${OMV_RSNAPSHOT_CRONSCRIPT}.tmp
+mail=false
+EOF
 
 # void omv_get_mount_point (char *uuid)
 # Get the mount point of the given shared folder

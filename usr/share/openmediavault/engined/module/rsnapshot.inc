@@ -30,17 +30,6 @@ class OMVModuleRSnapshot extends \OMV\Engine\Module\ServiceAbstract
     }
 
     /**
-     * Generate the configuration.
-     * @throw E_EXEC_FAILED
-     */
-    public function applyConfig()
-    {
-        $cmd = new \OMV\System\Process('usr/sbin/omv-rsnapshot-conf');
-        $cmd->setRedirect2to1(TRUE);
-        $cmd->execute();
-    }
-
-    /**
      * Helper function to find out whether the given shared folder
      * configuration object is used. If it is used, then mark the
      * module as dirty.
