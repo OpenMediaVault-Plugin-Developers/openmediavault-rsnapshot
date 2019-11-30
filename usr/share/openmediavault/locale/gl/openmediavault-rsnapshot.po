@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
 # Miguel Anxo Bouzada <mbouzada@gmail.com>, 2015
@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 10:10-0500\n"
-"PO-Revision-Date: 2017-09-23 20:34+0000\n"
+"POT-Creation-Date: 2018-12-14 11:41-0600\n"
+"PO-Revision-Date: 2018-12-14 17:41+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Galician (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,12 @@ msgstr "Engadir un traballo de copia de seguranza"
 msgid "Backup jobs"
 msgstr "Traballos de copia de seguranza"
 
+msgid "Command to be run after rsnapshot execution."
+msgstr ""
+
+msgid "Command to be run before rsnapshot execution."
+msgstr ""
+
 msgid "Comment"
 msgstr "Comentario"
 
@@ -32,10 +38,10 @@ msgstr ""
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
-" Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
-"href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
-"page</a> for more details."
-msgstr "Argumentos longos predeterminados de rsyncs. Todas as ordes de rsync deben ter polo menos esta opción. «--delete --numeric-ids --delete-excluded». Lea a <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>páxina do manual</a> para obter máis detalles."
+" Default is \"--delete --numeric-ids --delete-excluded\". Please check the "
+"<a href=\"http://www.samba.org/ftp/rsync/rsync.html\" "
+"target=\"_blank\">manual page</a> for more details."
+msgstr ""
 
 msgid "Edit backup job"
 msgstr "Editar un traballo de copia de seguranza"
@@ -80,10 +86,10 @@ msgstr "Número de copias de seguranza mensuais que facer. Após n copias de seg
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
-"card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
-" errors, for example, set this to a higher value to have the rsync operation"
-" re-tried"
-msgstr "Número de intentos de rsync. Se ten algún problema coa rede ou coa tarxeta de rede, tendentes, por exemplo, a ensuciar ssh cunha MAC estragada na entrada de erros, estabeleza isto a un valor máis alto para provocar novos intentos de rsync"
+"card issues that tend to cause ssh to crap-out with \"Corrupted MAC on "
+"input\" errors, for example, set this to a higher value to have the rsync "
+"operation re-tried"
+msgstr ""
 
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
@@ -97,6 +103,12 @@ msgstr "Número de copias de seguranza anuais que facer. Após n copias de segur
 
 msgid "One filesystem only"
 msgstr "Só un sistema de ficheiros"
+
+msgid "Post-exec command"
+msgstr ""
+
+msgid "Pre-exec command"
+msgstr ""
 
 msgid "Retain daily"
 msgstr "Gardar cada día"

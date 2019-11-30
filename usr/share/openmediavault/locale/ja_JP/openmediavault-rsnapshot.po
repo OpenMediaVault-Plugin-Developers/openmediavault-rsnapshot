@@ -1,15 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
-# Toshihiro Kan <kansuke4649@gmail.com>, 2016
+# Toshihiro Kan <kansuke4649@gmail.com>, 2016,2019
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 10:10-0500\n"
-"PO-Revision-Date: 2017-09-20 00:08+0000\n"
+"POT-Creation-Date: 2018-12-14 11:41-0600\n"
+"PO-Revision-Date: 2019-01-07 04:29+0000\n"
 "Last-Translator: Toshihiro Kan <kansuke4649@gmail.com>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,12 @@ msgstr "バックアップジョブの追加"
 msgid "Backup jobs"
 msgstr "バックアップジョブ"
 
+msgid "Command to be run after rsnapshot execution."
+msgstr "rsnapshot実行後に実行するコマンド。"
+
+msgid "Command to be run before rsnapshot execution."
+msgstr "rsnapshot実行前に実行するコマンド"
+
 msgid "Comment"
 msgstr "コメント"
 
@@ -32,10 +38,10 @@ msgstr "日付 & 時間"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
-" Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
-"href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
-"page</a> for more details."
-msgstr "デフォルトのrsyncの長い引数。すべてのrsyncコマンドのうち、少なくともこれらのオプションは設定してください。デフォルトは '--delete --numeric-ids --delete-excluded' です。詳細は <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>マニュアルページ</a> を参照してください。"
+" Default is \"--delete --numeric-ids --delete-excluded\". Please check the "
+"<a href=\"http://www.samba.org/ftp/rsync/rsync.html\" "
+"target=\"_blank\">manual page</a> for more details."
+msgstr "デフォルトのrsync long args。 すべてのrsyncコマンドには、少なくともこれらのオプションが設定されます。 デフォルトは \"--delete --numeric-ids --delete-excluded\"です。 詳細については<a href=\"http://www.samba.org/ftp/rsync/rsync.html\" target=\"_blank\">マニュアルページ</a>を確認してください。"
 
 msgid "Edit backup job"
 msgstr "バックアップジョブの編集"
@@ -80,10 +86,10 @@ msgstr "月ごとのバックアップを保持する数です。Nのバック�
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
-"card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
-" errors, for example, set this to a higher value to have the rsync operation"
-" re-tried"
-msgstr "rsyncを試行する回数です。もし、ネットワークの問題やネットワークカードの問題のいずれかが発生した場合、SSHが'Corrupted MAC on input' エラーを起こすことがあります。たとえば、rsyncの操作のリトライを高い値に設定した場合など。"
+"card issues that tend to cause ssh to crap-out with \"Corrupted MAC on "
+"input\" errors, for example, set this to a higher value to have the rsync "
+"operation re-tried"
+msgstr "rsyncの試行回数。たとえば、\"Corrupted MAC on input\" エラーが発生してsshが切断されるネットワークの問題またはネットワークカードの問題が発生した場合は、これを高い値に設定してrsync操作を再試行してください。"
 
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
@@ -97,6 +103,12 @@ msgstr "年ごとのバックアップを保持する数です。Nのバック�
 
 msgid "One filesystem only"
 msgstr "1つのファイルシステムのみ"
+
+msgid "Post-exec command"
+msgstr "実行後のコマンド"
+
+msgid "Pre-exec command"
+msgstr "実行前のコマンド"
 
 msgid "Retain daily"
 msgstr "日ごとに保持"

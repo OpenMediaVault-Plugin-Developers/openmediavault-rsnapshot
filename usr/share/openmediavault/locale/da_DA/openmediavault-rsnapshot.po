@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
 # Stefan Thrane Overby <stoverby@gmail.com>, 2014-2016
@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 10:10-0500\n"
-"PO-Revision-Date: 2017-09-19 22:52+0000\n"
-"Last-Translator: Stefan Thrane Overby <stoverby@gmail.com>\n"
+"POT-Creation-Date: 2018-12-14 11:41-0600\n"
+"PO-Revision-Date: 2018-12-14 17:41+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,6 +24,12 @@ msgstr "Tilføj backup opgave"
 msgid "Backup jobs"
 msgstr "Backup opgaver"
 
+msgid "Command to be run after rsnapshot execution."
+msgstr ""
+
+msgid "Command to be run before rsnapshot execution."
+msgstr ""
+
 msgid "Comment"
 msgstr "Kommentar"
 
@@ -32,10 +38,10 @@ msgstr "Dato & Tid"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
-" Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
-"href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
-"page</a> for more details."
-msgstr "Standard rsync lange argumenter. Alle rsync kommandoer har mindst disse valgmuligheder indstilt. Standard er '--delete --numeric-ids --delete-excluded'. Kontroller venligst  <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual page</a> for flere detajler."
+" Default is \"--delete --numeric-ids --delete-excluded\". Please check the "
+"<a href=\"http://www.samba.org/ftp/rsync/rsync.html\" "
+"target=\"_blank\">manual page</a> for more details."
+msgstr ""
 
 msgid "Edit backup job"
 msgstr "Rediger backup opgave"
@@ -80,10 +86,10 @@ msgstr "Antal af månedlige backups, der skal beholdes. Efter n backups er opret
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
-"card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
-" errors, for example, set this to a higher value to have the rsync operation"
-" re-tried"
-msgstr "Antal af rsync forsøg. Hvis du oplever nogle netværks problemer eller netværkskort problemstillinger der får ssh til at opføre sig underlig med 'Korrupt MAC på input' fejl, som eksempel, så indstil denne værdi til en større for at få rsync opgaven til at forsøge igen"
+"card issues that tend to cause ssh to crap-out with \"Corrupted MAC on "
+"input\" errors, for example, set this to a higher value to have the rsync "
+"operation re-tried"
+msgstr ""
 
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
@@ -97,6 +103,12 @@ msgstr "Antal af årlige backups, der skal beholdes. Efter n backups er oprettet
 
 msgid "One filesystem only"
 msgstr "Kun et filsystem"
+
+msgid "Post-exec command"
+msgstr ""
+
+msgid "Pre-exec command"
+msgstr ""
 
 msgid "Retain daily"
 msgstr "Bibehold dagligt"

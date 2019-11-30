@@ -1,18 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
-# Axel Cantenys <clexanis@gmail.com>, 2017
+# Axel Cantenys, 2017
 # Christophe Lherieau <skimpax@gmail.com>, 2015
 # luisp <luis.pereira.978+transifex@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 10:10-0500\n"
-"PO-Revision-Date: 2017-11-06 16:30+0000\n"
-"Last-Translator: Axel Cantenys <clexanis@gmail.com>\n"
+"POT-Creation-Date: 2018-12-14 11:41-0600\n"
+"PO-Revision-Date: 2018-12-14 17:41+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,6 +26,12 @@ msgstr "Ajouter un travail de sauvegarde"
 msgid "Backup jobs"
 msgstr "Travaux de sauvegarde"
 
+msgid "Command to be run after rsnapshot execution."
+msgstr ""
+
+msgid "Command to be run before rsnapshot execution."
+msgstr ""
+
 msgid "Comment"
 msgstr "Commentaire"
 
@@ -34,10 +40,10 @@ msgstr "Date et Heures"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
-" Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
-"href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
-"page</a> for more details."
-msgstr "Arguments par défaut de rsync (syntaxe longue). Toutes les commandes rsync ont au minimum ces options configurées. Par défaut : « --delete --numeric-ids --delete-excluded ». Veuillez consulter la <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>page du manuel page</a> pour les détails supplémentaires."
+" Default is \"--delete --numeric-ids --delete-excluded\". Please check the "
+"<a href=\"http://www.samba.org/ftp/rsync/rsync.html\" "
+"target=\"_blank\">manual page</a> for more details."
+msgstr ""
 
 msgid "Edit backup job"
 msgstr "Éditer le travail de sauvegarde"
@@ -82,10 +88,10 @@ msgstr "Nombre de sauvegardes mensuels à conserver. Après avoir créer n sauve
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
-"card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
-" errors, for example, set this to a higher value to have the rsync operation"
-" re-tried"
-msgstr "Nombre d'essais rsync. Si vous rencontrez des problèmes de réseau ou des problèmes de carte réseau qui provoquent une erreur SSH avec des erreurs « MAC corrompues en entrée », par exemple, définissez cette valeur sur une valeur plus \nélevée pour que l'opération rsync soit retestée"
+"card issues that tend to cause ssh to crap-out with \"Corrupted MAC on "
+"input\" errors, for example, set this to a higher value to have the rsync "
+"operation re-tried"
+msgstr ""
 
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
@@ -99,6 +105,12 @@ msgstr "Nombre de sauvegardes annuels à conserver. Après avoir créer n sauveg
 
 msgid "One filesystem only"
 msgstr "Un système de fichiers uniquement"
+
+msgid "Post-exec command"
+msgstr ""
+
+msgid "Pre-exec command"
+msgstr ""
 
 msgid "Retain daily"
 msgstr "Conservation quotidienne"

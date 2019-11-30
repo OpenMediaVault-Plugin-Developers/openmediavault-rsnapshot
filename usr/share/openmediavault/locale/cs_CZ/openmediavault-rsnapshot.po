@@ -1,16 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
 # Matěj Mihal <mejatysek@gmail.com>, 2014
-# Pavel Borecki <pavel.borecki@gmail.com>, 2015-2016
+# Pavel Borecki <pavel.borecki@gmail.com>, 2015-2016,2018
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 10:10-0500\n"
-"PO-Revision-Date: 2017-09-23 19:32+0000\n"
+"POT-Creation-Date: 2018-12-14 11:41-0600\n"
+"PO-Revision-Date: 2018-12-16 19:41+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
@@ -25,6 +25,12 @@ msgstr "Přidat zálohovací úlohu"
 msgid "Backup jobs"
 msgstr "Zálohovací úlohy"
 
+msgid "Command to be run after rsnapshot execution."
+msgstr "Příkaz který spustit po vykonání rsnapshot."
+
+msgid "Command to be run before rsnapshot execution."
+msgstr "Příkaz který spustit před vykonáním rsnapshot."
+
 msgid "Comment"
 msgstr "Komentář"
 
@@ -33,10 +39,10 @@ msgstr "Datum a čas"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
-" Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
-"href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
-"page</a> for more details."
-msgstr "Výchozí parametry pro nástroj rsync v dlouhém tvaru. Všechny jeho implementace podporují alespoň tyto: „--delete --numeric-ids --delete-excluded“. Podrobnosti naleznete v <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manuálové stránce</a>."
+" Default is \"--delete --numeric-ids --delete-excluded\". Please check the "
+"<a href=\"http://www.samba.org/ftp/rsync/rsync.html\" "
+"target=\"_blank\">manual page</a> for more details."
+msgstr "Výchozí parametry pro nástroj rsync v dlouhém tvaru. Všechny jeho implementace podporují alespoň tyto: „--delete --numeric-ids --delete-excluded“. Podrobnosti naleznete v <a href=\"http://www.samba.org/ftp/rsync/rsync.html\" target=\"_blank\">manuálové stránce</a>."
 
 msgid "Edit backup job"
 msgstr "Upravit zálohovací úlohu"
@@ -81,9 +87,9 @@ msgstr "Kolik měsíců nazpět uchovávat zálohu za každý měsíc. Po n zál
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
-"card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
-" errors, for example, set this to a higher value to have the rsync operation"
-" re-tried"
+"card issues that tend to cause ssh to crap-out with \"Corrupted MAC on "
+"input\" errors, for example, set this to a higher value to have the rsync "
+"operation re-tried"
 msgstr "Počet pokusů, než bude zálohování prohlášeno za nezdařené. Pokud se setkáváte s jakýmikoli problémy se sítí nebo rozhraním do ní, které způsobují, že ssh vypisuje chybová hlášení jako například „Corrupted MAC on input“, nastavte zde vyšší počet opakování."
 
 msgid ""
@@ -98,6 +104,12 @@ msgstr "Kolik let nazpět uchovávat zálohu za každý rok. Po n zálohách bud
 
 msgid "One filesystem only"
 msgstr "Pouze jeden souborový systém"
+
+msgid "Post-exec command"
+msgstr "Příkaz po vykonání"
+
+msgid "Pre-exec command"
+msgstr "Příkaz před vykonáním"
 
 msgid "Retain daily"
 msgstr "Ponechávat denních"

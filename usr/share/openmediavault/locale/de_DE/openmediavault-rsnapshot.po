@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
 # Ettore Atalan <atalanttore@googlemail.com>, 2016
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 10:10-0500\n"
-"PO-Revision-Date: 2017-09-21 14:01+0000\n"
+"POT-Creation-Date: 2018-12-14 11:41-0600\n"
+"PO-Revision-Date: 2018-12-14 17:41+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -25,6 +25,12 @@ msgstr "Hinzufügen eines Sicherungsauftrages"
 msgid "Backup jobs"
 msgstr "Sicherungsaufträge"
 
+msgid "Command to be run after rsnapshot execution."
+msgstr ""
+
+msgid "Command to be run before rsnapshot execution."
+msgstr ""
+
 msgid "Comment"
 msgstr "Kommentar"
 
@@ -33,9 +39,9 @@ msgstr "Datum & Zeit"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
-" Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
-"href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
-"page</a> for more details."
+" Default is \"--delete --numeric-ids --delete-excluded\". Please check the "
+"<a href=\"http://www.samba.org/ftp/rsync/rsync.html\" "
+"target=\"_blank\">manual page</a> for more details."
 msgstr ""
 
 msgid "Edit backup job"
@@ -81,9 +87,9 @@ msgstr "Anzahl der zu behaltenden monatlichen Sicherungen. Nachdem n Sicherungen
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
-"card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
-" errors, for example, set this to a higher value to have the rsync operation"
-" re-tried"
+"card issues that tend to cause ssh to crap-out with \"Corrupted MAC on "
+"input\" errors, for example, set this to a higher value to have the rsync "
+"operation re-tried"
 msgstr ""
 
 msgid ""
@@ -98,6 +104,12 @@ msgstr "Anzahl der zu behaltenden jährlichen Sicherungen. Nachdem n Sicherungen
 
 msgid "One filesystem only"
 msgstr "Nur ein Dateisystem"
+
+msgid "Post-exec command"
+msgstr ""
+
+msgid "Pre-exec command"
+msgstr ""
 
 msgid "Retain daily"
 msgstr "Tägliche behalten"

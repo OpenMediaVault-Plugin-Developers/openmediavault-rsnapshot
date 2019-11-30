@@ -1,15 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
-# kochin <kochinc@outlook.com>, 2014,2016
+# kochin <kochinc@outlook.com>, 2014,2016,2019
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-20 10:10-0500\n"
-"PO-Revision-Date: 2017-09-21 14:01+0000\n"
+"POT-Creation-Date: 2018-12-14 11:41-0600\n"
+"PO-Revision-Date: 2019-01-11 16:00+0000\n"
 "Last-Translator: kochin <kochinc@outlook.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,12 @@ msgstr "新增備份工作"
 msgid "Backup jobs"
 msgstr "備份工作"
 
+msgid "Command to be run after rsnapshot execution."
+msgstr "在 rsnapshot 完成後執行的指令。"
+
+msgid "Command to be run before rsnapshot execution."
+msgstr "在 rsnapshot 開始前執行的指令。"
+
 msgid "Comment"
 msgstr "註釋"
 
@@ -32,10 +38,10 @@ msgstr "日期及時間"
 
 msgid ""
 "Default rsync long args. All rsync commands have at least these options set."
-" Default is '--delete --numeric-ids --delete-excluded'. Please check the <a "
-"href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>manual "
-"page</a> for more details."
-msgstr "預設 rsync 長參數。所有的 rsync 指令至少會有這些選項。預設為 '--delete --numeric-ids --delete-excluded'。詳情請查閱 <a href='http://www.samba.org/ftp/rsync/rsync.html' target='_blank'>手冊頁</a>。"
+" Default is \"--delete --numeric-ids --delete-excluded\". Please check the "
+"<a href=\"http://www.samba.org/ftp/rsync/rsync.html\" "
+"target=\"_blank\">manual page</a> for more details."
+msgstr "預設的 rsync 長參數。所有的 rsync 指令會至少有這些選項被設定。預設為 \"--delete --numeric-ids --delete-excluded\"。請參閱 <a href=\"http://www.samba.org/ftp/rsync/rsync.html\" target=\"_blank\">手冊頁</a> 內詳情。"
 
 msgid "Edit backup job"
 msgstr "編輯備份工作"
@@ -80,10 +86,10 @@ msgstr "要保留的每月備份數目。在 n 個備份建立後，第一個備
 
 msgid ""
 "Number of rsync tries. If you experience any network problems or network "
-"card issues that tend to cause ssh to crap-out with 'Corrupted MAC on input'"
-" errors, for example, set this to a higher value to have the rsync operation"
-" re-tried"
-msgstr "Rsync 重試的次數。如果您經驗到任何的網路問題或網路卡困難，通常會讓 ssh 吐出 像是 'Corrupted MAC on input' 的錯誤。將這個設定成較高的數值來讓 rsync 重試作業。"
+"card issues that tend to cause ssh to crap-out with \"Corrupted MAC on "
+"input\" errors, for example, set this to a higher value to have the rsync "
+"operation re-tried"
+msgstr "rsync 重試的次數。例如：若是您經歷到網路或網路卡的問題，造成 ssh 吐出 \"Corrupted MAC on input\" 錯誤，可將這設成較高的值，讓 rsync 重試操作。"
 
 msgid ""
 "Number of weekly backups to keep. After n backups are created, the first one"
@@ -97,6 +103,12 @@ msgstr "要保留的每年備份數目。在 n 個備份建立後，第一個備
 
 msgid "One filesystem only"
 msgstr "只對單一檔案系統"
+
+msgid "Post-exec command"
+msgstr "執行後指令"
+
+msgid "Pre-exec command"
+msgstr "執行前指令"
 
 msgid "Retain daily"
 msgstr "保留每日備份"
