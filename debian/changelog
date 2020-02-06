@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (5.0.2) stable; urgency=low
+
+  * Changes spaces to tabs in config files
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 06 Feb 2020 05:54:50 -0600
+
 openmediavault-rsnapshot (5.0.1) stable; urgency=low
 
   * Fix Github issue #25
