@@ -29,6 +29,7 @@ OMV_RSNAPSHOT_CRONSCRIPT=${OMV_RSNAPSHOT_CRONSCRIPT:-"/var/lib/openmediavault/cr
 
 OMV_RSNAPSHOT_SCRIPTS_MASK=${OMV_RSNAPSHOT_SCRIPTS_MASK:-"755"}
 OMV_RSNAPSHOT_DIRS_MASK=${OMV_RSNAPSHOT_DIRS_MASK:-"2775"}
+OMV_RSNAPSHOT_STARTING_HOUR=${OMV_RSNAPSHOT_STARTING_HOUR:-"2"}
 OMV_RSNAPSHOT_LOGFILE=${OMV_RSNAPSHOT_LOGFILE:-"/var/log/rsnapshot.log"}
 
 # macros for xmlstarlet
@@ -39,6 +40,9 @@ GET_SOURCE_RELDIR=${GET_SOURCE_RELDIR=-m "//system/shares/sharedfolder[uuid=curr
 # rsnapshot path
 RSNAPSHOT=/usr/bin/rsnapshot
 
+hour1=${OMV_RSNAPSHOT_STARTING_HOUR}
+hour2=$(expr ${hour1} + 1)
+
 cat <<EOF > /etc/cron.d/openmediavault-rsnapshot
 # Create cron file
 # This is the cron file for openmediavault-rsnapshot.
@@ -46,10 +50,10 @@ cat <<EOF > /etc/cron.d/openmediavault-rsnapshot
 # the jobs that are configured in the plugin.
 # m h 		dom mon dow user  command
 5 *         * * *           root    /var/lib/openmediavault/cron.d/rsnapshot hourly
-30 3        * * *           root    /var/lib/openmediavault/cron.d/rsnapshot daily
-0  3        * * 1           root    /var/lib/openmediavault/cron.d/rsnapshot weekly
-30 2        1 * *           root    /var/lib/openmediavault/cron.d/rsnapshot monthly
-00 2        1 1 *           root    /var/lib/openmediavault/cron.d/rsnapshot yearly
+30 ${hour2}        * * *           root    /var/lib/openmediavault/cron.d/rsnapshot daily
+0  ${hour2}        * * 1           root    /var/lib/openmediavault/cron.d/rsnapshot weekly
+30 ${hour1}        1 * *           root    /var/lib/openmediavault/cron.d/rsnapshot monthly
+00 ${hour1}        1 1 *           root    /var/lib/openmediavault/cron.d/rsnapshot yearly
 EOF
 
 
