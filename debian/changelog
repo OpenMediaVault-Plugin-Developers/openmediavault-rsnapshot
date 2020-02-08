@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (5.0.3) stable; urgency=low
+
+  * Use OMV_RSNAPSHOT_STARTING_HOUR for starting hour of cron job
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 08 Feb 2020 10:58:22 -0600
+
 openmediavault-rsnapshot (5.0.2) stable; urgency=low
 
   * Changes spaces to tabs in config files
