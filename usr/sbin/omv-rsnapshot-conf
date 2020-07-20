@@ -3,7 +3,7 @@
 # @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
 # @author    Julian Kalinowski <julakali@gmail.com>
 # @copyright Copyright (c) 2013-2014 Julian Kalinowski
-# @copyright Copyright (c) 2015-2019 OpenMediaVault Plugin Developers
+# @copyright Copyright (c) 2015-2020 OpenMediaVault Plugin Developers
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,6 +30,7 @@ OMV_RSNAPSHOT_CRONSCRIPT=${OMV_RSNAPSHOT_CRONSCRIPT:-"/var/lib/openmediavault/cr
 OMV_RSNAPSHOT_SCRIPTS_MASK=${OMV_RSNAPSHOT_SCRIPTS_MASK:-"755"}
 OMV_RSNAPSHOT_DIRS_MASK=${OMV_RSNAPSHOT_DIRS_MASK:-"2775"}
 OMV_RSNAPSHOT_STARTING_HOUR=${OMV_RSNAPSHOT_STARTING_HOUR:-"2"}
+OMV_RSNAPSHOT_DISABLE_CRON=${OMV_RSNAPSHOT_DISABLE_CRON:-"0"}
 OMV_RSNAPSHOT_LOGFILE=${OMV_RSNAPSHOT_LOGFILE:-"/var/log/rsnapshot.log"}
 
 # macros for xmlstarlet
@@ -40,10 +41,12 @@ GET_SOURCE_RELDIR=${GET_SOURCE_RELDIR=-m "//system/shares/sharedfolder[uuid=curr
 # rsnapshot path
 RSNAPSHOT=/usr/bin/rsnapshot
 
-hour1=${OMV_RSNAPSHOT_STARTING_HOUR}
-hour2=$(expr ${hour1} + 1)
+if [ ! "${OMV_RSNAPSHOT_DISABLE_CRON}" = "1" ]; then
 
-cat <<EOF > /etc/cron.d/openmediavault-rsnapshot
+  hour1=${OMV_RSNAPSHOT_STARTING_HOUR}
+  hour2=$(expr ${hour1} + 1)
+
+  cat <<EOF > /etc/cron.d/openmediavault-rsnapshot
 # Create cron file
 # This is the cron file for openmediavault-rsnapshot.
 # The file /var/lib/openmediavault/cron.d/rsnapshot will mirror
@@ -56,6 +59,7 @@ cat <<EOF > /etc/cron.d/openmediavault-rsnapshot
 00 ${hour1}        1 1 *           root    /var/lib/openmediavault/cron.d/rsnapshot yearly
 EOF
 
+fi
 
 # Create the backup jobs. Every job gets its own config file, but their execution
 # is managed through one single bash script that is executed by cron.
@@ -94,13 +98,10 @@ xmlstarlet sel -t \
   while read uuid; do
 	  filename="${OMV_RSNAPSHOT_CONFS_DIR}/rsnapshot-${uuid}.conf"
 
-	  gid=$(omv_config_get "//services/rsnapshot/jobs/job[uuid='${uuid}']/gid")
-
 	  sourcefolderref=$(omv_config_get "//services/rsnapshot/jobs/job[uuid='${uuid}']/src/sharedfolderref")
 
 	  # determine the mountpoint of the source shared folder
 	  mountpoint="$(omv_get_mount_point "${sourcefolderref}")"
-	  sourcedevice="$(cat /etc/mtab | grep -w "${mountpoint}" | awk '{print $1}')"
 	  label="$(lsblk -o mountpoint,label -n | grep -w "${mountpoint}" | awk '{print $2}' | uniq)"
 
 	  if [ -e "${mountpoint}" ] && [ -n "${label}" ]; then

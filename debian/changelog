@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (5.0.4) stable; urgency=low
+
+  * Add environment variable to disable cron job creation
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 20 Jul 2020 07:14:55 -0500
+
 openmediavault-rsnapshot (5.0.3) stable; urgency=low
 
   * Use OMV_RSNAPSHOT_STARTING_HOUR for starting hour of cron job
