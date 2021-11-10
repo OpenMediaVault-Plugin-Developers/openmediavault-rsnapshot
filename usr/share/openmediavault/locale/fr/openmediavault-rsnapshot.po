@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
-# clexanis, 2017
+# Axel Cantenys, 2017
 # Christophe Lherieau <skimpax@gmail.com>, 2015
+# kevin LECLERCQ <nuklearstriker@gmail.com>, 2020
 # luisp <luis.pereira.978+transifex@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-14 11:41-0600\n"
-"PO-Revision-Date: 2018-12-14 17:41+0000\n"
+"POT-Creation-Date: 2021-11-10 10:45-0600\n"
+"PO-Revision-Date: 2021-11-10 16:45+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -20,33 +21,17 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Add backup job"
-msgstr "Ajouter un travail de sauvegarde"
-
-msgid "Backup jobs"
-msgstr "Travaux de sauvegarde"
-
-msgid "Command to be run after rsnapshot execution."
-msgstr ""
-
-msgid "Command to be run before rsnapshot execution."
-msgstr ""
-
 msgid "Comment"
 msgstr "Commentaire"
 
-msgid "Date & Time"
-msgstr "Date et Heures"
-
-msgid ""
-"Default rsync long args. All rsync commands have at least these options set."
-" Default is \"--delete --numeric-ids --delete-excluded\". Please check the "
-"<a href=\"http://www.samba.org/ftp/rsync/rsync.html\" "
-"target=\"_blank\">manual page</a> for more details."
+msgid "Create"
 msgstr ""
 
-msgid "Edit backup job"
-msgstr "Éditer le travail de sauvegarde"
+msgid "Created job."
+msgstr ""
+
+msgid "Edit"
+msgstr ""
 
 msgid "Enable"
 msgstr "Activer"
@@ -57,8 +42,8 @@ msgstr "Activé"
 msgid "Error output only"
 msgstr "Erreur de sortie seulement"
 
-msgid "Execute backup job"
-msgstr "Exécuter le travail de sauvegarde"
+msgid "Execute backup job ..."
+msgstr ""
 
 msgid "Group"
 msgstr "Groupe"
@@ -68,49 +53,14 @@ msgid ""
 "point."
 msgstr "Si cette option est activée, rsync ne couvre pas les partitions du système de fichiers au sein d'un point de sauvegarde."
 
-msgid "Message"
-msgstr "Message"
-
-msgid ""
-"Number of daily backups to keep. After n backups are created, the first one "
-"will be overwritten."
-msgstr "Nombre de sauvegardes quotidiennes à conserver. Après avoir créer n sauvegardes, la première sera écrasée."
-
-msgid ""
-"Number of hourly backups to keep. After n backups are created, the first one"
-" will be overwritten."
-msgstr "Nombre de sauvegardes horaires à conserver. Après avoir créer n sauvegardes, la première sera écrasée."
-
-msgid ""
-"Number of monthly backups to keep. After n backups are created, the first "
-"one will be overwritten."
-msgstr "Nombre de sauvegardes mensuels à conserver. Après avoir créer n sauvegardes, la première sera écrasée."
-
-msgid ""
-"Number of rsync tries. If you experience any network problems or network "
-"card issues that tend to cause ssh to crap-out with \"Corrupted MAC on "
-"input\" errors, for example, set this to a higher value to have the rsync "
-"operation re-tried"
-msgstr ""
-
-msgid ""
-"Number of weekly backups to keep. After n backups are created, the first one"
-" will be overwritten."
-msgstr "Nombre de sauvegardes hebdomadaires à conserver. Après avoir créer n sauvegardes, la première sera écrasée."
-
-msgid ""
-"Number of yearly backups to keep. After n backups are created, the first one"
-" will be overwritten."
-msgstr "Nombre de sauvegardes annuels à conserver. Après avoir créer n sauvegardes, la première sera écrasée."
-
 msgid "One filesystem only"
 msgstr "Un système de fichiers uniquement"
 
 msgid "Post-exec command"
-msgstr ""
+msgstr "Commande post-exécution"
 
 msgid "Pre-exec command"
-msgstr ""
+msgstr "Commande pré-exécution"
 
 msgid "Retain daily"
 msgstr "Conservation quotidienne"
@@ -130,9 +80,6 @@ msgstr "Conservation annuelle"
 msgid "Rsnapshot"
 msgstr "Rsnapshot"
 
-msgid "Rsnapshot (Backup)"
-msgstr "Rsnapshot (Sauvegarde)"
-
 msgid "Rsync long arguments"
 msgstr "Arguments Rsync"
 
@@ -142,10 +89,8 @@ msgstr "Tentatives Rsync"
 msgid "Run"
 msgstr "Exécuter"
 
-msgid ""
-"Show output on error only. If set, no output will be shown on successful "
-"execution.  If no output is generated, no email will be sent if configured."
-msgstr "Envoie un message uniquement en cas d'erreur. Si elle est définie, aucun message ne sera affichée en cas d'exécution réussie. Si aucune message n'est générée, aucun e-mail ne sera envoyé s'il est configuré."
+msgid "Select a group ..."
+msgstr ""
 
 msgid "Source"
 msgstr "Source"
@@ -165,14 +110,17 @@ msgid ""
 "path&gt;</em>"
 msgstr "Le dossier cible utilisé pour les sauvegardes. Les sauvegardes iront dans un sous-dossier <em>localhost/&lt;label du système de fichiers source&gt;/&lt;chemin relatif du dossier source&gt;</em>"
 
-msgid "The shared folder to Backup."
-msgstr "Le dossier partagé à sauvegarder."
+msgid "The shared folder to backup."
+msgstr ""
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
-"Note: This will only change the group of additionally created dirs. The "
+"Note%3A This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr "Cette option spécifie le groupe auquel les répertoires de sauvegarde vont appartenir. Remarque : Cela va seulement changer le groupe des répertoires supplémentaires crées. Les fichiers et répertoires sauvegardés refléteront les permissions d'origine."
+msgstr ""
+
+msgid "Updated job."
+msgstr ""
 
 msgid "n/a"
 msgstr "n/a"

@@ -1,0 +1,62 @@
+version: "1.0"
+type: component
+data:
+  name: omv-services-rsnapshot-job-datatable-page
+  type: datatablePage
+  config:
+    autoReload: false
+    hasSearchField: true
+    stateId: 693bddb2-7765-11e2-8c62-00221568ca88
+    store:
+      proxy:
+        service: Rsnapshot
+        get:
+          method: getList
+    columns:
+      - name: _("Enabled")
+        prop: enable
+        sortable: true
+        cellTemplateName: checkIcon
+        flexGrow: 1
+      - name: _("Source")
+        prop: sourcefoldername
+        flexGrow: 2
+        sortable: true
+      - name: _("Target")
+        prop: targetfoldername
+        flexGrow: 2
+        sortable: true
+      - name: _("Comment")
+        prop: comment
+        flexGrow: 3
+        sortable: true
+    actions:
+      - template: create
+        execute:
+          type: url
+          url: "/services/rsnapshot/create"
+      - template: edit
+        execute:
+          type: url
+          url: "/services/rsnapshot/edit/{{ _selected[0].uuid }}"
+      - template: delete
+        execute:
+          type: request
+          request:
+            service: Rsnapshot
+            method: delete
+            params:
+              uuid: "{{ _selected[0].uuid }}"
+      - text: _("Run")
+        icon: mdi:play-box-outline
+        execute:
+          type: taskDialog
+          taskDialog:
+            config:
+              title: _("Execute backup job ...")
+              startOnInit: true
+              request:
+                service: Rsnapshot
+                method: executeCommand
+                params:
+                  uuid: "{{ _selected[0].uuid }}"

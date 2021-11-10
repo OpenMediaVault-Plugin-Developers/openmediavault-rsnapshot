@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-14 11:41-0600\n"
-"PO-Revision-Date: 2018-12-14 17:41+0000\n"
+"POT-Creation-Date: 2021-11-10 10:45-0600\n"
+"PO-Revision-Date: 2021-11-10 16:45+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -20,33 +20,17 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Add backup job"
-msgstr "Aggiungi un backup"
-
-msgid "Backup jobs"
-msgstr "Operazioni di backup"
-
-msgid "Command to be run after rsnapshot execution."
-msgstr ""
-
-msgid "Command to be run before rsnapshot execution."
-msgstr ""
-
 msgid "Comment"
 msgstr "Commento"
 
-msgid "Date & Time"
-msgstr "Data & Orario"
-
-msgid ""
-"Default rsync long args. All rsync commands have at least these options set."
-" Default is \"--delete --numeric-ids --delete-excluded\". Please check the "
-"<a href=\"http://www.samba.org/ftp/rsync/rsync.html\" "
-"target=\"_blank\">manual page</a> for more details."
+msgid "Create"
 msgstr ""
 
-msgid "Edit backup job"
-msgstr "Modifica un backup"
+msgid "Created job."
+msgstr ""
+
+msgid "Edit"
+msgstr ""
 
 msgid "Enable"
 msgstr "Abilita"
@@ -57,8 +41,8 @@ msgstr "Abilitato"
 msgid "Error output only"
 msgstr "Solo errori di output"
 
-msgid "Execute backup job"
-msgstr "Esegui il backup"
+msgid "Execute backup job ..."
+msgstr ""
 
 msgid "Group"
 msgstr "Gruppo"
@@ -67,41 +51,6 @@ msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
 msgstr "Se questa opzione è abilitata, rsync non includerà altre partizioni del filesystem all'interno di un punto di backup."
-
-msgid "Message"
-msgstr "Messaggio"
-
-msgid ""
-"Number of daily backups to keep. After n backups are created, the first one "
-"will be overwritten."
-msgstr "Numero di backup giornalieri da conservare. Dopo n backup creati, il primo sarà sovrascritto."
-
-msgid ""
-"Number of hourly backups to keep. After n backups are created, the first one"
-" will be overwritten."
-msgstr "Numero di backup orari da conservare. Dopo n backup creati, il primo sarà sovrascritto."
-
-msgid ""
-"Number of monthly backups to keep. After n backups are created, the first "
-"one will be overwritten."
-msgstr "Numero di backup mensili da conservare. Dopo n backup creati, il primo sarà sovrascritto."
-
-msgid ""
-"Number of rsync tries. If you experience any network problems or network "
-"card issues that tend to cause ssh to crap-out with \"Corrupted MAC on "
-"input\" errors, for example, set this to a higher value to have the rsync "
-"operation re-tried"
-msgstr ""
-
-msgid ""
-"Number of weekly backups to keep. After n backups are created, the first one"
-" will be overwritten."
-msgstr "Numero di backup settimanali da conservare. Dopo n backup creati, il primo sarà sovrascritto."
-
-msgid ""
-"Number of yearly backups to keep. After n backups are created, the first one"
-" will be overwritten."
-msgstr "Numero di backup annuali da conservare. Dopo n backup creati, il primo sarà sovrascritto."
 
 msgid "One filesystem only"
 msgstr "Un solo filesystem"
@@ -130,9 +79,6 @@ msgstr "Conservazione annuale"
 msgid "Rsnapshot"
 msgstr "Rsnapshot"
 
-msgid "Rsnapshot (Backup)"
-msgstr "Rsnapshot (Backup)"
-
 msgid "Rsync long arguments"
 msgstr "Argomenti rsync estesi"
 
@@ -142,10 +88,8 @@ msgstr "Tentativi Rsync"
 msgid "Run"
 msgstr "Esegui"
 
-msgid ""
-"Show output on error only. If set, no output will be shown on successful "
-"execution.  If no output is generated, no email will be sent if configured."
-msgstr "Mostra solo errori di output. Se impostato, nessun output verrà mostrato ad esecuzione corretta. Se nessun output è generato, nessuna mail verrà inviata."
+msgid "Select a group ..."
+msgstr ""
 
 msgid "Source"
 msgstr "Sorgente"
@@ -165,14 +109,17 @@ msgid ""
 "path&gt;</em>"
 msgstr "La Cartella utilizzata come destinazione per i backup. I backup andranno in una sotto-cartella <em>localhost/&lt;nome del filesystem sorgente&gt;/&lt;percorso relativo della cartella sorgente&gt;</ em>"
 
-msgid "The shared folder to Backup."
-msgstr "La cartella condivisa di cui eseguire il Backup."
+msgid "The shared folder to backup."
+msgstr ""
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
-"Note: This will only change the group of additionally created dirs. The "
+"Note%3A This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr "Questa opzione specifica il gruppo a cui apparterranno le cartelle di backup. Nota: Verrà cambiato solo il gruppo delle cartelle aggiuntive. I file e le directory di backup rispecchieranno i permessi originali."
+msgstr ""
+
+msgid "Updated job."
+msgstr ""
 
 msgid "n/a"
 msgstr "n/d"

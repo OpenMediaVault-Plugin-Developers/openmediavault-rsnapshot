@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
+# Jonatan Nyberg <jonatan@autistici.org>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-14 11:41-0600\n"
-"PO-Revision-Date: 2018-12-14 17:41+0000\n"
+"POT-Creation-Date: 2021-11-10 10:45-0600\n"
+"PO-Revision-Date: 2021-11-10 16:45+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -17,158 +18,105 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Add backup job"
-msgstr ""
-
-msgid "Backup jobs"
-msgstr ""
-
-msgid "Command to be run after rsnapshot execution."
-msgstr ""
-
-msgid "Command to be run before rsnapshot execution."
-msgstr ""
-
 msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Create"
 msgstr ""
 
-msgid "Date & Time"
+msgid "Created job."
 msgstr ""
 
-msgid ""
-"Default rsync long args. All rsync commands have at least these options set."
-" Default is \"--delete --numeric-ids --delete-excluded\". Please check the "
-"<a href=\"http://www.samba.org/ftp/rsync/rsync.html\" "
-"target=\"_blank\">manual page</a> for more details."
-msgstr ""
-
-msgid "Edit backup job"
+msgid "Edit"
 msgstr ""
 
 msgid "Enable"
-msgstr ""
+msgstr "Aktivera"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Aktiverad"
 
 msgid "Error output only"
-msgstr ""
+msgstr "Endast felutmatning"
 
-msgid "Execute backup job"
+msgid "Execute backup job ..."
 msgstr ""
 
 msgid "Group"
-msgstr ""
+msgstr "Grupp"
 
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr ""
-
-msgid "Message"
-msgstr ""
-
-msgid ""
-"Number of daily backups to keep. After n backups are created, the first one "
-"will be overwritten."
-msgstr ""
-
-msgid ""
-"Number of hourly backups to keep. After n backups are created, the first one"
-" will be overwritten."
-msgstr ""
-
-msgid ""
-"Number of monthly backups to keep. After n backups are created, the first "
-"one will be overwritten."
-msgstr ""
-
-msgid ""
-"Number of rsync tries. If you experience any network problems or network "
-"card issues that tend to cause ssh to crap-out with \"Corrupted MAC on "
-"input\" errors, for example, set this to a higher value to have the rsync "
-"operation re-tried"
-msgstr ""
-
-msgid ""
-"Number of weekly backups to keep. After n backups are created, the first one"
-" will be overwritten."
-msgstr ""
-
-msgid ""
-"Number of yearly backups to keep. After n backups are created, the first one"
-" will be overwritten."
-msgstr ""
+msgstr "Om detta är aktiverat spänner rsync inte över filsystemspartitioner inom en säkerhetskopieringspunkt."
 
 msgid "One filesystem only"
-msgstr ""
+msgstr "Endast ett filsystem"
 
 msgid "Post-exec command"
-msgstr ""
+msgstr "Kommando efter körning"
 
 msgid "Pre-exec command"
-msgstr ""
+msgstr "Kommando före körning"
 
 msgid "Retain daily"
-msgstr ""
+msgstr "Behåll dagligen"
 
 msgid "Retain hourly"
-msgstr ""
+msgstr "Behåll varje timme"
 
 msgid "Retain monthly"
-msgstr ""
+msgstr "Behåll varje månad"
 
 msgid "Retain weekly"
-msgstr ""
+msgstr "Behåll varje vecka"
 
 msgid "Retain yearly"
-msgstr ""
+msgstr "Behåll varje år"
 
 msgid "Rsnapshot"
-msgstr ""
-
-msgid "Rsnapshot (Backup)"
-msgstr ""
+msgstr "Rsnapshot"
 
 msgid "Rsync long arguments"
-msgstr ""
+msgstr "Rsync långa argument"
 
 msgid "Rsync tries"
-msgstr ""
+msgstr "Rsync försöker"
 
 msgid "Run"
-msgstr ""
+msgstr "Kör"
 
-msgid ""
-"Show output on error only. If set, no output will be shown on successful "
-"execution.  If no output is generated, no email will be sent if configured."
+msgid "Select a group ..."
 msgstr ""
 
 msgid "Source"
-msgstr ""
+msgstr "Källa"
 
 msgid "Source folder"
-msgstr ""
+msgstr "Källmapp"
 
 msgid "Target"
-msgstr ""
+msgstr "Mål"
 
 msgid "Target folder"
-msgstr ""
+msgstr "Målmapp"
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
 "<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
 "path&gt;</em>"
-msgstr ""
+msgstr "Mappen som används som säkerhetskopia. Säkerhetskopior går till en undermapp <em>localhost/&lt;label för källfilssystem&gt;/&lt;källmapp relativ sökväg&gt;</em>"
 
-msgid "The shared folder to Backup."
+msgid "The shared folder to backup."
 msgstr ""
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
-"Note: This will only change the group of additionally created dirs. The "
+"Note%3A This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
+msgstr ""
+
+msgid "Updated job."
 msgstr ""
 
 msgid "n/a"

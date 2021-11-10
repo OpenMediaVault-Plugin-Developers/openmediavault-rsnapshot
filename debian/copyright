@@ -7,12 +7,5 @@ Copyright: 2013-2014 Julian Kalinowski <julakali@gmail.com>
 License: GPL-3
 
 Files: *
-Copyright: 2014-2020 openmediavault plugin developers <plugins@omv-extras.org>
+Copyright: 2014-2021 openmediavault plugin developers <plugins@omv-extras.org>
 License: GPL-3
-
-Files: /var/www/openmediavault/images/rsnapshot.png
-       /var/www/openmediavault/images/rsnapshot.svg
-Copyright: Brankic1979 <http://www.brankic1979.com>
-License: permissive
- You may use this icon set for both personal and commercial use, which means
- this resource can be used in any project without worrying about licensing.

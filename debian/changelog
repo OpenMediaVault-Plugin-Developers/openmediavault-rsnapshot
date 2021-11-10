@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (6.0) stable; urgency=low
+
+  * Update for OMV 6.x
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 10 Nov 2021 08:09:13 -0600
+
 openmediavault-rsnapshot (5.0.4) stable; urgency=low
 
   * Add environment variable to disable cron job creation

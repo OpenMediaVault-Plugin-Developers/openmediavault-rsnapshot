@@ -1,0 +1,141 @@
+version: "1.0"
+type: component
+data:
+  name: omv-services-rsnapshot-job-form-page
+  type: formPage
+  config:
+    request:
+      service: Rsnapshot
+      get:
+        method: get
+        params:
+          uuid: "{{ _routeParams.uuid }}"
+      post:
+        method: set
+    fields:
+      - type: confObjUuid
+      - type: checkbox
+        name: enable
+        label: _("Enable")
+        value: true
+      - type: textInput
+        name: comment
+        label: _("Comment")
+      - type: sharedFolderSelect
+        name: srcsharedfolderref
+        label: _("Source folder")
+        hint: _("The shared folder to backup.")
+      - type: checkbox
+        name: onefs
+        label: _("One filesystem only")
+        value: false
+        hint: _("If this is enabled, rsync won't span filesystem partitions within a backup point.")
+      - type: sharedFolderSelect
+        name: destsharedfolderref
+        label: _("Target folder")
+        hint: _("The Folder used as target for backups. Backups will go into a sub-folder <em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative path&gt;</em>")
+      - type: numberInput
+        name: hourly
+        label: _("Retain hourly")
+        value: 0
+        hint: _('Number of hourly backups to keep. After n backups are created, the first one will be overwritten.')
+        validators:
+          min: 0
+          max: 999
+          patternType: integer
+          required: true
+      - type: numberInput
+        name: daily
+        label: _("Retain daily")
+        value: 7
+        hint: _('Number of daily backups to keep. After n backups are created, the first one will be overwritten.')
+        validators:
+          min: 0
+          max: 999
+          patternType: integer
+          required: true
+      - type: numberInput
+        name: weekly
+        label: _("Retain weekly")
+        value: 4
+        hint: _('Number of weekly backups to keep. After n backups are created, the first one will be overwritten.')
+        validators:
+          min: 0
+          max: 999
+          patternType: integer
+          required: true
+      - type: numberInput
+        name: monthly
+        label: _("Retain monthly")
+        value: 3
+        hint: _('Number of monthly backups to keep. After n backups are created, the first one will be overwritten.')
+        validators:
+          min: 0
+          max: 999
+          patternType: integer
+          required: true
+      - type: numberInput
+        name: yearly
+        label: _("Retain yearly")
+        value: 0
+        hint: _('Number of yearly backups to keep. After n backups are created, the first one will be overwritten.')
+        validators:
+          min: 0
+          max: 99
+          patternType: integer
+          required: true
+      - type: numberInput
+        name: numtries
+        label: _("Rsync tries")
+        value: 1
+        hint: _('Number of rsync tries. If you experience any network problems or network card issues that tend to cause ssh to crap-out with "Corrupted MAC on input" errors, for example, set this to a higher value to have the rsync operation re-tried')
+        validators:
+          min: 1
+          max: 99
+          patternType: integer
+          required: true
+      - type: select
+        name: gid
+        label: _("Group")
+        placeholder: _("Select a group ...")
+        hint: _("This option specifies the group that the backup directories will belong to. Note%3A This will only change the group of additionally created dirs. The backed-up files and directories will mirror the original permissions.")
+        value: "users"
+        valueField: name
+        textField: name
+        store:
+          proxy:
+            service: UserMgmt
+            get:
+              method: enumerateGroups
+          sorters:
+            - dir: asc
+              prop: name
+      - type: checkbox
+        name: erroroutputonly
+        label: _("Error output only")
+        value: false
+        hint: _('Show output on error only. If set, no output will be shown on successful execution.  If no output is generated, no email will be sent if configured.')
+      - type: textInput
+        name: rsyncargs
+        label: _("Rsync long arguments")
+        value: ""
+        hint: _('Default rsync long args. All rsync commands have at least these options set. Default is "--delete --numeric-ids --delete-excluded". Please check the <a href="http://www.samba.org/ftp/rsync/rsync.html" target="_blank">manual page</a> for more details.')
+      - type: textInput
+        name: cmd_preexec
+        label: _("Pre-exec command")
+        value: ""
+        hint: _('Command to be run before rsnapshot execution.')
+      - type: textInput
+        name: cmd_postexec
+        label: _("Post-exec command")
+        value: ""
+        hint: _('Command to be run after rsnapshot execution.')
+    buttons:
+      - template: submit
+        execute:
+          type: url
+          url: "/services/rsnapshot"
+      - template: cancel
+        execute:
+          type: url
+          url: "/services/rsnapshot"

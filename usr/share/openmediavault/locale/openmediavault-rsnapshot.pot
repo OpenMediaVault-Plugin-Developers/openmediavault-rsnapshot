@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-14 11:41-0600\n"
+"POT-Creation-Date: 2021-11-10 10:45-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,28 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Add backup job"
-msgstr ""
-
-msgid "Backup jobs"
-msgstr ""
-
-msgid "Command to be run after rsnapshot execution."
-msgstr ""
-
-msgid "Command to be run before rsnapshot execution."
-msgstr ""
-
 msgid "Comment"
 msgstr ""
 
-msgid "Date & Time"
+msgid "Create"
 msgstr ""
 
-msgid "Default rsync long args. All rsync commands have at least these options set. Default is \"--delete --numeric-ids --delete-excluded\". Please check the <a href=\"http://www.samba.org/ftp/rsync/rsync.html\" target=\"_blank\">manual page</a> for more details."
+msgid "Created job."
 msgstr ""
 
-msgid "Edit backup job"
+msgid "Edit"
 msgstr ""
 
 msgid "Enable"
@@ -50,34 +38,13 @@ msgstr ""
 msgid "Error output only"
 msgstr ""
 
-msgid "Execute backup job"
+msgid "Execute backup job ..."
 msgstr ""
 
 msgid "Group"
 msgstr ""
 
 msgid "If this is enabled, rsync won't span filesystem partitions within a backup point."
-msgstr ""
-
-msgid "Message"
-msgstr ""
-
-msgid "Number of daily backups to keep. After n backups are created, the first one will be overwritten."
-msgstr ""
-
-msgid "Number of hourly backups to keep. After n backups are created, the first one will be overwritten."
-msgstr ""
-
-msgid "Number of monthly backups to keep. After n backups are created, the first one will be overwritten."
-msgstr ""
-
-msgid "Number of rsync tries. If you experience any network problems or network card issues that tend to cause ssh to crap-out with \"Corrupted MAC on input\" errors, for example, set this to a higher value to have the rsync operation re-tried"
-msgstr ""
-
-msgid "Number of weekly backups to keep. After n backups are created, the first one will be overwritten."
-msgstr ""
-
-msgid "Number of yearly backups to keep. After n backups are created, the first one will be overwritten."
 msgstr ""
 
 msgid "One filesystem only"
@@ -107,9 +74,6 @@ msgstr ""
 msgid "Rsnapshot"
 msgstr ""
 
-msgid "Rsnapshot (Backup)"
-msgstr ""
-
 msgid "Rsync long arguments"
 msgstr ""
 
@@ -119,7 +83,7 @@ msgstr ""
 msgid "Run"
 msgstr ""
 
-msgid "Show output on error only. If set, no output will be shown on successful execution.  If no output is generated, no email will be sent if configured."
+msgid "Select a group ..."
 msgstr ""
 
 msgid "Source"
@@ -137,10 +101,13 @@ msgstr ""
 msgid "The Folder used as target for backups. Backups will go into a sub-folder <em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative path&gt;</em>"
 msgstr ""
 
-msgid "The shared folder to Backup."
+msgid "The shared folder to backup."
 msgstr ""
 
-msgid "This option specifies the group that the backup directories will belong to. Note: This will only change the group of additionally created dirs. The backed-up files and directories will mirror the original permissions."
+msgid "This option specifies the group that the backup directories will belong to. Note%3A This will only change the group of additionally created dirs. The backed-up files and directories will mirror the original permissions."
+msgstr ""
+
+msgid "Updated job."
 msgstr ""
 
 msgid "n/a"
