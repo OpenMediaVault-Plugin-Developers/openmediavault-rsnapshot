@@ -47,8 +47,12 @@ data:
             method: delete
             params:
               uuid: "{{ _selected[0].uuid }}"
-      - text: _("Run")
+      - type: iconButton
+        tooltip: _("Run")
         icon: mdi:play-box-outline
+        enabledConstraints:
+          minSelected: 1
+          maxSelected: 1
         execute:
           type: taskDialog
           taskDialog:
@@ -57,6 +61,6 @@ data:
               startOnInit: true
               request:
                 service: Rsnapshot
-                method: executeCommand
+                method: execute
                 params:
                   uuid: "{{ _selected[0].uuid }}"
