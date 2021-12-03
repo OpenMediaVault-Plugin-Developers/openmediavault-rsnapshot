@@ -21,6 +21,7 @@ data:
       - type: textInput
         name: comment
         label: _("Comment")
+        value: ""
       - type: sharedFolderSelect
         name: srcsharedfolderref
         label: _("Source folder")
