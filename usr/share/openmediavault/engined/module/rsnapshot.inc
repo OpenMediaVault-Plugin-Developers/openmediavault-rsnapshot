@@ -4,7 +4,7 @@
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @author    Julian Kalinowski <julakali@gmail.com>
  * @copyright Copyright (c) 2013-2014 Julian Kalinowski
- * @copyright Copyright (c) 2015-2020 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2015-2022 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
