@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
-# kochin <kochinc@outlook.com>, 2014,2016,2019
+# kochin <kochinc@outlook.com>, 2014,2016,2019,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-10 10:45-0600\n"
-"PO-Revision-Date: 2021-11-10 16:45+0000\n"
+"POT-Creation-Date: 2022-02-28 07:50-0600\n"
+"PO-Revision-Date: 2022-02-28 13:50+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -22,13 +22,16 @@ msgid "Comment"
 msgstr "註釋"
 
 msgid "Create"
-msgstr ""
+msgstr "新建"
 
 msgid "Created job."
+msgstr "已建立工作。"
+
+msgid "Date & Time"
 msgstr ""
 
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 msgid "Enable"
 msgstr "啟用"
@@ -40,7 +43,7 @@ msgid "Error output only"
 msgstr "只含錯誤輸出"
 
 msgid "Execute backup job ..."
-msgstr ""
+msgstr "執行備份工作 ..."
 
 msgid "Group"
 msgstr "群組"
@@ -49,6 +52,9 @@ msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
 msgstr "如果啟用，rsync 將不會在一個備份點內跨越檔案系統分割。"
+
+msgid "Message"
+msgstr ""
 
 msgid "One filesystem only"
 msgstr "只對單一檔案系統"
@@ -87,7 +93,7 @@ msgid "Run"
 msgstr "執行"
 
 msgid "Select a group ..."
-msgstr ""
+msgstr "選擇一個群組 ..."
 
 msgid "Source"
 msgstr "來源"
@@ -108,16 +114,16 @@ msgid ""
 msgstr "當作備份目標的檔案夾。備份將被放進一個子檔案夾 <em>localhost/&lt;來源檔案系統標籤&gt;/&lt;來源檔案夾相對路徑&gt;</em>。"
 
 msgid "The shared folder to backup."
-msgstr ""
+msgstr "所要備份的共享檔案夾。"
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note%3A This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr ""
+msgstr "此選項指定備份目錄將屬於的群組。附註%3A 這將只改變額外建立之目錄的群組。被備份的檔案及目錄將反映原本的權限。"
 
 msgid "Updated job."
-msgstr ""
+msgstr "已更新工作。"
 
 msgid "n/a"
 msgstr "n/a"

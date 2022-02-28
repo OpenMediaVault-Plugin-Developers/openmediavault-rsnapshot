@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Matěj Mihal <mejatysek@gmail.com>, 2014
-# Pavel Borecki <pavel.borecki@gmail.com>, 2015-2016,2018
+# Pavel Borecki <pavel.borecki@gmail.com>, 2015-2016,2018,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-10 10:45-0600\n"
-"PO-Revision-Date: 2021-11-10 16:45+0000\n"
+"POT-Creation-Date: 2022-02-28 07:50-0600\n"
+"PO-Revision-Date: 2022-02-28 13:50+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
@@ -23,13 +23,16 @@ msgid "Comment"
 msgstr "Komentář"
 
 msgid "Create"
-msgstr ""
+msgstr "Vytvořit"
 
 msgid "Created job."
+msgstr "Úloha vytvořena."
+
+msgid "Date & Time"
 msgstr ""
 
 msgid "Edit"
-msgstr ""
+msgstr "Upravit"
 
 msgid "Enable"
 msgstr "Používat tuto funkci"
@@ -41,7 +44,7 @@ msgid "Error output only"
 msgstr "Pouze chybový výstup"
 
 msgid "Execute backup job ..."
-msgstr ""
+msgstr "Spustit zálohovací úlohu"
 
 msgid "Group"
 msgstr "Skupina"
@@ -50,6 +53,9 @@ msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
 msgstr "Pokud je toto zapnuto, nástroj rsync se bude držet pouze v rámci daného souborového systému."
+
+msgid "Message"
+msgstr ""
 
 msgid "One filesystem only"
 msgstr "Pouze jeden souborový systém"
@@ -88,7 +94,7 @@ msgid "Run"
 msgstr "Spustit"
 
 msgid "Select a group ..."
-msgstr ""
+msgstr "Vyberte skupinu"
 
 msgid "Source"
 msgstr "Zdroj"
@@ -109,16 +115,16 @@ msgid ""
 msgstr "Složka do které ukládat zálohy. Ty přijdou do podsložky <em>mistni-nazev-stroje/&lt;popisek-zdrojoveho-souboroveho-systemu&gt;/&lt;relativni-popis-umisteni-zdrojove-slozky&gt;</em>"
 
 msgid "The shared folder to backup."
-msgstr ""
+msgstr "Sdílená složka, kterou zálohovat."
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note%3A This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr ""
+msgstr "Toto předvolba určuje skupinu, která bude vlastnit složky se zálohami. Poznámka: Toto se týká pouze dodatečně vytvářených složek. Zálohované soubory a složky si podrží původní přístupová práva."
 
 msgid "Updated job."
-msgstr ""
+msgstr "Úloha zaktualizována."
 
 msgid "n/a"
 msgstr "n/a"

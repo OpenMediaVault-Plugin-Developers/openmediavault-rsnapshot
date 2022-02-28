@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
-# Raul Fernandez Garcia <raulfg3@gmail.com>, 2014,2016,2019
+# Raul Fernandez Garcia <raulfg3@gmail.com>, 2014,2016,2019,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-10 10:45-0600\n"
-"PO-Revision-Date: 2021-11-10 16:45+0000\n"
+"POT-Creation-Date: 2022-02-28 07:50-0600\n"
+"PO-Revision-Date: 2022-02-28 13:50+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -22,13 +22,16 @@ msgid "Comment"
 msgstr "Comentario"
 
 msgid "Create"
-msgstr ""
+msgstr "Crear"
 
 msgid "Created job."
+msgstr "Crear tarea"
+
+msgid "Date & Time"
 msgstr ""
 
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 msgid "Enable"
 msgstr "Habilitar"
@@ -40,7 +43,7 @@ msgid "Error output only"
 msgstr "Solo errores"
 
 msgid "Execute backup job ..."
-msgstr ""
+msgstr "Ejecutar tarea de backup ..."
 
 msgid "Group"
 msgstr "Grupo"
@@ -49,6 +52,9 @@ msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
 msgstr "Si esta opción está activada, rsync no utilizará las particiones del sistema de archivos para realizar una copia de seguridad."
+
+msgid "Message"
+msgstr ""
 
 msgid "One filesystem only"
 msgstr "Un unico sistema de archivos"
@@ -87,7 +93,7 @@ msgid "Run"
 msgstr "Ejecutar"
 
 msgid "Select a group ..."
-msgstr ""
+msgstr "Seleccione un grupo ..."
 
 msgid "Source"
 msgstr "Origen"
@@ -108,16 +114,16 @@ msgid ""
 msgstr "La carpeta destino de los backups. Los Backups se realizarán en sub-carpetas <em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative path&gt;</em>"
 
 msgid "The shared folder to backup."
-msgstr ""
+msgstr "La carpeta compartida a realizar el backup."
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note%3A This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr ""
+msgstr "Esta opción especifica el grupo al que pertenecerán las carpetas de backup. Nota%3A Esto solo cambia el grupo para carpetas nuevas, las existentes no se cambiaran. Los archivos y carpetas copiados mantendrán los permisos originales."
 
 msgid "Updated job."
-msgstr ""
+msgstr "Tarea actualizada."
 
 msgid "n/a"
 msgstr "n/d"

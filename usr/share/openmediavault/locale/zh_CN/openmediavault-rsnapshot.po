@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
-# songming <by@songming.me>, 2013-2014,2016
+# songming <by@songming.me>, 2013-2014,2016,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-10 10:45-0600\n"
-"PO-Revision-Date: 2021-11-10 16:45+0000\n"
+"POT-Creation-Date: 2022-02-28 07:50-0600\n"
+"PO-Revision-Date: 2022-02-28 13:50+0000\n"
 "Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -22,13 +22,16 @@ msgid "Comment"
 msgstr "备注"
 
 msgid "Create"
-msgstr ""
+msgstr "创建"
 
 msgid "Created job."
+msgstr "创建任务。"
+
+msgid "Date & Time"
 msgstr ""
 
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 msgid "Enable"
 msgstr "启动"
@@ -40,7 +43,7 @@ msgid "Error output only"
 msgstr "仅输出错误"
 
 msgid "Execute backup job ..."
-msgstr ""
+msgstr "执行备份任务 ..."
 
 msgid "Group"
 msgstr "组"
@@ -50,14 +53,17 @@ msgid ""
 "point."
 msgstr "如果启用该参数，rsync 将不会在一个备份点跨越文件系统分区。"
 
+msgid "Message"
+msgstr ""
+
 msgid "One filesystem only"
 msgstr "仅单文件系统"
 
 msgid "Post-exec command"
-msgstr ""
+msgstr "执行后命令"
 
 msgid "Pre-exec command"
-msgstr ""
+msgstr "执行前命令"
 
 msgid "Retain daily"
 msgstr "每日备份"
@@ -87,7 +93,7 @@ msgid "Run"
 msgstr "运行"
 
 msgid "Select a group ..."
-msgstr ""
+msgstr "选择一个组 ..."
 
 msgid "Source"
 msgstr "源"
@@ -108,16 +114,16 @@ msgid ""
 msgstr "备份到该文件夹，将备份到一个子文件夹 <em>localhost/&lt;源文件系统标签&gt;/&lt;源文件夹对应路径&gt;</em>"
 
 msgid "The shared folder to backup."
-msgstr ""
+msgstr "要备份的共享文件夹。"
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note%3A This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr ""
+msgstr "此选项指定备份目录所属的用户组。注意%3A这只会更改创建目录的用户组。备份的文件和目录将保留原始权限。"
 
 msgid "Updated job."
-msgstr ""
+msgstr "更新任务。"
 
 msgid "n/a"
 msgstr "N/A"
