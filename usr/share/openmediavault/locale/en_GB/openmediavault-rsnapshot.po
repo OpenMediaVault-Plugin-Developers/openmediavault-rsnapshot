@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
-# Andi Chandler <andi@gowling.com>, 2015-2016,2019
+# Andi Chandler <andi@gowling.com>, 2015-2016,2019,2022
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-28 07:50-0600\n"
-"PO-Revision-Date: 2022-02-28 13:50+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
+"PO-Revision-Date: 2013-12-02 16:36+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2015-2016,2019,2022\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,16 +22,16 @@ msgid "Comment"
 msgstr "Comment"
 
 msgid "Create"
-msgstr ""
+msgstr "Create"
 
 msgid "Created job."
-msgstr ""
+msgstr "Created job."
 
 msgid "Date & Time"
-msgstr ""
+msgstr "Date & Time"
 
 msgid "Edit"
-msgstr ""
+msgstr "Edit"
 
 msgid "Enable"
 msgstr "Enable"
@@ -43,7 +43,7 @@ msgid "Error output only"
 msgstr "Error output only"
 
 msgid "Execute backup job ..."
-msgstr ""
+msgstr "Execute backup job ..."
 
 msgid "Group"
 msgstr "Group"
@@ -54,7 +54,7 @@ msgid ""
 msgstr "If this is enabled, rsync won't span filesystem partitions within a backup point."
 
 msgid "Message"
-msgstr ""
+msgstr "Message"
 
 msgid "One filesystem only"
 msgstr "One filesystem only"
@@ -93,7 +93,7 @@ msgid "Run"
 msgstr "Run"
 
 msgid "Select a group ..."
-msgstr ""
+msgstr "Select a group ..."
 
 msgid "Source"
 msgstr "Source"
@@ -114,16 +114,16 @@ msgid ""
 msgstr "The Folder used as target for backups. Backups will go into a sub-folder <em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative path&gt;</em>"
 
 msgid "The shared folder to backup."
-msgstr ""
+msgstr "The shared folder to backup."
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note%3A This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr ""
+msgstr "This option specifies the group that the backup directories will belong to. Note%3A This will only change the group of additionally created dirs. The backed-up files and directories will mirror the original permissions."
 
 msgid "Updated job."
-msgstr ""
+msgstr "Updated job."
 
 msgid "n/a"
 msgstr "n/a"
