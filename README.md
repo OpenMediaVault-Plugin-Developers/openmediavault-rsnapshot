@@ -9,7 +9,7 @@ automatically rotates the backups.
 
 The created backups can be browsed using SMB/NFS/... by the user.
 
-More information and screenshots at: http://forums.openmediavault.org/viewtopic.php?f=13&t=2726&p=18450#p18450
+More information and screenshots at: https://forum.openmediavault.org/index.php?thread/2726-backup-plugin-using-rsnapshot-for-0-5/&postID=18450#post18450
 
 
 Small Developing Guide
