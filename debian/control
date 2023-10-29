@@ -3,13 +3,13 @@ Section: net
 XB-Plugin-Section: backup
 Priority: optional
 Maintainer: OpenMediaVault Plugin Developers <plugins@omv-extras.org>
-Build-Depends: debhelper (>= 12), gettext
+Build-Depends: debhelper (>= 13), gettext
 Standards-Version: 4.3.0
 Homepage: http://omv-extras.org
 
 Package: openmediavault-rsnapshot
 Architecture: all
-Depends: openmediavault (>= 6),
+Depends: openmediavault (>= 7),
          rsnapshot
 Priority: optional
 Description: OpenMediaVault rsnapshot backup plugin.
