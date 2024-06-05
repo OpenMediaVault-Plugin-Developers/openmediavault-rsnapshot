@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (7.0.1) stable; urgency=low
+
+  * Fix sharedfolder change notifier
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 05 Jun 2024 09:26:09 -0500
+
 openmediavault-rsnapshot (7.0) stable; urgency=low
 
   * Update for OMV 7.x
