@@ -3,26 +3,22 @@
 # This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
-# Axel Cantenys, 2017
-# Christophe Lherieau <skimpax@gmail.com>, 2015
-# Kevin Leclercq <nuklearstriker@gmail.com>, 2020
-# luisp <luis.pereira.978+transifex@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-28 07:50-0600\n"
 "PO-Revision-Date: 2013-12-02 16:36+0000\n"
-"Last-Translator: Kevin Leclercq <nuklearstriker@gmail.com>, 2020\n"
-"Language-Team: French (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/fr/)\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Basque (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: eu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Comment"
-msgstr "Commentaire"
+msgstr ""
 
 msgid "Create"
 msgstr ""
@@ -37,84 +33,84 @@ msgid "Edit"
 msgstr ""
 
 msgid "Enable"
-msgstr "Activer"
+msgstr ""
 
 msgid "Enabled"
-msgstr "Activé"
+msgstr ""
 
 msgid "Error output only"
-msgstr "Erreur de sortie seulement"
+msgstr ""
 
 msgid "Execute backup job ..."
 msgstr ""
 
 msgid "Group"
-msgstr "Groupe"
+msgstr ""
 
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr "Si cette option est activée, rsync ne couvre pas les partitions du système de fichiers au sein d'un point de sauvegarde."
+msgstr ""
 
 msgid "Message"
 msgstr ""
 
 msgid "One filesystem only"
-msgstr "Un système de fichiers uniquement"
+msgstr ""
 
 msgid "Post-exec command"
-msgstr "Commande post-exécution"
+msgstr ""
 
 msgid "Pre-exec command"
-msgstr "Commande pré-exécution"
+msgstr ""
 
 msgid "Retain daily"
-msgstr "Conservation quotidienne"
+msgstr ""
 
 msgid "Retain hourly"
-msgstr "Conservation horaire"
+msgstr ""
 
 msgid "Retain monthly"
-msgstr "Conservation mensuelle"
+msgstr ""
 
 msgid "Retain weekly"
-msgstr "Conservation hebdomadaire"
+msgstr ""
 
 msgid "Retain yearly"
-msgstr "Conservation annuelle"
+msgstr ""
 
 msgid "Rsnapshot"
-msgstr "Rsnapshot"
+msgstr ""
 
 msgid "Rsync long arguments"
-msgstr "Arguments Rsync"
+msgstr ""
 
 msgid "Rsync tries"
-msgstr "Tentatives Rsync"
+msgstr ""
 
 msgid "Run"
-msgstr "Exécuter"
+msgstr ""
 
 msgid "Select a group ..."
 msgstr ""
 
 msgid "Source"
-msgstr "Source"
+msgstr ""
 
 msgid "Source folder"
-msgstr "Dossier source"
+msgstr ""
 
 msgid "Target"
-msgstr "Cible"
+msgstr ""
 
 msgid "Target folder"
-msgstr "Dossier cible"
+msgstr ""
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
 "<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
 "path&gt;</em>"
-msgstr "Le dossier cible utilisé pour les sauvegardes. Les sauvegardes iront dans un sous-dossier <em>localhost/&lt;label du système de fichiers source&gt;/&lt;chemin relatif du dossier source&gt;</em>"
+msgstr ""
 
 msgid "The shared folder to backup."
 msgstr ""
@@ -129,4 +125,4 @@ msgid "Updated job."
 msgstr ""
 
 msgid "n/a"
-msgstr "n/a"
+msgstr ""
