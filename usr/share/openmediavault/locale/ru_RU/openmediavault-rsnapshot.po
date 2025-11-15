@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
+# Asdfgr Wertyu, 2024
 # Artur Mudrykh <arturmon82@gmail.com>, 2013,2015
 # Artur Mudrykh <arturmon82@gmail.com>, 2017
 # Дмитрий <bardimnik@rambler.ru>, 2019
@@ -10,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-28 07:50-0600\n"
+"POT-Creation-Date: 2025-11-15 03:05+0000\n"
 "PO-Revision-Date: 2013-12-02 16:36+0000\n"
-"Last-Translator: Дмитрий <bardimnik@rambler.ru>, 2019\n"
+"Last-Translator: Asdfgr Wertyu, 2024\n"
 "Language-Team: Russian (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,16 +25,16 @@ msgid "Comment"
 msgstr "Комментарий"
 
 msgid "Create"
-msgstr ""
+msgstr "Создать"
 
 msgid "Created job."
-msgstr ""
+msgstr "Созданная работа."
 
 msgid "Date & Time"
-msgstr ""
+msgstr "Дата и время"
 
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 msgid "Enable"
 msgstr "Включить"
@@ -45,7 +46,7 @@ msgid "Error output only"
 msgstr "Только ошибки отображать"
 
 msgid "Execute backup job ..."
-msgstr ""
+msgstr "Выполнение задания резервного копирования ..."
 
 msgid "Group"
 msgstr "Группа"
@@ -56,7 +57,7 @@ msgid ""
 msgstr "Если эта опция включена, Rsync не будет охватывать разделы файловой системы в  точке резервной копии."
 
 msgid "Message"
-msgstr ""
+msgstr "Сообщение"
 
 msgid "One filesystem only"
 msgstr "Только одну файловую систему"
@@ -95,7 +96,7 @@ msgid "Run"
 msgstr "Запуск"
 
 msgid "Select a group ..."
-msgstr ""
+msgstr "Выберите группу ..."
 
 msgid "Source"
 msgstr "Источник"
@@ -116,16 +117,16 @@ msgid ""
 msgstr "Папка используется в качестве назначения для резервных копий. Резервные копии будут находиться в подпапке <em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative path&gt;</em>"
 
 msgid "The shared folder to backup."
-msgstr ""
+msgstr "Общая папка для резервного копирования."
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note%3A This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr ""
+msgstr "Этот параметр указывает группу, к которой будут принадлежать резервные каталоги. Примечание%3A Это изменит только группу дополнительно созданных каталогов. Резервные файлы и каталоги будут иметь зеркальное отражение исходных разрешений."
 
 msgid "Updated job."
-msgstr ""
+msgstr "Обновленная работа."
 
 msgid "n/a"
 msgstr "н/д"

@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the openmediavault-rsnapshot package.
 # 
 # Translators:
+# Stephan Paternotte <stephan@paternottes.net>, 2025
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-28 07:50-0600\n"
+"POT-Creation-Date: 2025-11-15 03:05+0000\n"
 "PO-Revision-Date: 2013-12-02 16:36+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>, 2025\n"
 "Language-Team: Dutch (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,111 +19,111 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Comment"
-msgstr ""
+msgstr "Commentaar"
 
 msgid "Create"
-msgstr ""
+msgstr "Aanmaken"
 
 msgid "Created job."
-msgstr ""
+msgstr "Taak aanmaken."
 
 msgid "Date & Time"
-msgstr ""
+msgstr "Datun & Tijd"
 
 msgid "Edit"
-msgstr ""
+msgstr "Bewerken"
 
 msgid "Enable"
-msgstr ""
+msgstr "Inschakelen"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Ingeschakeld"
 
 msgid "Error output only"
-msgstr ""
+msgstr "Alleen foutuitvoer"
 
 msgid "Execute backup job ..."
-msgstr ""
+msgstr "Back-uptaak uitvoeren…"
 
 msgid "Group"
-msgstr ""
+msgstr "Groep"
 
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr ""
+msgstr "Als dit is ingeschakeld, zal rsync geen bestandssysteempartities binnen een back-uppunt overspannen."
 
 msgid "Message"
-msgstr ""
+msgstr "Bericht"
 
 msgid "One filesystem only"
-msgstr ""
+msgstr "Slechts één bestandssysteem"
 
 msgid "Post-exec command"
-msgstr ""
+msgstr "Opdracht vóór uitvoer"
 
 msgid "Pre-exec command"
-msgstr ""
+msgstr "Opdracht na uitvoer"
 
 msgid "Retain daily"
-msgstr ""
+msgstr "Dagelijks bewaren"
 
 msgid "Retain hourly"
-msgstr ""
+msgstr "Ieder uur bewaren"
 
 msgid "Retain monthly"
-msgstr ""
+msgstr "Maandelijks bewaren"
 
 msgid "Retain weekly"
-msgstr ""
+msgstr "Wekelijks bewaren"
 
 msgid "Retain yearly"
-msgstr ""
+msgstr "Jaarlijks bewaren"
 
 msgid "Rsnapshot"
-msgstr ""
+msgstr "Rsnapshot"
 
 msgid "Rsync long arguments"
-msgstr ""
+msgstr "Rsync long arguments"
 
 msgid "Rsync tries"
-msgstr ""
+msgstr "Rsync tries"
 
 msgid "Run"
-msgstr ""
+msgstr "Uitvoeren"
 
 msgid "Select a group ..."
-msgstr ""
+msgstr "Selecteer een groep…"
 
 msgid "Source"
-msgstr ""
+msgstr "Bron"
 
 msgid "Source folder"
-msgstr ""
+msgstr "Bronmap"
 
 msgid "Target"
-msgstr ""
+msgstr "Doel"
 
 msgid "Target folder"
-msgstr ""
+msgstr "Doelmap"
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
 "<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
 "path&gt;</em>"
-msgstr ""
+msgstr "De map die als doel voor back-ups wordt gebruikt. Back-ups gaan naar een submap <em>localhost/&lt;label van bron-bestandssysteem&gt;/&lt;bronmap relatief pad&gt;</em>"
 
 msgid "The shared folder to backup."
-msgstr ""
+msgstr "De gedeelde map om een back-up te maken."
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note%3A This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr ""
+msgstr "Deze optie specificeert de groep waartoe de back-upmappen zullen behoren. Opmerking %3A Dit verandert alleen de groep extra gemaakte dirs. De back-upbestanden en mappen weerspiegelen de oorspronkelijke machtigingen."
 
 msgid "Updated job."
-msgstr ""
+msgstr "Taak bijgwerkt."
 
 msgid "n/a"
-msgstr ""
+msgstr "n.v.t."
