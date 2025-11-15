@@ -9,7 +9,7 @@ Homepage: http://omv-extras.org
 
 Package: openmediavault-rsnapshot
 Architecture: all
-Depends: openmediavault (>= 7),
+Depends: openmediavault (>= 8),
          rsnapshot
 Priority: optional
 Description: OpenMediaVault rsnapshot backup plugin.
