@@ -1,3 +1,10 @@
+openmediavault-rsnapshot (8.1) stable; urgency=low
+
+  * Convert old bash script used to generate jobs and config files to
+    saltstack code
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 26 Mar 2026 12:32:41 +0000
+
 openmediavault-rsnapshot (8.0) stable; urgency=low
 
   * Update for omv 8
