@@ -57,7 +57,7 @@ class OMVModuleRSnapshot extends \OMV\Engine\Module\ServiceAbstract
     function bindListeners(\OMV\Engine\Notify\Dispatcher $dispatcher) {
         $dispatcher->addListener(
             OMV_NOTIFY_CREATE | OMV_NOTIFY_MODIFY | OMV_NOTIFY_DELETE,
-            'org.openmediavault.conf.service.rsnapshot',
+            'org.openmediavault.conf.service.rsnapshot.job',
             [ $this, 'setDirty' ]
         );
         $dispatcher->addListener(

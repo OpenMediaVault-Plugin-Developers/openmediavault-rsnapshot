@@ -1,4 +1,3 @@
 srv/* srv
-usr/sbin/* usr/sbin
 usr/share/openmediavault/* usr/share/openmediavault
 var/lib/openmediavault/cron.d/* var/lib/openmediavault/cron.d

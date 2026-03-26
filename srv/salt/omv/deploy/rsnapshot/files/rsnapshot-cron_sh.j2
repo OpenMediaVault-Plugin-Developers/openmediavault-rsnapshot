@@ -1,0 +1,82 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "No argument given. Should be one of: hourly,daily,weekly,monthly,yearly. UUID of backup job can be passed as second argument to execute a single job."
+    exit 1
+fi
+
+mail=false
+{%- set rsnapshot = '/usr/bin/rsnapshot' %}
+{%- for job in config.jobs.job %}
+{%- set uuid = job.uuid %}
+{%- if not uuid %}{% continue %}{% endif %}
+{%- set src_sf = job.src.sharedfolderref %}
+{%- set dst_sf = job.dest.sharedfolderref %}
+{%- set src_path = salt['omv_conf.get_sharedfolder_path'](src_sf) if src_sf else '' %}
+{%- set dst_path = salt['omv_conf.get_sharedfolder_path'](dst_sf) if dst_sf else '' %}
+{%- set mountpoint = '' %}
+{%- if src_sf %}
+{%- set mountpoint = src_sf | omv_conf_get_by_identifier('conf.system.sharedfolder') | attr('mntentref') | omv_conf_get_by_identifier('conf.system.filesystem.mountpoint') | attr('dir') %}
+{%- endif %}
+{%- set src_reldir = '' %}
+{%- if mountpoint and src_path.startswith(mountpoint + '/') %}
+{%- set src_reldir = src_path[(mountpoint|length + 1):] %}
+{%- endif %}
+{%- set sourcelabel = mountpoint.lstrip('/') if mountpoint else 'source' %}
+{%- if mountpoint %}
+{%- set lsblk = salt['cmd.run']("lsblk -o MOUNTPOINT,LABEL -n 2>/dev/null | awk '$1==\"%s\"{print $2; exit}'" % mountpoint, python_shell=True).strip() %}
+{%- if lsblk %}
+{%- set sourcelabel = lsblk %}
+{%- endif %}
+{%- endif %}
+{%- if not job.enable | to_bool %}
+#### DISABLED ####
+# backup {{ src_path }} to {{ dst_path }}
+{%- else %}
+# backup {{ src_path }} to {{ dst_path }}
+skip=false
+{%- if job.hourly|int == 0 %}
+if [ "$1" = "hourly" ]; then skip=true; fi
+{%- endif %}
+{%- if job.daily|int == 0 %}
+if [ "$1" = "daily" ]; then skip=true; fi
+{%- endif %}
+{%- if job.weekly|int == 0 %}
+if [ "$1" = "weekly" ]; then skip=true; fi
+{%- endif %}
+{%- if job.monthly|int == 0 %}
+if [ "$1" = "monthly" ]; then skip=true; fi
+{%- endif %}
+{%- if job.yearly|int == 0 %}
+if [ "$1" = "yearly" ]; then skip=true; fi
+{%- endif %}
+if [ "$2" = "{{ uuid }}" ] || ([ -z "$2" ] && [ "$skip" = false ]); then
+    targetdir="{{ dst_path }}/{{ sourcelabel }}{% if src_reldir %}/{{ src_reldir }}{% endif %}"
+    if [ ! -e "${targetdir}" ]; then
+{%- if not job.erroroutputonly|to_bool %}
+        echo "Creating target directory structure ..."
+{%- endif %}
+        mkdir -p "${targetdir}"
+    fi
+{%- if not job.erroroutputonly | to_bool %}
+    echo "Checking access rights on target directory structure ..."
+{%- endif %}
+    while [ -n "${targetdir}" ] && [ "${targetdir}" != "{{ dst_path }}" ]; do
+{%- if not job.erroroutputonly | to_bool %}
+        echo "... ${targetdir}"
+{%- endif %}
+        chmod {{ dirs_mask }} "${targetdir}"
+        chgrp {{ job.gid }} "${targetdir}"
+        targetdir="${targetdir%/*}"
+    done
+{%- if not job.erroroutputonly | to_bool %}
+    mail=true
+    echo "starting $1 backup for {{ uuid }}"
+{%- endif %}
+    {{ rsnapshot }} -c "{{ confs_dir }}/rsnapshot-{{ uuid }}.conf" "$1"
+fi
+{%- endif %}
+{%- endfor %}
+if [ "$mail" = true ]; then
+    echo "Backups finished."
+fi

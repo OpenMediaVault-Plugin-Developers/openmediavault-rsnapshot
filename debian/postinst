@@ -40,7 +40,7 @@ case "$1" in
             omv-confdbadm migrate "conf.service.rsnapshot" "${2}"
         fi
 
-        /usr/sbin/omv-rsnapshot-conf
+        omv-salt deploy run --no-color rsnapshot || :
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

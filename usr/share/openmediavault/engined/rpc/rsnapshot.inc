@@ -22,17 +22,11 @@ require_once('openmediavault/globals.inc');
 require_once('openmediavault/functions.inc');
 
 class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
-    /**
-     * Get the RPC service name.
-     */
     public function getName()
     {
         return 'RSnapshot';
     }
 
-    /**
-     * Initialize the RPC service.
-     */
     public function initialize()
     {
         $this->registerMethod('getList');
@@ -42,18 +36,6 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
         $this->registerMethod('execute');
     }
 
-    /**
-     * Get list of RSnapshot backup job configuration objects.
-     * @param data An array containing the following fields:
-     *   \em start The index where to start.
-     *   \em limit The number of objects to process.
-     *   \em sortfield The name of the column used to sort.
-     *   \em sortdir The sort direction, ASC or DESC.
-     * @return An array containing the requested objects. The field \em total
-     *   contains the total number of objects, \em data contains the object
-     *   array. An exception will be thrown in case of an error.
-     * @throw E_CONFIG_GET_OBJECT_FAILED
-     */
     public function getList($params, $context)
     {
         // Validate the RPC caller context.
@@ -62,7 +44,7 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
         $this->validateMethodParams($params, 'rpc.common.getlist');
         // Get configuration objects.
         $db = \OMV\Config\Database::getInstance();
-        $objects = $db->get('conf.service.rsnapshot');
+        $objects = $db->get('conf.service.rsnapshot.job');
         // Add additional information.
         $objectsAssoc = [];
         foreach ($objects as $objectk => &$objectv) {
@@ -76,20 +58,11 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
             $objectv->add('running', file_exists(sprintf('/var/run/rsnapshot-%s', $objectv->get('uuid'))));
             $objectsAssoc[] = $objectv->getAssoc();
         }
-
         // Filter the result.
         return $this->applyFilter($objectsAssoc, $params['start'], $params['limit'],
             $params['sortfield'], $params['sortdir']);
     }
 
-    /**
-     * Get a RSnapshot backup job configuration object.
-     * @param params An array containing the following fields:
-     *   \em uuid The UUID of the configuration object.
-     * @param context The context of the caller.
-     * @return The requested configuration object.
-     * @throw E_CONFIG_GET_OBJECT_FAILED
-     */
     function get($params, $context)
     {
         // Validate the RPC caller context.
@@ -98,20 +71,12 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
         $this->validateMethodParams($params, 'rpc.common.objectuuid');
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $object = $db->get('conf.service.rsnapshot', $params['uuid']);
+        $object = $db->get('conf.service.rsnapshot.job', $params['uuid']);
         $object->copy('src.sharedfolderref', 'srcsharedfolderref');
         $object->copy('dest.sharedfolderref', 'destsharedfolderref');
         return $object->getAssoc();
     }
 
-    /**
-     * Set a RSnapshot backup job configuration object.
-     * @param params The method parameters.
-     * @param context The context of the caller.
-     * @return The stored configuration object.
-     * @throw E_CONFIG_OBJECT_UNIQUENESS
-     * @throw E_CONFIG_SET_OBJECT_FAILED
-     */
     function set($params, $context)
     {
         // Validate the RPC caller context.
@@ -119,7 +84,7 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, 'rpc.rsnapshot.set');
         // Prepare the configuration data.
-        $object = new \OMV\Config\ConfigObject('conf.service.rsnapshot');
+        $object = new \OMV\Config\ConfigObject('conf.service.rsnapshot.job');
         $object->setAssoc($params, TRUE, TRUE);
         $object->set('src.sharedfolderref', $params['srcsharedfolderref']);
         $object->set('dest.sharedfolderref', $params['destsharedfolderref']);
@@ -130,13 +95,6 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
         return $object->getAssoc();
     }
 
-    /**
-     * Delete a backup job configuration object.
-     * @param params An array containing the following fields:
-     *   \em uuid The UUID of the configuration object.
-     * @param context The context of the caller.
-     * @return The deleted configuration object.
-     */
     public function delete($params, $context)
     {
         // Validate the RPC caller context.
@@ -145,21 +103,12 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
         $this->validateMethodParams($params, 'rpc.common.objectuuid');
         // Delete the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $object = $db->get('conf.service.rsnapshot', $params['uuid']);
+        $object = $db->get('conf.service.rsnapshot.job', $params['uuid']);
         $db->delete($object);
         // Return the deleted configuration object.
         return $object->getAssoc();
     }
 
-    /**
-     * Execute a backup job.
-     * @param params An array containing the following fields:
-     *   \em uuid The UUID of the cron job to execute.
-     *   \em level The backup level to execute.
-     * @param context The context of the caller.
-     * @return The name of the background process status file.
-     * @throw E_CONFIG_DIRTY
-     */
     public function execute($params, $context)
     {
         // Validate the RPC caller context.
@@ -173,7 +122,7 @@ class OMVRpcServiceRsnapshot extends \OMV\Rpc\ServiceAbstract {
             throw new \OMV\Config\ConfigDirtyException();
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $object = $db->get('conf.service.rsnapshot', $params['uuid']);
+        $object = $db->get('conf.service.rsnapshot.job', $params['uuid']);
         // Determine backup level.
         // Will use the smallest backup cycle upon manual execution.
         $level = 'unknown';
