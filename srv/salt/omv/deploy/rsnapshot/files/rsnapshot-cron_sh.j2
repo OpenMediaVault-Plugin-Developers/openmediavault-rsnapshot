@@ -19,8 +19,14 @@ mail=false
 {%- set mountpoint = src_sf | omv_conf_get_by_identifier('conf.system.sharedfolder') | attr('mntentref') | omv_conf_get_by_identifier('conf.system.filesystem.mountpoint') | attr('dir') %}
 {%- endif %}
 {%- set src_reldir = '' %}
-{%- if mountpoint and src_path.startswith(mountpoint + '/') %}
-{%- set src_reldir = src_path[(mountpoint|length + 1):] %}
+{%- if mountpoint %}
+{%- set _mp = mountpoint.rstrip('/') %}
+{%- if not _mp %}
+{# source is on root filesystem: full path (minus leading /) is the reldir #}
+{%- set src_reldir = src_path.strip('/') %}
+{%- elif src_path.rstrip('/').startswith(_mp + '/') %}
+{%- set src_reldir = src_path.rstrip('/')[(_mp|length + 1):] %}
+{%- endif %}
 {%- endif %}
 {%- set sourcelabel = mountpoint.lstrip('/') if mountpoint else 'source' %}
 {%- if mountpoint %}
@@ -28,6 +34,13 @@ mail=false
 {%- if lsblk %}
 {%- set sourcelabel = lsblk %}
 {%- endif %}
+{%- endif %}
+{%- if sourcelabel and src_reldir %}
+{%- set subpath = sourcelabel ~ '/' ~ src_reldir %}
+{%- elif sourcelabel %}
+{%- set subpath = sourcelabel %}
+{%- else %}
+{%- set subpath = src_reldir %}
 {%- endif %}
 {%- if not job.enable | to_bool %}
 #### DISABLED ####
@@ -51,7 +64,7 @@ if [ "$1" = "monthly" ]; then skip=true; fi
 if [ "$1" = "yearly" ]; then skip=true; fi
 {%- endif %}
 if [ "$2" = "{{ uuid }}" ] || ([ -z "$2" ] && [ "$skip" = false ]); then
-    targetdir="{{ dst_path }}/{{ sourcelabel }}{% if src_reldir %}/{{ src_reldir }}{% endif %}"
+    targetdir="{{ dst_path }}{{ subpath }}"
     if [ ! -e "${targetdir}" ]; then
 {%- if not job.erroroutputonly|to_bool %}
         echo "Creating target directory structure ..."
@@ -61,7 +74,7 @@ if [ "$2" = "{{ uuid }}" ] || ([ -z "$2" ] && [ "$skip" = false ]); then
 {%- if not job.erroroutputonly | to_bool %}
     echo "Checking access rights on target directory structure ..."
 {%- endif %}
-    while [ -n "${targetdir}" ] && [ "${targetdir}" != "{{ dst_path }}" ]; do
+    while [ -n "${targetdir}" ] && [ "${targetdir}" != "{{ dst_path.rstrip('/') }}" ]; do
 {%- if not job.erroroutputonly | to_bool %}
         echo "... ${targetdir}"
 {%- endif %}
