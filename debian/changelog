@@ -1,3 +1,9 @@
+openmediavault-rsnapshot (8.1.1) stable; urgency=low
+
+  * Fix snapshot_root for some cases
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 06 Apr 2026 16:22:04 +0000
+
 openmediavault-rsnapshot (8.1) stable; urgency=low
 
   * Convert old bash script used to generate jobs and config files to
