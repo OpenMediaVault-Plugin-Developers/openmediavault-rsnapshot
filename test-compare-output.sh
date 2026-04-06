@@ -7,10 +7,11 @@
 # copied to /tmp/rsnapshot-test/{old,new} after each run for diffing.
 #
 # Usage:
-#   sudo bash test-compare-output.sh            # run both, then compare
-#   sudo bash test-compare-output.sh --no-salt  # skip salt run
-#   sudo bash test-compare-output.sh --no-old   # skip old script run
-#   sudo bash test-compare-output.sh --diff-only # just compare existing captures
+#   sudo bash test-compare-output.sh               # run both + synthetic jobs, then compare
+#   sudo bash test-compare-output.sh --no-salt     # skip salt run
+#   sudo bash test-compare-output.sh --no-old      # skip old script run
+#   sudo bash test-compare-output.sh --no-synthetic # skip adding synthetic test jobs
+#   sudo bash test-compare-output.sh --diff-only   # just compare existing captures (no scripts, no synthetic)
 #
 
 OLD_SCRIPT=${OLD_SCRIPT:-/srv/plugins/old/omv-rsnapshot-conf}
@@ -25,14 +26,92 @@ ACTUAL_CRON_D=/etc/cron.d/openmediavault-rsnapshot
 
 RUN_OLD=true
 RUN_SALT=true
+RUN_SYNTHETIC=true
 
 for arg in "$@"; do
     case $arg in
-        --no-salt)   RUN_SALT=false ;;
-        --no-old)    RUN_OLD=false ;;
-        --diff-only) RUN_OLD=false; RUN_SALT=false ;;
+        --no-salt)        RUN_SALT=false ;;
+        --no-old)         RUN_OLD=false ;;
+        --diff-only)      RUN_OLD=false; RUN_SALT=false; RUN_SYNTHETIC=false ;;
+        --no-synthetic)   RUN_SYNTHETIC=false ;;
     esac
 done
+
+# ── Synthetic test jobs ──────────────────────────────────────────────────────
+# Each entry: "comment|src_sharedfolder_uuid|dest_sharedfolder_uuid"
+#
+# Shared folders used (verify with: omv-confdbadm read conf.system.sharedfolder)
+#   varlibdocker  uuid=6ed6872f  mntentref=79684322 (/)              reldirpath=var/lib/docker/
+#   test          uuid=5a21fb10  mntentref=fde7963c (/srv/mergerfs/p1) reldirpath=/
+#   rsnapshot_source uuid=8a7d47c6 mntentref=1a78cda9 (/srv/dev-disk-...) reldirpath=rsnapshot_source/
+#   appdata       uuid=6291378b  mntentref=bbe2e57a (/srv/single/main) reldirpath=compose/appdata/
+#   archive       uuid=a6bd2f78  mntentref=9493283a (/srv/single/archive) reldirpath=archive/
+#   rsnapshot_dest uuid=8b93dff7 mntentref=1a78cda9  reldirpath=rsnapshot_dest/
+#   rsnapshot_dest2 uuid=367bb113 mntentref=1a78cda9 reldirpath=rsnapshot_dest2/
+SYNTHETIC_TEST_CASES=(
+    # Root filesystem source — the bug reported by the user (snapshot_root was ///)
+    "test: root-fs source (mountpoint=/, reldirpath=var/lib/docker/)|6ed6872f-9afd-462a-847e-7b97e6e8bfa5|8b93dff7-793d-4231-81f3-b161dbfe8e01"
+    # Source shared folder IS the mountpoint (reldirpath=/), no subdirectory
+    "test: share IS mountpoint (mountpoint=/srv/mergerfs/p1, reldirpath=/)|5a21fb10-62c0-4232-8756-57529e19dc97|8b93dff7-793d-4231-81f3-b161dbfe8e01"
+    # Normal case: single subdir on a non-root filesystem
+    "test: normal single subdir on non-root fs|8a7d47c6-83df-444d-8e56-23ac536bf29d|8b93dff7-793d-4231-81f3-b161dbfe8e01"
+    # Multi-level subdirectory (reldirpath=compose/appdata/)
+    "test: multi-level subdir (reldirpath=compose/appdata/)|6291378b-0c57-44b9-a933-54b88420d5d3|367bb113-7f3d-492c-a549-8b14d16eab7f"
+    # Non-root filesystem, subdir, different mountpoint from the main disk
+    "test: subdir on separate non-root fs (/srv/single/archive)|a6bd2f78-51da-43f0-8029-01195985a02e|8b93dff7-793d-4231-81f3-b161dbfe8e01"
+)
+
+SYNTHETIC_UUIDS=()
+
+add_test_job() {
+    local comment="$1" src="$2" dest="$3"
+    local params response uuid
+    # OMV_CONFIGOBJECT_NEW_UUID signals db->set() to INSERT (not update) and assign a real UUID.
+    # Value from: python3 -c "import openmediavault; print(openmediavault.getenv('OMV_CONFIGOBJECT_NEW_UUID'))"
+    local NEW_UUID="fa4b1c66-ef79-11e5-87a0-0002b3a176b4"
+    params=$(printf '{"uuid":"%s","enable":true,"comment":"%s","srcsharedfolderref":"%s","destsharedfolderref":"%s","hourly":6,"daily":7,"weekly":4,"monthly":3,"yearly":0,"numtries":3,"gid":"users","onefs":false,"erroroutputonly":false,"rsyncargs":"","cmd_preexec":"","cmd_postexec":""}' \
+        "$NEW_UUID" "$comment" "$src" "$dest")
+    response=$(/usr/sbin/omv-rpc RSnapshot set "$params")
+    # Success: raw object JSON (no wrapper).  Error: {"response":null,"error":{...}}
+    if echo "$response" | python3 -c "import json,sys; d=json.load(sys.stdin); sys.exit(1 if d.get('error') else 0)" 2>/dev/null; then
+        uuid=$(echo "$response" | python3 -c "import json,sys; print(json.load(sys.stdin)['uuid'])")
+        if [ -z "$uuid" ]; then
+            echo "ERROR: could not parse UUID from response for: $comment" >&2
+            echo "$response" >&2
+            return 1
+        fi
+        SYNTHETIC_UUIDS+=("$uuid")
+        echo "  Added job $uuid: $comment"
+    else
+        echo "ERROR: failed to create test job: $comment" >&2
+        echo "$response" >&2
+        return 1
+    fi
+}
+
+setup_test_jobs() {
+    echo "=== Adding synthetic test jobs to OMV config ==="
+    for entry in "${SYNTHETIC_TEST_CASES[@]}"; do
+        IFS='|' read -r comment src dest <<< "$entry"
+        add_test_job "$comment" "$src" "$dest"
+    done
+    echo "Added ${#SYNTHETIC_UUIDS[@]} synthetic job(s)."
+    echo ""
+}
+
+cleanup_test_jobs() {
+    [ ${#SYNTHETIC_UUIDS[@]} -eq 0 ] && return
+    echo ""
+    echo "=== Cleaning up synthetic test jobs ==="
+    for uuid in "${SYNTHETIC_UUIDS[@]}"; do
+        if /usr/sbin/omv-rpc RSnapshot delete "{\"uuid\":\"${uuid}\"}" > /dev/null; then
+            echo "  Deleted job $uuid"
+        else
+            echo "  WARNING: failed to delete job $uuid — remove it manually via the UI" >&2
+        fi
+    done
+    SYNTHETIC_UUIDS=()
+}
 
 capture_files() {
     local dest="$1"
@@ -83,12 +162,20 @@ compare_files() {
     #   - unquoted [ $var = x ] → quoted [ "$var" = x ]
     #   - trailing spaces inside echo strings removed
     #   - extra blank lines between job blocks
+    #   - double slashes in paths (old script bug, new script is correct)
     norm_sh() {
         expand "$1" |
         sed 's/^[[:space:]]*//' |
         sed 's/\[ \$\([a-zA-Z_][a-zA-Z_]*\)/[ "\$\1"/g' |
         sed 's/[[:space:]]*"$/"/g' |
+        sed 's|/\+|/|g' |
         grep -v '^[[:space:]]*$'
+    }
+
+    # Normalize conf files: collapse multiple slashes in paths.
+    norm_conf() {
+        grep -v "^# rsnapshot-$2\.conf$" "$1" |
+        sed 's|/\+|/|g'
     }
 
     # --- /etc/cron.d/openmediavault-rsnapshot ---
@@ -134,9 +221,8 @@ compare_files() {
         echo ""
         echo "  Job: ${uuid}"
         if [ -f "${OLD_CONF}" ] && [ -f "${NEW_CONF}" ]; then
-            # Old script emits "# rsnapshot-<uuid>.conf" as first line; new template doesn't
-            diff <(grep -v "^# rsnapshot-${uuid}\.conf$" "${OLD_CONF}") \
-                 <(grep -v "^# rsnapshot-${uuid}\.conf$" "${NEW_CONF}") \
+            diff <(norm_conf "${OLD_CONF}" "${uuid}") \
+                 <(norm_conf "${NEW_CONF}" "${uuid}") \
                 && echo "  MATCH" || any_diff=true
         else
             [ -f "${OLD_CONF}" ] || echo "  MISSING from old"
@@ -156,6 +242,12 @@ compare_files() {
 }
 
 mkdir -p "${OLD_OUT}" "${NEW_OUT}"
+
+if ${RUN_SYNTHETIC} && ( ${RUN_OLD} || ${RUN_SALT} ); then
+    trap cleanup_test_jobs EXIT
+    setup_test_jobs
+fi
+
 ${RUN_OLD}  && run_old
 ${RUN_SALT} && run_salt
 compare_files
