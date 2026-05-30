@@ -33,7 +33,7 @@ rsnapshot_confs_dir:
     - name: {{ confs_dir }}
     - user: root
     - group: root
-    - dir_mode: 0755
+    - dir_mode: '0755'
     - makedirs: True
 
 {% if not disable_cron %}
@@ -42,7 +42,7 @@ openmediavault_rsnapshot_cron:
     - name: /etc/cron.d/openmediavault-rsnapshot
     - user: root
     - group: root
-    - mode: 0644
+    - mode: '0644'
     - contents: |
         {{ pillar['headers']['auto_generated'] }}
         {{ pillar['headers']['warning'] }}
