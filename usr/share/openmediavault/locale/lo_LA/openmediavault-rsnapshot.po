@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-rsnapshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-26 12:33+0000\n"
+"POT-Creation-Date: 2026-05-31 01:26+0000\n"
 "PO-Revision-Date: 2013-12-02 16:36+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Lao (Laos) (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-rsnapshot/language/lo_LA/)\n"
@@ -18,111 +18,111 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Comment"
-msgstr ""
+msgstr "ຄຳອະທິບາຍ"
 
 msgid "Create"
-msgstr ""
+msgstr "ສ້າງ"
 
 msgid "Created job."
-msgstr ""
+msgstr "ສ້າງວຽກແລ້ວ."
 
 msgid "Date & Time"
-msgstr ""
+msgstr "ວັນທີ ແລະ ເວລາ"
 
 msgid "Edit"
-msgstr ""
+msgstr "ແກ້ໄຂ"
 
 msgid "Enable"
-msgstr ""
+msgstr "ເປີດໃຊ້ງານ"
 
 msgid "Enabled"
-msgstr ""
+msgstr "ເປີດໃຊ້ງານແລ້ວ"
 
 msgid "Error output only"
-msgstr ""
+msgstr "ສະແດງສະເພາະຂໍ້ຜິດພາດ"
 
 msgid "Execute backup job ..."
-msgstr ""
+msgstr "ດຳເນີນການວຽກສຳຮອງຂໍ້ມູນ ..."
 
 msgid "Group"
-msgstr ""
+msgstr "ກຸ່ມ"
 
 msgid ""
 "If this is enabled, rsync won't span filesystem partitions within a backup "
 "point."
-msgstr ""
+msgstr "ຖ້າເປີດໃຊ້ງານສິ່ງນີ້, rsync ຈະບໍ່ຂ້າມພາທິຊັນຂອງລະບົບໄຟລ໌ພາຍໃນຈຸດສຳຮອງ."
 
 msgid "Message"
-msgstr ""
+msgstr "ຂໍ້ຄວາມ"
 
 msgid "One filesystem only"
-msgstr ""
+msgstr "ລະບົບໄຟລ໌ດຽວເທົ່ານັ້ນ"
 
 msgid "Post-exec command"
-msgstr ""
+msgstr "ຄຳສັ່ງຫຼັງການເຮັດວຽກ"
 
 msgid "Pre-exec command"
-msgstr ""
+msgstr "ຄຳສັ່ງກ່ອນການເຮັດວຽກ"
 
 msgid "Retain daily"
-msgstr ""
+msgstr "ເກັບຮັກສາໄວ້ລາຍວັນ"
 
 msgid "Retain hourly"
-msgstr ""
+msgstr "ເກັບຮັກສາໄວ້ລາຍຊົ່ວໂມງ"
 
 msgid "Retain monthly"
-msgstr ""
+msgstr "ເກັບຮັກສາໄວ້ລາຍເດືອນ"
 
 msgid "Retain weekly"
-msgstr ""
+msgstr "ເກັບຮັກສາໄວ້ລາຍອາທິດ"
 
 msgid "Retain yearly"
-msgstr ""
+msgstr "ເກັບຮັກສາໄວ້ລາຍປີ"
 
 msgid "Rsnapshot"
-msgstr ""
+msgstr "Rsnapshot"
 
 msgid "Rsync long arguments"
-msgstr ""
+msgstr "ອາຄິວເມັ້ນແບບຍາວຂອງ Rsync"
 
 msgid "Rsync tries"
-msgstr ""
+msgstr "ຈຳນວນຄັ້ງທີ່ Rsync ພະຍາຍາມ"
 
 msgid "Run"
-msgstr ""
+msgstr "ເລີ່ມເຮັດວຽກ"
 
 msgid "Select a group ..."
-msgstr ""
+msgstr "ເລືອກກຸ່ມ ..."
 
 msgid "Source"
-msgstr ""
+msgstr "ຕົ້ນທາງ"
 
 msgid "Source folder"
-msgstr ""
+msgstr "ໂຟນເດີຕົ້ນທາງ"
 
 msgid "Target"
-msgstr ""
+msgstr "ປາຍທາງ"
 
 msgid "Target folder"
-msgstr ""
+msgstr "ໂຟນເດີປາຍທາງ"
 
 msgid ""
 "The Folder used as target for backups. Backups will go into a sub-folder "
 "<em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative "
 "path&gt;</em>"
-msgstr ""
+msgstr "ໂຟນເດີທີ່ໃຊ້ເປັນປາຍທາງສຳລັບການສຳຮອງຂໍ້ມູນ. ຂໍ້ມູນທີ່ສຳຮອງຈະຖືກເກັບໄວ້ໃນໂຟນເດີຍ່ອຍ <em>localhost/&lt;label of source filesystem&gt;/&lt;source folder relative path&gt;</em>"
 
 msgid "The shared folder to backup."
-msgstr ""
+msgstr "ໂຟນເດີທີ່ແບ່ງປັນເພື່ອສຳຮອງຂໍ້ມູນ."
 
 msgid ""
 "This option specifies the group that the backup directories will belong to. "
 "Note%3A This will only change the group of additionally created dirs. The "
 "backed-up files and directories will mirror the original permissions."
-msgstr ""
+msgstr "ຕົວເລືອກນີ້ກຳນົດກຸ່ມທີ່ໂຟນເດີສຳຮອງຂໍ້ມູນຈະສັງກັດຢູ່. ໝາຍເຫດ%3A ສິ່ງນີ້ຈະປ່ຽນແປງສະເພາະກຸ່ມຂອງໂຟນເດີທີ່ຖືກສ້າງຂຶ້ນເພີ່ມເຕີມເທົ່ານັ້ນ. ໄຟລ໌ ແລະ ໂຟນເດີທີ່ຖືກສຳຮອງຈະຍັງຄົງຮັກສາສິດການເຂົ້າເຖິງເດີມໄວ້."
 
 msgid "Updated job."
-msgstr ""
+msgstr "ອັບເດດວຽກແລ້ວ."
 
 msgid "n/a"
-msgstr ""
+msgstr "ບໍ່ມີຂໍ້ມູນ"
